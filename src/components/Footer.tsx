@@ -123,10 +123,11 @@ export default function Footer() {
       {/* Middle Footer: 4-Column Grid */}
       <div className="relative z-10 border-t border-white/10 bg-black/20 backdrop-blur-md pt-20 pb-20 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.02)]">
         <div className="container-custom">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+          {/* Ensure proper alignment items-start so nothing 'jumps' up and down */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 items-start">
              
              {/* Col 1: Quick Links */}
-             <div>
+             <div className="flex flex-col h-full">
                 <h4 className="text-white font-bold text-[11px] tracking-[0.2em] uppercase mb-8 flex items-center gap-3">
                   <span className="w-1.5 h-1.5 rounded-full bg-white/40"></span>
                   Quick Links
@@ -144,7 +145,7 @@ export default function Footer() {
              </div>
 
              {/* Col 2: Expertise */}
-             <div>
+             <div className="flex flex-col h-full">
                 <h4 className="text-white font-bold text-[11px] tracking-[0.2em] uppercase mb-8 flex items-center gap-3">
                   <span className="w-1.5 h-1.5 rounded-full bg-white/40"></span>
                   Expertise
@@ -162,7 +163,7 @@ export default function Footer() {
              </div>
 
              {/* Col 3: Direct Access */}
-             <div>
+             <div className="flex flex-col h-full">
                 <h4 className="text-white font-bold text-[11px] tracking-[0.2em] uppercase mb-8 flex items-center gap-3">
                   <span className="w-1.5 h-1.5 rounded-full bg-white/40"></span>
                   Direct Access
@@ -190,23 +191,25 @@ export default function Footer() {
              </div>
 
              {/* Col 4: Newsletter (Premium Card) */}
-             <div>
-               <div className="bg-white/[0.03] border border-white/10 rounded-2xl p-7 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05)] hover:bg-white/[0.05] transition-colors relative overflow-hidden group h-full">
+             <div className="flex flex-col h-full">
+               <div className="bg-white/[0.03] border border-white/10 rounded-2xl p-7 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05)] hover:bg-white/[0.05] transition-colors relative overflow-hidden group h-full flex flex-col justify-between">
                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-accent-blue/0 via-accent-blue to-accent-blue/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                  
-                 <h4 className="text-white font-bold text-[11px] tracking-[0.2em] uppercase mb-4 flex items-center gap-3">
-                   <span className="relative flex h-2 w-2">
-                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-blue opacity-75"></span>
-                     <span className="relative inline-flex rounded-full h-2 w-2 bg-accent-blue shadow-[0_0_10px_rgba(59,130,246,0.8)]"></span>
-                   </span>
-                   Newsletter
-                 </h4>
+                 <div>
+                   <h4 className="text-white font-bold text-[11px] tracking-[0.2em] uppercase mb-4 flex items-center gap-3">
+                     <span className="relative flex h-2 w-2">
+                       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-blue opacity-75"></span>
+                       <span className="relative inline-flex rounded-full h-2 w-2 bg-accent-blue shadow-[0_0_10px_rgba(59,130,246,0.8)]"></span>
+                     </span>
+                     Newsletter
+                   </h4>
+                   
+                   <p className="text-white/60 text-sm mb-6 leading-relaxed">
+                     Stay updated with monthly regulatory shifts and crucial Indian policy changes.
+                   </p>
+                 </div>
                  
-                 <p className="text-white/60 text-sm mb-8 leading-relaxed">
-                   Stay updated with monthly regulatory shifts and crucial Indian policy changes.
-                 </p>
-                 
-                 <div className="flex flex-col gap-4">
+                 <div className="flex flex-col gap-4 mt-auto">
                    <input 
                      type="email" 
                      placeholder="Work Email Address" 
