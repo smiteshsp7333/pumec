@@ -3,17 +3,25 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Send, Loader2 } from "lucide-react";
+import { submitContact } from "@/lib/api";
 
 export default function ContactPage() {
   const [formState, setFormState] = useState<"idle" | "submitting" | "success" | "error">("idle");
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
     setFormState("submitting");
-    // Simulate API call
-    setTimeout(() => {
+    try {
+      const data = {
+        name: e.target[0].value,
+        email: e.target[1].value,
+        message: e.target[5]? e.target[5].value : e.target[2].value || "Contact Form Submission"
+      };
+      await submitContact(data);
       setFormState("success");
-    }, 1500);
+    } catch (err) {
+      setFormState("error");
+    }
   };
 
   return (
@@ -100,7 +108,7 @@ export default function ContactPage() {
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <label className="text-xs font-bold text-navy uppercase tracking-widest ml-1">Full Name</label>
-                      <input 
+                      <input name="inputfield" 
                         required
                         type="text" 
                         placeholder="John Doe" 
@@ -109,7 +117,7 @@ export default function ContactPage() {
                     </div>
                     <div className="space-y-2">
                       <label className="text-xs font-bold text-navy uppercase tracking-widest ml-1">Email Address</label>
-                      <input 
+                      <input name="inputfield" 
                         required
                         type="email" 
                         placeholder="john@company.com" 
