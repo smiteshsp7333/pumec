@@ -85,7 +85,7 @@ export default function Stats() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="stats" className="pt-28 pb-24 bg-[#F8FAFC] relative overflow-hidden border-b border-border-subtle/50">
+    <section id="stats" className="pt-28 pb-24 bg-white relative overflow-hidden border-b border-slate-200/50">
       <div className="absolute inset-0 bg-gradient-to-br from-white to-transparent opacity-50 absolute pointer-events-none" />
       
       <div className="container-custom relative z-10">
@@ -101,20 +101,20 @@ export default function Stats() {
               transition={{ duration: 0.6, delay: i * 0.15, ease: [0.2, 0.6, 0.2, 1] }}
               className="text-center lg:px-6 relative flex flex-col items-center group hover:scale-[1.02] hover:-translate-y-1 transition-all duration-300"
             >
-              <div className="w-12 h-12 bg-white rounded-full shadow-sm flex items-center justify-center text-navy mb-6 group-hover:text-accent-blue transition-colors duration-300 border border-border-subtle/50">
+              <div className="w-12 h-12 bg-slate-50 rounded-full shadow-inner flex items-center justify-center text-slate-700 mb-6 group-hover:text-blue-600 transition-colors duration-300 border border-slate-200">
                 {s.icon}
               </div>
               
-              <div className="text-5xl lg:text-6xl font-black text-navy mb-4 tracking-tighter transition-colors duration-300 group-hover:text-navy-light drop-shadow-sm">
+              <div className="text-5xl lg:text-6xl font-black text-slate-900 mb-4 tracking-tighter transition-colors duration-300 group-hover:text-slate-900-light drop-shadow-sm">
                 <NumCounter target={s.value} suffix={s.suffix} />
               </div>
               
-              <div className="text-navy font-bold text-sm tracking-widest uppercase mb-2 relative">
+              <div className="text-slate-900 font-bold text-sm tracking-widest uppercase mb-2 relative">
                 {s.label}
                 <div className="absolute -bottom-2.5 mx-auto left-0 right-0 w-8 group-hover:w-16 h-[2px] bg-accent-blue/50 transition-all duration-400 ease-out" />
               </div>
               
-              <div className="text-text-muted text-xs tracking-wider uppercase font-medium mt-4 opacity-80 group-hover:opacity-100 transition-opacity">
+              <div className="text-slate-600 text-xs tracking-wider uppercase font-medium mt-4 opacity-80 group-hover:opacity-100 transition-opacity">
                 {s.sub}
               </div>
             </motion.div>
@@ -124,3 +124,4 @@ export default function Stats() {
     </section>
   );
 }
+

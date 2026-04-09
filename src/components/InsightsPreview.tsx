@@ -5,3 +5,4 @@ export default async function InsightsPreview() {
   const data = await fetchBlogs();
   return <InsightsPreviewClient blogsData={data} />;
 }
+

@@ -11,7 +11,7 @@ export default function TestimonialsClient({ testimonialsData }: { testimonialsD
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="py-24 bg-white relative overflow-hidden border-t border-border-subtle/30">
+    <section className="py-24 bg-slate-50 relative overflow-hidden border-t border-slate-200/50">
       {/* 3. SECTION ALTERNATION: white + subtle gradient tint */}
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[radial-gradient(ellipse_at_top_right,rgba(59,130,246,0.03),transparent_70%)] pointer-events-none z-0" />
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[radial-gradient(ellipse_at_bottom_left,rgba(59,130,246,0.02),transparent_70%)] pointer-events-none z-0" />
@@ -24,10 +24,10 @@ export default function TestimonialsClient({ testimonialsData }: { testimonialsD
             transition={{ duration: 0.6 }}
             className="max-w-2xl"
           >
-            <span className="text-navy font-bold tracking-widest uppercase text-xs mb-3 block">
+            <span className="text-slate-900 font-bold tracking-widest uppercase text-xs mb-3 block">
               Voices of Trust
             </span>
-            <h2 className="text-3xl lg:text-5xl font-bold text-navy leading-tight tracking-tight">
+            <h2 className="text-3xl lg:text-5xl font-bold text-slate-900 leading-tight tracking-tight">
               What Our Clients Say
             </h2>
           </motion.div>
@@ -41,13 +41,13 @@ export default function TestimonialsClient({ testimonialsData }: { testimonialsD
              <div className="flex items-center gap-4">
                <div className="flex -space-x-3">
                  {[1,2,3,4,5].map(i => (
-                    <div key={i} className="w-10 h-10 rounded-full border-2 border-white bg-bg-gray overflow-hidden">
+                    <div key={i} className="w-10 h-10 rounded-full border-2 border-white bg-slate-100 overflow-hidden">
                       <Image src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${i+10}`} alt="avatar" width={40} height={40} />
                     </div>
                  ))}
                </div>
-               <span className="text-sm font-medium text-text-muted">
-                 Trusted by <span className="font-bold text-navy">2,500+</span> global leaders
+               <span className="text-sm font-medium text-slate-600">
+                 Trusted by <span className="font-bold text-slate-900">2,500+</span> global leaders
                </span>
              </div>
           </motion.div>
@@ -63,7 +63,7 @@ export default function TestimonialsClient({ testimonialsData }: { testimonialsD
               initial={{ opacity: 0, y: 40 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 + i * 0.15 }}
-              className="relative bg-white border border-border-subtle/60 shadow-[0_4px_20px_rgba(0,0,0,0.02)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:-translate-y-1 rounded-2xl p-8 lg:p-10 transition-all duration-500 group flex flex-col h-full overflow-hidden"
+              className="relative bg-white border border-slate-100 hover:border-slate-200 shadow-sm hover:shadow-md hover:shadow-slate-200/50 hover:-translate-y-1 rounded-2xl p-8 lg:p-10 transition-all duration-500 group flex flex-col h-full overflow-hidden"
             >
               {/* 5. CARD BACKGROUNDS: Gradient edge highlight */}
               <div className="absolute inset-0 bg-gradient-to-br from-accent-blue/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-0" />
@@ -77,17 +77,17 @@ export default function TestimonialsClient({ testimonialsData }: { testimonialsD
                 ))}
               </div>
 
-              <blockquote className="relative z-10 text-navy text-lg leading-relaxed font-normal mb-8 flex-1 italic">
+              <blockquote className="relative z-10 text-slate-900 text-lg leading-relaxed font-normal mb-8 flex-1 italic">
                 &quot;{t.message}&quot;
               </blockquote>
 
-              <div className="relative z-10 flex items-center gap-4 pt-6 border-t border-border-subtle/50">
-                <div className="w-12 h-12 rounded-full bg-white overflow-hidden border border-border-subtle hover:border-accent-blue/40 transition-colors">
+              <div className="relative z-10 flex items-center gap-4 pt-6 border-t border-slate-200/50">
+                <div className="w-12 h-12 rounded-full bg-white overflow-hidden border border-slate-200 hover:border-accent-blue/40 transition-colors">
                   <Image src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${t.name.split(' ')[0]}`} alt={t.name} width={48} height={48} />
                 </div>
                 <div>
-                  <h4 className="text-navy font-bold text-sm tracking-wide">{t.name}</h4>
-                  <p className="text-text-muted text-xs font-medium uppercase tracking-wider">{t.designation}</p>
+                  <h4 className="text-slate-900 font-bold text-sm tracking-wide">{t.name}</h4>
+                  <p className="text-slate-600 text-xs font-medium uppercase tracking-wider">{t.designation}</p>
                 </div>
               </div>
             </motion.div>
@@ -97,3 +97,4 @@ export default function TestimonialsClient({ testimonialsData }: { testimonialsD
     </section>
   );
 }
+

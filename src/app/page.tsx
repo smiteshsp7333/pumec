@@ -9,7 +9,7 @@ import CtaBanner from "@/components/CtaBanner";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col bg-white text-text-main overflow-x-hidden pt-20">
+    <main className="flex min-h-screen flex-col bg-slate-50 text-slate-800 overflow-x-hidden pt-20">
       <Hero />
       <Services />
       <Stats />
@@ -21,3 +21,4 @@ export default function Home() {
     </main>
   );
 }
+

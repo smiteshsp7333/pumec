@@ -68,7 +68,7 @@ export default function Navbar() {
           <div className="hidden md:flex flex-1 justify-end items-center">
             <Link
               href="/contact"
-              className="bg-white text-navy font-semibold text-sm py-3 px-7 rounded shadow-sm hover:shadow-lg hover:-translate-y-0.5 hover:bg-bg-gray transition-all duration-300 border border-transparent"
+              className="bg-white text-slate-900 font-semibold text-sm py-3 px-7 rounded shadow-sm hover:shadow-lg hover:-translate-y-0.5 hover:bg-slate-100 transition-all duration-300 border border-transparent"
             >
               Get Consultation
             </Link>
@@ -113,7 +113,7 @@ export default function Navbar() {
               <Link 
                 href="/contact" 
                 onClick={() => setMobileOpen(false)}
-                className="mt-4 flex justify-center bg-white text-navy font-semibold text-base py-3.5 px-6 rounded shadow-sm hover:bg-bg-gray transition-colors border border-transparent"
+                className="mt-4 flex justify-center bg-white text-slate-900 font-semibold text-base py-3.5 px-6 rounded shadow-sm hover:bg-slate-100 transition-colors border border-transparent"
               >
                 Get Consultation
               </Link>
@@ -124,3 +124,4 @@ export default function Navbar() {
     </motion.nav>
   );
 }
+

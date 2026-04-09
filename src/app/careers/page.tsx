@@ -49,10 +49,10 @@ export default function CareersPage() {
             <span className="text-accent-blue font-bold tracking-widest uppercase text-xs mb-4 block">
               Build the Future of Consulting
             </span>
-            <h1 className="text-4xl lg:text-7xl font-bold text-navy leading-tight tracking-tight mb-8">
+            <h1 className="text-4xl lg:text-7xl font-bold text-slate-900 leading-tight tracking-tight mb-8">
               Where Rigor Meets <br /> Innovation.
             </h1>
-            <p className="text-text-muted text-xl max-w-2xl font-medium leading-relaxed">
+            <p className="text-slate-600 text-xl max-w-2xl font-medium leading-relaxed">
               Join a team of elite financial advisors and compliance experts dedicated to excellence. 
               We don&apos;t just offer jobs; we offer career trajectories that redefine mentorship.
             </p>
@@ -61,29 +61,29 @@ export default function CareersPage() {
       </section>
 
       {/* Perks placeholder */}
-      <section className="bg-bg-gray py-24 mb-24 border-y border-border-subtle">
+      <section className="bg-slate-100 py-24 mb-24 border-y border-slate-200">
         <div className="container-custom">
            <div className="grid md:grid-cols-3 gap-12 text-center">
               <div>
-                <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-sm border border-border-subtle">
+                <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-sm border border-slate-200">
                   <UserPlus className="text-accent-blue" size={28} />
                 </div>
-                <h3 className="text-lg font-bold text-navy mb-3">Mentorship First</h3>
-                <p className="text-text-muted text-sm leading-relaxed">Work directly with partners and gain exposure to complex cross-border cases.</p>
+                <h3 className="text-lg font-bold text-slate-900 mb-3">Mentorship First</h3>
+                <p className="text-slate-600 text-sm leading-relaxed">Work directly with partners and gain exposure to complex cross-border cases.</p>
               </div>
               <div>
-                <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-sm border border-border-subtle">
+                <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-sm border border-slate-200">
                   <Clock className="text-accent-blue" size={28} />
                 </div>
-                <h3 className="text-lg font-bold text-navy mb-3">Hybrid Culture</h3>
-                <p className="text-text-muted text-sm leading-relaxed">We value performance over presence. Enjoy flexible working models designed for high output.</p>
+                <h3 className="text-lg font-bold text-slate-900 mb-3">Hybrid Culture</h3>
+                <p className="text-slate-600 text-sm leading-relaxed">We value performance over presence. Enjoy flexible working models designed for high output.</p>
               </div>
               <div>
-                <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-sm border border-border-subtle">
+                <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-sm border border-slate-200">
                   <Briefcase className="text-accent-blue" size={28} />
                 </div>
-                <h3 className="text-lg font-bold text-navy mb-3">Wealth Creation</h3>
-                <p className="text-text-muted text-sm leading-relaxed">Competitive remuneration combined with performance incentives and career growth milestones.</p>
+                <h3 className="text-lg font-bold text-slate-900 mb-3">Wealth Creation</h3>
+                <p className="text-slate-600 text-sm leading-relaxed">Competitive remuneration combined with performance incentives and career growth milestones.</p>
               </div>
            </div>
         </div>
@@ -93,10 +93,10 @@ export default function CareersPage() {
       <section className="container-custom">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 lg:px-4">
           <div className="max-w-2xl">
-            <h2 className="text-3xl lg:text-5xl font-bold text-navy leading-tight tracking-tight mb-4">
+            <h2 className="text-3xl lg:text-5xl font-bold text-slate-900 leading-tight tracking-tight mb-4">
               Open Positions
             </h2>
-            <p className="text-text-muted text-lg font-medium">Join us in our offices in New Delhi, Mumbai, or Bangalore.</p>
+            <p className="text-slate-600 text-lg font-medium">Join us in our offices in New Delhi, Mumbai, or Bangalore.</p>
           </div>
         </div>
 
@@ -108,7 +108,7 @@ export default function CareersPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="group bg-white border border-border-subtle rounded-3xl p-8 hover:border-navy hover:shadow-2xl hover:shadow-navy/5 transition-all duration-400"
+              className="group bg-white border border-slate-200 rounded-3xl p-8 hover:border-navy hover:shadow-2xl hover:shadow-navy/5 transition-all duration-400"
             >
               <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
                 <div className="flex-1">
@@ -116,25 +116,25 @@ export default function CareersPage() {
                     <span className="px-3 py-1 bg-blue-50 text-accent-blue text-[10px] font-black uppercase tracking-widest rounded leading-none border border-blue-100">
                       {job.type}
                     </span>
-                    <div className="flex items-center gap-1.5 text-text-muted text-[10px] font-bold uppercase tracking-widest">
+                    <div className="flex items-center gap-1.5 text-slate-600 text-[10px] font-bold uppercase tracking-widest">
                        <MapPin size={12} />
                        {job.location}
                     </div>
-                    <div className="flex items-center gap-1.5 text-text-muted text-[10px] font-bold uppercase tracking-widest">
+                    <div className="flex items-center gap-1.5 text-slate-600 text-[10px] font-bold uppercase tracking-widest">
                        <Clock size={12} />
                        {job.exp}
                     </div>
                   </div>
-                  <h3 className="text-2xl font-bold text-navy mb-4 group-hover:text-accent-blue transition-colors">
+                  <h3 className="text-2xl font-bold text-slate-900 mb-4 group-hover:text-accent-blue transition-colors">
                     {job.title}
                   </h3>
-                  <p className="text-text-muted text-sm font-medium leading-relaxed max-w-2xl">
+                  <p className="text-slate-600 text-sm font-medium leading-relaxed max-w-2xl">
                     {job.desc}
                   </p>
                 </div>
                 
                 <div className="shrink-0">
-                  <button className="bg-bg-gray text-navy font-bold tracking-widest uppercase text-xs py-4 px-8 rounded-xl hover:bg-navy hover:text-white transition-all flex items-center gap-3 active:scale-95">
+                  <button className="bg-slate-100 text-slate-900 font-bold tracking-widest uppercase text-xs py-4 px-8 rounded-xl hover:bg-navy hover:text-white transition-all flex items-center gap-3 active:scale-95">
                     Apply Now
                     <ArrowRight size={16} />
                   </button>
@@ -145,12 +145,12 @@ export default function CareersPage() {
         </div>
 
         <div className="mt-20 lg:px-4">
-          <div className="bg-bg-gray rounded-3xl p-10 lg:p-16 flex flex-col lg:flex-row items-center justify-between gap-8 border border-border-subtle/50">
+          <div className="bg-slate-100 rounded-3xl p-10 lg:p-16 flex flex-col lg:flex-row items-center justify-between gap-8 border border-slate-200/50">
              <div className="max-w-lg">
-                <h3 className="text-2xl lg:text-3xl font-bold text-navy mb-4">Don&apos;t see a perfect fit?</h3>
-                <p className="text-text-muted font-medium">We are always looking for meritorious professionals across specialized domains. Send us your profile for our talent pool.</p>
+                <h3 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-4">Don&apos;t see a perfect fit?</h3>
+                <p className="text-slate-600 font-medium">We are always looking for meritorious professionals across specialized domains. Send us your profile for our talent pool.</p>
              </div>
-             <a href="mailto:careers@pumec.com" className="text-navy font-black text-lg border-b-2 border-navy hover:text-accent-blue hover:border-accent-blue transition-all pb-1">
+             <a href="mailto:careers@pumec.com" className="text-slate-900 font-black text-lg border-b-2 border-navy hover:text-accent-blue hover:border-accent-blue transition-all pb-1">
                careers@pumec.com
              </a>
           </div>
@@ -159,3 +159,4 @@ export default function CareersPage() {
     </main>
   );
 }
+

@@ -57,19 +57,18 @@ const expertise = [
 
 export default function Footer() {
   return (
-    <footer className="relative bg-[#0B1F3A] text-white overflow-hidden border-t-2 border-white/5 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05)]">
+    <footer className="relative bg-slate-950 text-slate-50 overflow-hidden border-t border-slate-800/50">
       {/* Background Depth & Gradients */}
-      <div className="absolute top-[-20%] left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-accent-blue/15 rounded-full blur-[120px] opacity-60 pointer-events-none md:w-[1200px]"></div>
-      <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(255,255,255,0.03)_0%,transparent_100%)] pointer-events-none"></div>
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-900/40 via-transparent to-transparent pointer-events-none md:w-[1200px]"></div>
 
-      {/* Top Footer Section: Brand & Locations */}
-      <div className="relative z-10 container-custom pt-28 pb-20">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
+      {/* 1. Header Row: Brand & Direct Access */}
+      <div className="relative z-10 container-custom pt-20 pb-12 border-b border-slate-800/50">
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-12">
           
-          {/* Brand & Mission */}
-          <div className="lg:col-span-5 flex flex-col items-start">
-            <Link href="/" className="mb-10 block group">
-              <div className="bg-white px-6 py-4 rounded-xl inline-block transition-transform duration-500 group-hover:-translate-y-1 shadow-[0_8px_30px_rgba(0,0,0,0.12)]">
+          {/* Brand */}
+          <div className="max-w-md">
+            <Link href="/" className="mb-8 block group w-max">
+              <div className="bg-slate-50/95 backdrop-blur-sm px-6 py-4 rounded-xl inline-block transition-transform duration-500 group-hover:-translate-y-1 shadow-lg border border-slate-200/50">
                 <Image 
                   src="/pu_logo.png" 
                   alt="PUMEC Logo" 
@@ -79,179 +78,178 @@ export default function Footer() {
                 />
               </div>
             </Link>
-            <p className="text-white/80 text-xl font-light leading-relaxed mb-12 max-w-md drop-shadow-sm">
+            <p className="text-slate-400 text-[15px] font-light leading-relaxed mb-0">
               Providing rigorous financial architecture and strategic compliance for global enterprises navigating the Indian economy.
             </p>
-            <div className="flex gap-5">
+          </div>
+
+          {/* Contact & Social */}
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-8 lg:gap-12">
+            <a href="mailto:info@pumec.com" className="flex items-center gap-4 group">
+               <div className="w-10 h-10 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center group-hover:bg-slate-800 transition-colors">
+                 <Mail size={16} className="text-slate-400 group-hover:text-slate-100 transition-colors" />
+               </div>
+               <div>
+                 <span className="block text-[10px] font-bold text-slate-500 uppercase tracking-widest leading-tight mb-0.5">Email Connect</span>
+                 <span className="text-slate-300 font-semibold text-sm group-hover:text-slate-100 transition-colors">info@pumec.com</span>
+               </div>
+            </a>
+            
+            <a href="tel:+919876543210" className="flex items-center gap-4 group">
+               <div className="w-10 h-10 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center group-hover:bg-slate-800 transition-colors">
+                 <Phone size={16} className="text-slate-400 group-hover:text-slate-100 transition-colors" />
+               </div>
+               <div>
+                 <span className="block text-[10px] font-bold text-slate-500 uppercase tracking-widest leading-tight mb-0.5">Direct Line</span>
+                 <span className="text-slate-300 font-semibold text-sm group-hover:text-slate-100 transition-colors">+91 98XXX XXXXX</span>
+               </div>
+            </a>
+
+            <div className="h-10 w-px bg-slate-800/50 hidden sm:block"></div>
+
+            <div className="flex gap-3">
               {[Linkedin, Twitter, Youtube].map((Icon, i) => (
                 <a 
                   key={i} 
                   href="#" 
-                  className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/60 hover:bg-white hover:text-[#0B1F3A] hover:border-white hover:scale-110 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] transition-all duration-300"
+                  className="w-10 h-10 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:bg-slate-800 hover:text-slate-100 hover:border-slate-700 hover:-translate-y-0.5 transition-all duration-300"
                 >
-                  <Icon size={20} />
+                  <Icon size={16} />
                 </a>
               ))}
             </div>
           </div>
-
-          {/* Locations Grid */}
-          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-16">
-            {locations.map((loc) => (
-              <div key={loc.region} className="relative group">
-                <div className="absolute -inset-4 bg-white/[0.02] rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10 blur-sm"></div>
-                <div className="flex items-center gap-3 mb-8">
-                  <div className="w-8 h-8 rounded-full bg-accent-blue/10 flex items-center justify-center border border-accent-blue/20">
-                    <Globe className="text-accent-blue" size={16} />
-                  </div>
-                  <h4 className="text-white font-bold text-sm tracking-[0.15em] uppercase drop-shadow-sm">{loc.region}</h4>
-                </div>
-                <div className="grid grid-cols-1 gap-6">
-                  {loc.places.map((place) => (
-                    <div key={place.name} className="group/place cursor-default flex flex-col gap-1">
-                      <span className="block text-white/90 font-medium group-hover/place:text-white transition-colors group-hover/place:translate-x-1 duration-300">{place.name}</span>
-                      <span className="text-white/40 text-[11px] font-bold uppercase tracking-widest group-hover/place:text-accent-blue/80 transition-colors">{place.info}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
+          
         </div>
       </div>
 
-      {/* Middle Footer: 4-Column Grid */}
-      <div className="relative z-10 border-t border-white/10 bg-black/20 backdrop-blur-md pt-20 pb-20 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.02)]">
-        <div className="container-custom">
-          {/* Ensure proper alignment items-start so nothing 'jumps' up and down */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 items-start">
-             
-             {/* Col 1: Quick Links */}
-             <div className="flex flex-col h-full">
-                <h4 className="text-white font-bold text-[11px] tracking-[0.2em] uppercase mb-8 flex items-center gap-3">
-                  <span className="w-1.5 h-1.5 rounded-full bg-white/40"></span>
-                  Quick Links
-                </h4>
-                <ul className="space-y-5">
-                  {mainLinks.map(l => (
-                    <li key={l.label}>
-                      <Link href={l.href} className="text-white/60 text-sm font-medium hover:text-white flex items-center gap-2 group transition-all duration-300">
-                        <ArrowRight size={14} className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 text-accent-blue" />
-                        <span className="group-hover:translate-x-1 transition-transform duration-300">{l.label}</span>
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-             </div>
-
-             {/* Col 2: Expertise */}
-             <div className="flex flex-col h-full">
-                <h4 className="text-white font-bold text-[11px] tracking-[0.2em] uppercase mb-8 flex items-center gap-3">
-                  <span className="w-1.5 h-1.5 rounded-full bg-white/40"></span>
-                  Expertise
-                </h4>
-                <ul className="space-y-5">
-                  {expertise.map(l => (
-                    <li key={l}>
-                      <Link href="/services" className="text-white/60 text-sm font-medium hover:text-white flex items-center gap-2 group transition-all duration-300">
-                        <ArrowRight size={14} className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 text-accent-blue" />
-                        <span className="group-hover:translate-x-1 transition-transform duration-300">{l}</span>
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-             </div>
-
-             {/* Col 3: Direct Access */}
-             <div className="flex flex-col h-full">
-                <h4 className="text-white font-bold text-[11px] tracking-[0.2em] uppercase mb-8 flex items-center gap-3">
-                  <span className="w-1.5 h-1.5 rounded-full bg-white/40"></span>
-                  Direct Access
-                </h4>
-                <div className="space-y-8">
-                   <a href="mailto:info@pumec.com" className="flex items-start gap-4 text-white/80 hover:text-white transition-colors group">
-                      <div className="w-12 h-12 shrink-0 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-accent-blue/10 group-hover:border-accent-blue/30 group-hover:shadow-[0_0_15px_rgba(59,130,246,0.2)] transition-all duration-300">
-                        <Mail size={20} className="group-hover:text-accent-blue transition-colors" />
-                      </div>
-                      <div className="pt-1">
-                        <span className="block text-[10px] font-bold text-white/40 uppercase tracking-widest mb-1">Email Connect</span>
-                        <span className="font-semibold text-base tracking-wide">info@pumec.com</span>
-                      </div>
-                   </a>
-                   <a href="tel:+919876543210" className="flex items-start gap-4 text-white/80 hover:text-white transition-colors group">
-                      <div className="w-12 h-12 shrink-0 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-accent-blue/10 group-hover:border-accent-blue/30 group-hover:shadow-[0_0_15px_rgba(59,130,246,0.2)] transition-all duration-300">
-                        <Phone size={20} className="group-hover:text-accent-blue transition-colors" />
-                      </div>
-                      <div className="pt-1">
-                        <span className="block text-[10px] font-bold text-white/40 uppercase tracking-widest mb-1">Direct Line</span>
-                        <span className="font-semibold text-base tracking-wide">+91 98XXX XXXXX</span>
-                      </div>
-                   </a>
-                </div>
-             </div>
-
-             {/* Col 4: Newsletter (Premium Card) */}
-             <div className="flex flex-col h-full">
-               <div className="bg-white/[0.03] border border-white/10 rounded-2xl p-7 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05)] hover:bg-white/[0.05] transition-colors relative overflow-hidden group h-full flex flex-col justify-between">
-                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-accent-blue/0 via-accent-blue to-accent-blue/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                 
-                 <div>
-                   <h4 className="text-white font-bold text-[11px] tracking-[0.2em] uppercase mb-4 flex items-center gap-3">
-                     <span className="relative flex h-2 w-2">
-                       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-blue opacity-75"></span>
-                       <span className="relative inline-flex rounded-full h-2 w-2 bg-accent-blue shadow-[0_0_10px_rgba(59,130,246,0.8)]"></span>
-                     </span>
-                     Newsletter
-                   </h4>
-                   
-                   <p className="text-white/60 text-sm mb-6 leading-relaxed">
-                     Stay updated with monthly regulatory shifts and crucial Indian policy changes.
-                   </p>
-                 </div>
-                 
-                 <div className="flex flex-col gap-4 mt-auto">
-                   <input 
-                     type="email" 
-                     placeholder="Work Email Address" 
-                     className="w-full bg-black/30 border border-white/10 rounded-xl px-5 py-4 text-sm text-white placeholder-white/30 focus:outline-none focus:border-accent-blue/50 focus:bg-black/50 transition-all shadow-inner"
-                   />
-                   <button className="w-full bg-white text-[#0B1F3A] py-4 rounded-xl font-bold text-xs uppercase tracking-[0.15em] hover:bg-accent-blue hover:text-white transition-all duration-300 shadow-[0_4px_14px_0_rgba(255,255,255,0.1)] hover:shadow-[0_6px_20px_rgba(59,130,246,0.3)] flex items-center justify-center gap-2">
-                     Subscribe Now <ArrowRight size={16} />
-                   </button>
-                 </div>
-               </div>
-             </div>
-
+      {/* 2. Middle Row: Mega-Directory 4-Column Grid */}
+      <div className="relative z-10 container-custom pt-16 pb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 xl:gap-8 items-start">
+          
+          {/* Col 1: About & Quick Links */}
+          <div>
+            <h4 className="text-slate-100 font-bold text-[11px] tracking-[0.2em] uppercase mb-8 flex items-center gap-3">
+              <span className="w-1.5 h-1.5 rounded-full bg-slate-700"></span>
+              Corporate
+            </h4>
+            <ul className="space-y-4">
+              {mainLinks.map(l => (
+                <li key={l.label}>
+                  <Link href={l.href} className="text-slate-400 text-sm hover:text-slate-100 flex items-center group transition-all duration-300">
+                    <span className="group-hover:translate-x-1 transition-transform duration-300">{l.label}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
+
+          {/* Col 2: Domain Expertise */}
+          <div>
+            <h4 className="text-slate-100 font-bold text-[11px] tracking-[0.2em] uppercase mb-8 flex items-center gap-3">
+              <span className="w-1.5 h-1.5 rounded-full bg-slate-700"></span>
+              Expertise
+            </h4>
+            <ul className="space-y-4">
+              {expertise.map(l => (
+                <li key={l}>
+                  <Link href="/services" className="text-slate-400 text-sm hover:text-slate-100 flex items-center group transition-all duration-300">
+                    <span className="group-hover:translate-x-1 transition-transform duration-300">{l}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Col 3: India Desk */}
+          <div>
+            <h4 className="text-slate-100 font-bold text-[11px] tracking-[0.2em] uppercase mb-8 flex items-center gap-3">
+              <span className="w-1.5 h-1.5 rounded-full bg-slate-700"></span>
+              India Offices
+            </h4>
+            <ul className="space-y-6">
+              {locations[0].places.map((place) => (
+                <li key={place.name} className="group">
+                  <span className="block text-slate-300 text-sm font-medium mb-1.5">{place.name}</span>
+                  <span className="block text-slate-500 text-[11px] uppercase tracking-widest">{place.info}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Col 4: Global Desk */}
+          <div>
+            <h4 className="text-slate-100 font-bold text-[11px] tracking-[0.2em] uppercase mb-8 flex items-center gap-3">
+              <span className="w-1.5 h-1.5 rounded-full bg-slate-700"></span>
+              Global Desk
+            </h4>
+            <ul className="space-y-6">
+              {locations[1].places.map((place) => (
+                <li key={place.name} className="group">
+                  <span className="block text-slate-300 text-sm font-medium mb-1.5">{place.name}</span>
+                  <span className="block text-slate-500 text-[11px] uppercase tracking-widest">{place.info}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
         </div>
       </div>
 
-      {/* Bottom Bar: Legal */}
-      <div className="relative z-10 border-t border-white/5 py-8 bg-[#0B1F3A]">
-        <div className="container-custom flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-white/40 text-[11px] font-medium tracking-wide">
-            © {new Date().getFullYear()} <span className="text-white/80 font-bold">PUMEC Consultants Pvt Ltd.</span> Independent Member Firm.
-          </p>
-          <div className="flex items-center gap-8">
-            {["Privacy Policy", "Terms of Service", "Sitemap", "Legal Disclaimer"].map((item) => (
-              <Link 
-                key={item} 
-                href="#" 
-                className="text-white/40 hover:text-white text-[11px] font-bold uppercase tracking-widest transition-colors duration-300"
-              >
-                {item}
-              </Link>
-            ))}
+      {/* 3. Bottom Row: Horizontal Newsletter & Legal */}
+      <div className="relative z-10 border-t border-slate-800/50 bg-slate-900/20 backdrop-blur-sm">
+        
+        {/* Horizontal Newsletter */}
+        <div className="container-custom py-10 border-b border-slate-800/50">
+          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8 bg-slate-900/50 border border-slate-800/80 rounded-2xl p-6 lg:p-8">
+            <div className="max-w-xl">
+              <h4 className="text-slate-100 font-bold text-[13px] tracking-[0.15em] uppercase mb-2 flex items-center gap-3">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-slate-600 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-slate-500"></span>
+                </span>
+                Intelligence Updates
+              </h4>
+              <p className="text-slate-400 text-sm leading-relaxed mb-0">
+                Stay compliant. Receive executive summaries on monthly regulatory shifts and Indian policy changes directly to your inbox.
+              </p>
+            </div>
+            <div className="w-full lg:w-auto flex flex-col sm:flex-row gap-3">
+              <input 
+                type="email" 
+                placeholder="Work Email Address" 
+                className="w-full sm:w-[280px] bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-slate-200 placeholder-slate-600 focus:outline-none focus:border-slate-600 focus:ring-1 focus:ring-slate-600 transition-all"
+              />
+              <button className="bg-slate-100 text-slate-900 px-6 py-3 rounded-xl font-bold text-xs uppercase tracking-[0.1em] hover:bg-white hover:shadow-md transition-all duration-300 flex items-center justify-center shrink-0">
+                Subscribe <ArrowRight size={14} className="ml-2" />
+              </button>
+            </div>
           </div>
         </div>
-      </div>
 
-      <style jsx>{`
-        .footer-border-top {
-          border-top: 1px solid rgba(255, 255, 255, 0.05);
-        }
-      `}</style>
+        {/* Copyright & Legal */}
+        <div className="container-custom py-6">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+            <p className="text-slate-500 text-[11px] font-medium tracking-wide mb-0">
+              © {new Date().getFullYear()} <span className="text-slate-300 font-bold">PUMEC Consultants Pvt Ltd.</span> Independent Member Firm.
+            </p>
+            <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-4">
+              {["Privacy Policy", "Terms of Service", "Sitemap", "Disclaimer"].map((item) => (
+                <Link 
+                  key={item} 
+                  href="#" 
+                  className="text-slate-500 hover:text-slate-300 text-[11px] font-bold uppercase tracking-widest transition-colors duration-300"
+                >
+                  {item}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+
+      </div>
     </footer>
   );
 }
+
 

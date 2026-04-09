@@ -69,10 +69,10 @@ export default function InsightsPage() {
             <span className="text-accent-blue font-bold tracking-widest uppercase text-xs mb-4 block">
               The PUMEC Lens
             </span>
-            <h1 className="text-4xl lg:text-7xl font-bold text-navy leading-tight tracking-tight mb-8">
+            <h1 className="text-4xl lg:text-7xl font-bold text-slate-900 leading-tight tracking-tight mb-8">
               Leadership & <br /> Regulatory Insights
             </h1>
-            <p className="text-text-muted text-xl max-w-2xl font-medium leading-relaxed">
+            <p className="text-slate-600 text-xl max-w-2xl font-medium leading-relaxed">
               In-depth analysis of the rapidly evolving financial and regulatory landscape in India.
             </p>
           </motion.div>
@@ -80,37 +80,40 @@ export default function InsightsPage() {
       </section>
 
       {/* Filter and Search Section */}
-      <section className="container-custom mb-12 border-y border-border-subtle py-8">
-        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8 px-2">
-          <div className="flex flex-wrap items-center gap-3">
-            {categories.map((cat, i) => (
-              <button 
-                key={cat} 
-                className={`px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest transition-all ${
-                  i === 0 
-                  ? "bg-navy text-white shadow-lg shadow-navy/20" 
-                  : "bg-bg-gray text-text-muted hover:bg-border-subtle hover:text-navy"
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
+      <section className="container-custom mb-12 border-y border-slate-200 py-6">
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+          
+          <div className="flex items-center overflow-x-auto pb-4 lg:pb-0 w-full lg:max-w-[70%] hide-scrollbar" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+            <div className="flex gap-2.5 w-max pr-4">
+              {categories.map((cat, i) => (
+                <button 
+                  key={cat} 
+                  className={`px-5 py-2.5 rounded-xl text-[11px] font-bold uppercase tracking-[0.15em] whitespace-nowrap transition-all duration-300 ${
+                    i === 0 
+                    ? "bg-slate-900 text-white shadow-md" 
+                    : "bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 hover:text-slate-900 hover:border-slate-300 hover:shadow-sm"
+                  }`}
+                >
+                  {cat}
+                </button>
+              ))}
+            </div>
           </div>
           
-          <div className="relative max-w-md w-full">
+          <div className="relative w-full lg:max-w-xs shrink-0">
             <input 
               type="text" 
               placeholder="Search insights..." 
-              className="w-full bg-bg-gray border border-border-subtle rounded-xl pl-12 pr-6 py-4 text-sm focus:outline-none focus:border-navy transition-all"
+              className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-11 pr-5 py-3 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-slate-400 focus:ring-1 focus:ring-slate-400 transition-all font-medium"
             />
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-text-muted" size={18} />
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" size={16} />
           </div>
         </div>
       </section>
 
       {/* Blog Grid */}
       <section className="container-custom">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
           {blogPosts.map((post, i) => (
             <motion.article
               key={post.slug}
@@ -118,53 +121,56 @@ export default function InsightsPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="flex flex-col h-full group"
+              className="flex flex-col h-full bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 group overflow-hidden"
             >
-              <Link href={`/insights/${post.slug}`} className="block relative aspect-[16/10] rounded-2xl overflow-hidden mb-6 shadow-md shadow-navy/5">
+              <Link href={`/insights/${post.slug}`} className="block relative w-full aspect-[16/10] overflow-hidden bg-slate-100 border-b border-slate-100 shrink-0">
                  <Image 
                    src={post.image} 
                    alt={post.title} 
                    fill 
                    className="object-cover group-hover:scale-105 transition-transform duration-700"
+                   unoptimized
                  />
                  <div className="absolute top-4 left-4">
-                   <span className="px-3 py-1 bg-white/90 backdrop-blur-md rounded text-[10px] font-bold text-navy uppercase tracking-widest shadow-sm">
+                   <span className="px-3 py-1 bg-white/95 backdrop-blur-md rounded-md text-[10px] font-bold text-slate-900 uppercase tracking-widest shadow-sm border border-slate-100/50">
                      {post.category}
                    </span>
                  </div>
               </Link>
               
-              <div className="flex-1">
-                <div className="flex items-center gap-3 text-[10px] font-bold text-accent-blue uppercase tracking-widest mb-4">
-                  <time>{post.date}</time>
-                  <span className="w-1 h-1 rounded-full bg-border-subtle" />
+              <div className="flex flex-col flex-1 p-6 lg:p-8 shrink-0">
+                <div className="flex items-center flex-wrap gap-2 text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-4">
+                  <time className="text-accent-blue">{post.date}</time>
+                  <span className="hidden sm:inline-block w-1 h-1 rounded-full bg-slate-300" />
                   <span>By {post.author}</span>
                 </div>
                 
-                <h3 className="text-2xl font-bold text-navy mb-4 leading-snug group-hover:text-accent-blue transition-colors">
+                <h3 className="text-xl lg:text-2xl font-bold text-slate-900 mb-4 leading-snug group-hover:text-accent-blue transition-colors line-clamp-3">
                   <Link href={`/insights/${post.slug}`}>
                     {post.title}
                   </Link>
                 </h3>
                 
-                <p className="text-text-muted text-sm leading-relaxed mb-8 line-clamp-3">
+                <p className="text-slate-600 text-sm leading-relaxed mb-8 line-clamp-3">
                   {post.excerpt}
                 </p>
+                
+                <div className="mt-auto pt-2">
+                  <Link 
+                    href={`/insights/${post.slug}`}
+                    className="inline-flex items-center gap-2 text-slate-900 text-xs font-bold uppercase tracking-widest group-hover:gap-3 group-hover:text-accent-blue transition-all"
+                  >
+                    Read deep-dive
+                    <ChevronRight size={16} />
+                  </Link>
+                </div>
               </div>
-              
-              <Link 
-                href={`/insights/${post.slug}`}
-                className="inline-flex items-center gap-2 text-navy text-xs font-bold uppercase tracking-widest group-hover:gap-3 transition-all"
-              >
-                Read deep-dive
-                <ChevronRight size={16} className="text-accent-blue" />
-              </Link>
             </motion.article>
           ))}
         </div>
         
         {/* Pagination placeholder */}
-        <div className="mt-20 flex justify-center border-t border-border-subtle pt-12">
+        <div className="mt-20 flex justify-center border-t border-slate-200 pt-12">
            <button className="bg-navy text-white font-bold tracking-widest uppercase text-xs px-10 py-5 rounded-2xl hover:bg-navy-light shadow-xl shadow-navy/20 active:scale-95 transition-all">
              Load More Articles
            </button>
@@ -173,3 +179,4 @@ export default function InsightsPage() {
     </main>
   );
 }
+

@@ -64,7 +64,7 @@ const services = [
 
 export default function ServicesPage() {
   return (
-    <main className="min-h-screen pt-32 pb-24 bg-bg-gray">
+    <main className="min-h-screen pt-32 pb-24 bg-slate-100">
       {/* Header */}
       <section className="container-custom mb-20 text-center">
         <motion.div
@@ -75,10 +75,10 @@ export default function ServicesPage() {
           <span className="text-accent-blue font-bold tracking-widest uppercase text-xs mb-4 block">
             Our Expertise
           </span>
-          <h1 className="text-4xl lg:text-7xl font-bold text-navy leading-tight tracking-tight mb-8">
+          <h1 className="text-4xl lg:text-7xl font-bold text-slate-900 leading-tight tracking-tight mb-8">
             Tailored Solutions <br /> For Complex Needs
           </h1>
-          <p className="text-text-muted text-lg max-w-2xl mx-auto font-medium">
+          <p className="text-slate-600 text-lg max-w-2xl mx-auto font-medium">
              From startup compliance to multinational tax strategy — we provide the rigorous architecture your business needs to excel in the Indian market.
           </p>
         </motion.div>
@@ -93,23 +93,23 @@ export default function ServicesPage() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="group bg-white rounded-3xl p-10 border border-border-subtle shadow-sm hover:shadow-2xl hover:-translate-y-3 transition-all duration-500 relative flex flex-col"
+              className="group bg-white rounded-3xl p-10 border border-slate-200 shadow-sm hover:shadow-2xl hover:-translate-y-3 transition-all duration-500 relative flex flex-col"
             >
               <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${s.gradient} text-white flex items-center justify-center mb-10 shadow-lg group-hover:scale-110 transition-transform duration-500`}>
                 {s.icon}
               </div>
               
-              <h3 className="text-2xl font-black text-navy mb-5 tracking-tight group-hover:text-accent-blue transition-colors leading-tight">
+              <h3 className="text-2xl font-black text-slate-900 mb-5 tracking-tight group-hover:text-accent-blue transition-colors leading-tight">
                 {s.title}
               </h3>
               
-              <p className="text-text-muted text-sm leading-relaxed mb-8 font-medium">
+              <p className="text-slate-600 text-sm leading-relaxed mb-8 font-medium">
                 {s.desc}
               </p>
 
               <div className="space-y-3 flex-1 mb-10">
                 {s.details.map((detail) => (
-                  <div key={detail} className="flex items-center gap-2 text-navy text-xs font-bold tracking-widest uppercase opacity-70">
+                  <div key={detail} className="flex items-center gap-2 text-slate-900 text-xs font-bold tracking-widest uppercase opacity-70">
                     <div className="w-1 h-1 rounded-full bg-accent-blue" />
                     {detail}
                   </div>
@@ -118,7 +118,7 @@ export default function ServicesPage() {
 
               <Link 
                 href={`/services/${s.slug}`}
-                className="inline-flex items-center gap-2 bg-bg-gray text-navy text-[10px] font-black uppercase tracking-widest py-3 px-6 rounded-full hover:bg-navy hover:text-white transition-all w-fit"
+                className="inline-flex items-center gap-2 bg-slate-100 text-slate-900 text-[10px] font-black uppercase tracking-widest py-3 px-6 rounded-full hover:bg-navy hover:text-white transition-all w-fit"
               >
                 Deep Dive
                 <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
@@ -147,7 +147,7 @@ export default function ServicesPage() {
             </p>
             <Link 
               href="/contact" 
-              className="inline-flex items-center gap-4 bg-white text-navy font-bold text-sm tracking-widest uppercase py-5 px-10 rounded-2xl hover:bg-bg-gray active:scale-95 transition-all shadow-xl shadow-navy/20 relative z-10"
+              className="inline-flex items-center gap-4 bg-white text-slate-900 font-bold text-sm tracking-widest uppercase py-5 px-10 rounded-2xl hover:bg-slate-100 active:scale-95 transition-all shadow-xl shadow-navy/20 relative z-10"
             >
               Get a Retainership Quote
               <ShieldCheck size={20} />
@@ -157,3 +157,4 @@ export default function ServicesPage() {
     </main>
   );
 }
+

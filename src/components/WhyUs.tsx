@@ -52,11 +52,7 @@ export default function WhyUs() {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="why-us" className="py-24 lg:py-32 bg-white relative overflow-hidden">
-      {/* 3. SECTION ALTERNATION: white + subtle gradient tint for Section A */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[800px] bg-[radial-gradient(ellipse_at_top,rgba(59,130,246,0.03),transparent_70%)] pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-[800px] h-[800px] bg-[radial-gradient(ellipse_at_bottom_right,rgba(59,130,246,0.02),transparent_60%)] pointer-events-none" />
-
+    <section id="why-us" className="py-24 lg:py-32 bg-white relative overflow-hidden border-b border-slate-200/50">
       <div className="container-custom relative z-10">
         <div className="text-center mb-24">
           <motion.div
@@ -69,11 +65,11 @@ export default function WhyUs() {
             <span className="text-accent-blue font-bold tracking-widest uppercase text-sm mb-4 block">
               Our Difference
             </span>
-            <h2 className="text-4xl lg:text-5xl font-black text-navy leading-tight tracking-tight mb-6">
+            <h2 className="text-4xl lg:text-5xl font-black text-slate-900 leading-tight tracking-tight mb-6">
               Why Leading Businesses Choose PUMEC
             </h2>
             <div className="w-24 h-1 bg-accent-blue rounded-full mb-8" />
-            <p className="text-text-muted text-lg leading-relaxed font-medium">
+            <p className="text-slate-600 text-lg leading-relaxed font-medium">
               We combine the rigorous architecture of a Big-4 firm with the personal attention of a boutique practice — giving you the ultimate advantage at every stage.
             </p>
           </motion.div>
@@ -95,8 +91,8 @@ export default function WhyUs() {
                   i % 2 !== 0 ? "md:translate-y-12" : ""
                 } ${
                   isFeatured 
-                    ? "bg-white border text-navy border-accent-blue/20 shadow-[0_8px_30px_rgb(0,0,0,0.04)] z-10 hover:shadow-[0_12px_40px_rgb(59,130,246,0.06)]" 
-                    : "bg-white border border-border-subtle/60 shadow-[0_4px_20px_rgba(0,0,0,0.02)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.04)]"
+                    ? "bg-white border text-slate-900 border-blue-100 shadow-[0_8px_30px_rgb(0,0,0,0.06)] z-10 hover:shadow-[0_12px_40px_rgb(59,130,246,0.12)]" 
+                    : "bg-white border border-slate-200 shadow-[0_4px_12px_rgba(0,0,0,0.03)] hover:border-slate-300 hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)]"
                 }`}
               >
                 {/* 5. CARD BACKGROUNDS: Gradient edge highlight (very faint) */}
@@ -112,12 +108,12 @@ export default function WhyUs() {
                 </div>
                 
                 <h3 className={`relative z-10 text-2xl font-bold mb-4 tracking-wide transition-colors duration-300 ${
-                  isFeatured ? "text-navy" : "text-navy group-hover:text-accent-blue"
+                  isFeatured ? "text-slate-900" : "text-slate-900 group-hover:text-accent-blue"
                 }`}>
                   {p.title}
                 </h3>
                 
-                <p className="relative z-10 text-text-muted text-base leading-relaxed font-medium max-w-[90%]">
+                <p className="relative z-10 text-slate-600 text-base leading-relaxed font-medium max-w-[90%]">
                   {p.desc}
                 </p>
               </motion.div>
@@ -128,3 +124,4 @@ export default function WhyUs() {
     </section>
   );
 }
+

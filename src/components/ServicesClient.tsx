@@ -33,9 +33,7 @@ export default function ServicesClient({ servicesData }: { servicesData: any[] }
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="services" className="section-padding bg-[#F8FAFC] relative overflow-hidden border-y border-border-subtle/40">
-      {/* 3. SECTION ALTERNATION: very light gray + subtle gradient tint for Section B */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(59,130,246,0.04),transparent_60%)] pointer-events-none z-0" />
+    <section id="services" className="section-padding bg-[#F1F5F9] relative overflow-hidden border-y border-slate-200">
       <div className="container-custom relative z-10">
         {/* Header */}
         <motion.div
@@ -47,16 +45,16 @@ export default function ServicesClient({ servicesData }: { servicesData: any[] }
         >
           <div className="inline-flex items-center gap-3 mb-5">
             <div className="w-10 h-[2px] bg-accent-blue" />
-            <span className="text-navy font-semibold tracking-widest uppercase text-xs">
+            <span className="text-slate-900 font-semibold tracking-widest uppercase text-xs">
               What We Offer
             </span>
           </div>
-          <h2 className="text-4xl lg:text-5xl font-bold text-navy leading-tight tracking-tight mb-4">
+          <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 leading-tight tracking-tight mb-4">
             Comprehensive Services
             <br />
             For Every Need
           </h2>
-          <p className="text-text-muted text-lg leading-relaxed">
+          <p className="text-slate-600 text-lg leading-relaxed">
             From tax planning to cross-border transactions — we bring deep expertise
             to every financial challenge your business faces.
           </p>
@@ -74,23 +72,23 @@ export default function ServicesClient({ servicesData }: { servicesData: any[] }
               key={s.id}
               variants={cardVariants}
               id={`service-card-${s.id}`}
-              className={`group flex flex-col h-full cursor-pointer rounded-2xl p-10 transition-all duration-500 relative overflow-hidden ${
+              className={`group flex flex-col h-full cursor-pointer rounded-2xl p-10 transition-all duration-300 relative overflow-hidden ${
                 s.featured 
-                  ? "bg-white border border-blue-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_12px_40px_rgb(59,130,246,0.08)] -translate-y-1 z-10" 
-                  : "bg-white border border-border-subtle/60 shadow-[0_4px_20px_rgba(0,0,0,0.02)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:-translate-y-1"
+                  ? "bg-white border border-blue-100 shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_12px_40px_rgb(59,130,246,0.12)] -translate-y-1 z-10" 
+                  : "bg-white border border-slate-200 shadow-[0_4px_12px_rgba(0,0,0,0.03)] hover:border-slate-300 hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)] hover:-translate-y-1"
               }`}
             >
               {/* 5. CARD BACKGROUNDS: Gradient edge highlight (very faint) */}
               <div className="absolute inset-0 bg-gradient-to-b from-accent-blue/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-0" />
               <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-accent-blue/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
               
-              <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-8 transition-colors duration-400 relative shadow-[inset_0_2px_10px_rgba(0,0,0,0.02)] z-10 ${
-                s.featured ? "bg-white text-accent-blue border border-blue-100/50" : "bg-[#F8FAFC] text-navy group-hover:text-accent-blue border border-border-subtle/40"
+              <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-8 transition-colors duration-400 relative z-10 ${
+                s.featured ? "bg-blue-50 text-blue-600 border border-blue-100" : "bg-[#F8FAFC] text-slate-900 group-hover:text-blue-600 border border-slate-200"
               }`}>
                 {renderIcon(s.icon)}
               </div>
               
-              <h3 className={`text-xl font-bold mb-4 relative z-10 ${s.featured ? "text-navy" : "text-navy"}`}>
+              <h3 className={`text-xl font-bold mb-4 relative z-10 ${s.featured ? "text-slate-900" : "text-slate-900"}`}>
                 {s.title}
                 {s.featured && (
                   <span className="absolute -top-3 -right-2 bg-accent-blue text-white text-[10px] font-bold px-2 py-0.5 rounded-full tracking-wider uppercase shadow-sm">
@@ -99,11 +97,11 @@ export default function ServicesClient({ servicesData }: { servicesData: any[] }
                 )}
               </h3>
               
-              <p className="text-text-muted text-sm leading-relaxed mb-8 relative z-10 font-medium flex-1">
+              <p className="text-slate-600 text-sm leading-relaxed mb-8 relative z-10 font-medium flex-1">
                 {s.description || s.desc}
               </p>
               
-              <div className="flex items-center gap-2 text-navy text-xs font-bold uppercase tracking-widest group-hover:text-accent-blue transition-colors duration-300">
+              <div className="flex items-center gap-2 text-slate-900 text-xs font-bold uppercase tracking-widest group-hover:text-accent-blue transition-colors duration-300">
                 Learn more
                 <svg className="w-4 h-4 translate-x-0 group-hover:translate-x-2 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -120,7 +118,7 @@ export default function ServicesClient({ servicesData }: { servicesData: any[] }
           transition={{ duration: 0.5, delay: 0.6 }}
           className="text-center mt-20"
         >
-          <a href="#contact" className="btn-secondary shadow-sm hover:shadow-md bg-white border-border-subtle">
+          <a href="#contact" className="btn-secondary shadow-sm hover:shadow-md bg-white border-slate-200">
             View All Services
             <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -131,3 +129,4 @@ export default function ServicesClient({ servicesData }: { servicesData: any[] }
     </section>
   );
 }
+

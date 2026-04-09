@@ -25,23 +25,26 @@ export default function Hero() {
           className="object-cover object-center"
           quality={100}
           style={{
-            filter: "contrast(105%) brightness(95%)",
+            filter: "contrast(105%) brightness(90%)",
           }}
         />
         
+        {/* OVERALL DARKENING OVERLAY */}
+        <div className="absolute inset-0 bg-[#0B1F3A]/40 pointer-events-none mix-blend-multiply" />
+
         {/* EXACT GRADIENT OVERLAY (Left to Right ONLY) */}
-        {/* Left: 80% -> Middle: 35% -> Right: 0% */}
+        {/* Left: 90% -> Middle: 50% -> Right: 20% */}
         <div 
           className="absolute inset-0 pointer-events-none" 
           style={{
-            background: "linear-gradient(to right, rgba(11, 31, 58, 0.8) 0%, rgba(11, 31, 58, 0.35) 50%, rgba(11, 31, 58, 0) 100%)"
+            background: "linear-gradient(to right, rgba(11, 31, 58, 0.9) 0%, rgba(11, 31, 58, 0.5) 50%, rgba(11, 31, 58, 0.2) 100%)"
           }}
         />
       </motion.div>
 
       {/* FOREGROUND CONTENT */}
       <div className="max-w-7xl mx-auto px-6 lg:px-12 w-full relative z-20">
-        <div className="max-w-2xl drop-shadow-[0_10px_20px_rgba(0,0,0,0.3)]">
+        <div className="max-w-2xl drop-shadow-[0_10px_20px_rgba(0,0,0,0.6)]">
           
           {/* Tagline */}
           <motion.div
@@ -76,7 +79,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
-            className="text-white/90 text-lg md:text-xl leading-relaxed max-w-xl mb-12 font-medium drop-shadow-lg"
+            className="text-white text-lg md:text-xl leading-relaxed max-w-xl mb-12 font-medium drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"
           >
             PUMEC Consultants delivers expert CA services, strategic tax advisory, and full-spectrum business consulting — built on three decades of trust, precision, and deep regulatory expertise.
           </motion.p>
@@ -90,7 +93,7 @@ export default function Hero() {
           >
             <Link 
               href="/contact" 
-              className="bg-white text-[#0B1F3A] font-bold text-[13px] uppercase tracking-widest px-10 py-5 rounded-sm shadow-[0_4px_14px_0_rgba(0,0,0,0.1)] hover:bg-[#EAB308] hover:text-[#0B1F3A] transition-colors duration-300 flex items-center justify-center gap-2 group"
+              className="bg-white text-slate-900 font-bold text-[13px] uppercase tracking-widest px-10 py-5 rounded-sm shadow-lg shadow-black/20 hover:shadow-xl hover:-translate-y-0.5 hover:bg-[#EAB308] hover:text-slate-900 transition-all duration-300 flex items-center justify-center gap-2 group"
             >
               Get Consultation
               <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -99,7 +102,7 @@ export default function Hero() {
             </Link>
             <Link 
               href="/services" 
-              className="border-2 border-white/80 text-white font-bold text-[13px] uppercase tracking-widest px-10 py-5 rounded-sm hover:bg-white hover:text-[#0B1F3A] transition-colors duration-300 flex items-center justify-center drop-shadow-md"
+              className="border-2 border-white/90 bg-black/20 backdrop-blur-sm text-white font-bold text-[13px] uppercase tracking-widest px-10 py-5 rounded-sm hover:bg-white hover:text-slate-900 hover:-translate-y-0.5 shadow-lg shadow-black/10 hover:shadow-xl transition-all duration-300 flex items-center justify-center drop-shadow-md"
             >
               Explore Services
             </Link>
@@ -110,3 +113,4 @@ export default function Hero() {
     </section>
   );
 }
+

@@ -5,3 +5,4 @@ export default async function Testimonials() {
   const data = await fetchTestimonials();
   return <TestimonialsClient testimonialsData={data} />;
 }
+

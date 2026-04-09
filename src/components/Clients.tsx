@@ -5,3 +5,4 @@ export default async function Clients() {
   const data = await fetchClients();
   return <ClientsClient clientsData={data} />;
 }
+

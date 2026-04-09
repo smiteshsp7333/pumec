@@ -91,9 +91,9 @@ const fallbackBlogs = [
 ];
 
 const fallbackClients = [
-  { id: 1, name: "Infosys", logo_url: "https://upload.wikimedia.org/wikipedia/commons/9/95/Infosys_logo.svg" },
-  { id: 2, name: "Tata Group", logo_url: "https://upload.wikimedia.org/wikipedia/commons/8/86/Tata_logo.svg" },
-  { id: 3, name: "Wipro", logo_url: "https://upload.wikimedia.org/wikipedia/commons/a/a0/Wipro_Primary_Logo_Color_RGB.svg" },
-  { id: 4, name: "HDFC Bank", logo_url: "https://upload.wikimedia.org/wikipedia/commons/2/28/HDFC_Bank_Logo.svg" },
-  { id: 5, name: "Aditya Birla", logo_url: "https://upload.wikimedia.org/wikipedia/commons/b/bc/Aditya_Birla_Group_Logo.svg" }
+  { id: 1, name: "Infosys", logo_url: "/logos/infosys.png" },
+  { id: 2, name: "Tata Group", logo_url: "/logos/Tata_logo.svg" },
+  { id: 3, name: "Wipro", logo_url: "/logos/Wipro_Primary_Logo_Color_RGB.svg.png" },
+  { id: 4, name: "HDFC Bank", logo_url: "/logos/HDFC-LOGO.png" },
+  { id: 5, name: "Aditya Birla", logo_url: "/logos/Aditya-Birla-Group-Logo-Vector-scaled.jpg" }
 ]; 
