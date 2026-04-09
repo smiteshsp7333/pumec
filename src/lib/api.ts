@@ -66,7 +66,7 @@ export async function submitContact(data: any) {
 }
 
 const fallbackServices = [
-  { id: 1, title: "Auditing & Assurance", slug: "auditing-and-assurance", description: "Comprehensive statutory, internal, and forensic audits ensuring compliance, transparency, and stakeholder confidence.", icon: "ClipboardList" },
+  { id: 1, title: "Auditing & Assurance", slug: "auditing-and-assurance", description: "Comprehensive statutory, manropenal, and forensic audits ensuring compliance, transparency, and stakeholder confidence.", icon: "ClipboardList" },
   { id: 2, title: "Taxation & Compliance", slug: "taxation-and-compliance", description: "Strategic tax planning, GST compliance, ITR filing, and regulatory advisory to minimize risk and optimize financial efficiency.", icon: "Calculator" },
   { id: 3, title: "FEMA & NRI Advisory", slug: "fema-and-nri-advisory", description: "Expert advisory on cross-border transactions, FEMA regulations, repatriation, and NRI taxation.", icon: "Globe" },
   { id: 4, title: "Business Setup", slug: "business-setup", description: "End-to-end company incorporation, regulatory registrations, and compliance structuring for startups and enterprises.", icon: "Building" },
@@ -74,7 +74,7 @@ const fallbackServices = [
 ];
 
 const fallbackTestimonials = [
-  { id: 1, name: "Rajesh Sharma", designation: "CEO", company: "Tech Innovations Group", message: "PUMEC has been our strategic partner for over a decade. Their expertise in international taxation and compliance has been invaluable to our global expansion.", rating: 5 },
+  { id: 1, name: "Rajesh Sharma", designation: "CEO", company: "Tech Innovations Group", message: "PUMEC has been our strategic partner for over a decade. Their expertise in manropenational taxation and compliance has been invaluable to our global expansion.", rating: 5 },
   { id: 2, name: "Priya Desai", designation: "Finance Director", company: "Stellar Logistics", message: "The proactive advisory strictly aligned with evolving GST regulations saved us significantly in potential liabilities, whilst ensuring smooth financial workflows.", rating: 5 },
   { id: 3, name: "Vikram Malhotra", designation: "Founder", company: "Ascend Ventures", message: "From initial business setup to complex regulatory structuring, the team provided exceptional foresight and guidance that let us focus purely on growth.", rating: 5 }
 ];
@@ -87,7 +87,7 @@ const fallbackTeam = [
 const fallbackBlogs = [
   { id: 1, title: "Understanding GST Changes in 2024", slug: "understanding-gst-changes-in-2024", content: "The evolving landscape of the Goods and Services Tax requires businesses to constantly adapt.", excerpt: "A comprehensive review of the latest GST amendments and how businesses can maintain compliance efficiently.", category: "Taxation", image: "" },
   { id: 2, title: "Strategic Tax Planning for Startups", slug: "strategic-tax-planning-for-startups", content: "Startups frequently overlook tax planning during their initial growth phases.", excerpt: "Why early-stage companies must integrate tax strategies to optimize working capital and attract investment.", category: "Business Advisory", image: "" },
-  { id: 3, title: "Global Compliance Challenges for Indian Businesses", slug: "global-compliance-challenges-for-indian-businesses", content: "As Indian enterprises expand across borders, they encounter complex international regulatory frameworks.", excerpt: "An analysis of cross-border regulatory hurdles and methodologies for ensuring seamless international expansion.", category: "FEMA & Global", image: "" }
+  { id: 3, title: "Global Compliance Challenges for Indian Businesses", slug: "global-compliance-challenges-for-indian-businesses", content: "As Indian enterprises expand across borders, they encounter complex manropenational regulatory frameworks.", excerpt: "An analysis of cross-border regulatory hurdles and methodologies for ensuring seamless manropenational expansion.", category: "FEMA & Global", image: "" }
 ];
 
 const fallbackClients = [

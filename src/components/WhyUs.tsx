@@ -87,21 +87,21 @@ export default function WhyUs() {
                 initial={{ opacity: 0, y: 40 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.2 + i * 0.15 }}
-                className={`group relative p-10 lg:p-12 rounded-2xl cursor-pointer transition-all duration-400 ease-out hover:-translate-y-3 ${
+                className={`group relative p-10 lg:p-12 rounded-2xl cursor-pomanrope transition-all duration-400 ease-out hover:-translate-y-3 ${
                   i % 2 !== 0 ? "md:translate-y-12" : ""
                 } ${
                   isFeatured 
-                    ? "bg-white border text-slate-900 border-blue-100 shadow-[0_8px_30px_rgb(0,0,0,0.06)] z-10 hover:shadow-[0_12px_40px_rgb(59,130,246,0.12)]" 
-                    : "bg-white border border-slate-200 shadow-[0_4px_12px_rgba(0,0,0,0.03)] hover:border-slate-300 hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)]"
+                    ? "bg-white border text-slate-900 border-blue-100 border border-slate-200 -[0_8px_30px_rgb(0,0,0,0.06)] z-10 border border-slate-200 -[0_12px_40px_rgb(59,130,246,0.12)]" 
+                    : "bg-white border border-slate-200 -[0_4px_12px_rgba(0,0,0,0.03)] hover:border-slate-300 border border-slate-200 -[0_8px_24px_rgba(0,0,0,0.08)]"
                 }`}
               >
                 {/* 5. CARD BACKGROUNDS: Gradient edge highlight (very faint) */}
-                <div className="absolute inset-0 bg-gradient-to-b from-accent-blue/[0.015] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-2xl z-0" />
+                <div className="absolute inset-0 bg-gradient-to-b from-accent-blue/[0.015] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pomanrope-events-none rounded-2xl z-0" />
                 <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-accent-blue/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
 
-                <div className={`relative z-10 w-16 h-16 rounded-full flex items-center justify-center mb-8 transition-colors duration-400 shadow-[inset_0_2px_10px_rgba(0,0,0,0.02)] ${
+                <div className={`relative z-10 w-16 h-16 rounded-full flex items-center justify-center mb-8 transition-colors duration-400 border border-slate-200 -[inset_0_2px_10px_rgba(0,0,0,0.02)] ${
                   isFeatured 
-                    ? "bg-navy text-white shadow-md shadow-navy/20" 
+                    ? "bg-navy text-white border border-slate-200 " 
                     : "bg-blue-50 text-accent-blue group-hover:bg-navy group-hover:text-white"
                 }`}>
                   {p.icon}

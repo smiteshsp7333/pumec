@@ -11,11 +11,11 @@ export default function CtaBanner() {
   return (
     <section id="contact" className="py-32 bg-[#0B1F3A] relative overflow-hidden">
       {/* 6. DARK SECTIONS: Gradient Navy + Highlight Area */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#0B1F3A] via-[#0D2444] to-[#0F2A4D] z-0 pointer-events-none" />
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-[radial-gradient(ellipse_at_top,rgba(59,130,246,0.15),transparent_70%)] pointer-events-none z-0 blur-[50px]" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[#0B1F3A] via-[#0D2444] to-[#0F2A4D] z-0 pomanrope-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-[radial-gradient(ellipse_at_top,rgba(59,130,246,0.15),transparent_70%)] pomanrope-events-none z-0 blur-[50px]" />
       
       {/* Slight texture overlay */}
-      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-[0.03] pointer-events-none z-0 mix-blend-overlay" />
+      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-[0.03] pomanrope-events-none z-0 mix-blend-overlay" />
       
       <div className="container-custom relative z-10">
         <motion.div
@@ -42,7 +42,7 @@ export default function CtaBanner() {
           >
             <Link
               href="/contact"
-              className="bg-white text-slate-900 font-semibold px-10 py-4 rounded-xl hover:bg-slate-100 transition-all shadow-xl shadow-white/10 active:scale-95 flex justify-center items-center gap-3"
+              className="bg-white text-slate-900 font-semibold px-10 py-4 rounded-xl hover:bg-slate-100 transition-all active:scale-95 flex justify-center items-center gap-3"
             >
               Book Free Consultation
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>

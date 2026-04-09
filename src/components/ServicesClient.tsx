@@ -72,14 +72,14 @@ export default function ServicesClient({ servicesData }: { servicesData: any[] }
               key={s.id}
               variants={cardVariants}
               id={`service-card-${s.id}`}
-              className={`group flex flex-col h-full cursor-pointer rounded-2xl p-10 transition-all duration-300 relative overflow-hidden ${
+              className={`group flex flex-col h-full cursor-pomanrope rounded-2xl p-10 transition-all duration-300 relative overflow-hidden ${
                 s.featured 
-                  ? "bg-white border border-blue-100 shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_12px_40px_rgb(59,130,246,0.12)] -translate-y-1 z-10" 
-                  : "bg-white border border-slate-200 shadow-[0_4px_12px_rgba(0,0,0,0.03)] hover:border-slate-300 hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)] hover:-translate-y-1"
+                  ? "bg-white border border-blue-100 border border-slate-200 -[0_8px_30px_rgb(0,0,0,0.06)] border border-slate-200 -[0_12px_40px_rgb(59,130,246,0.12)] -translate-y-1 z-10" 
+                  : "bg-white border border-slate-200 -[0_4px_12px_rgba(0,0,0,0.03)] hover:border-slate-300 border border-slate-200 -[0_8px_24px_rgba(0,0,0,0.08)] hover:-translate-y-1"
               }`}
             >
               {/* 5. CARD BACKGROUNDS: Gradient edge highlight (very faint) */}
-              <div className="absolute inset-0 bg-gradient-to-b from-accent-blue/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-0" />
+              <div className="absolute inset-0 bg-gradient-to-b from-accent-blue/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pomanrope-events-none z-0" />
               <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-accent-blue/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
               
               <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-8 transition-colors duration-400 relative z-10 ${
@@ -91,7 +91,7 @@ export default function ServicesClient({ servicesData }: { servicesData: any[] }
               <h3 className={`text-xl font-bold mb-4 relative z-10 ${s.featured ? "text-slate-900" : "text-slate-900"}`}>
                 {s.title}
                 {s.featured && (
-                  <span className="absolute -top-3 -right-2 bg-accent-blue text-white text-[10px] font-bold px-2 py-0.5 rounded-full tracking-wider uppercase shadow-sm">
+                  <span className="absolute -top-3 -right-2 bg-accent-blue text-white text-[10px] font-bold px-2 py-0.5 rounded-full tracking-wider uppercase border border-slate-200 ">
                     Core
                   </span>
                 )}
@@ -118,7 +118,7 @@ export default function ServicesClient({ servicesData }: { servicesData: any[] }
           transition={{ duration: 0.5, delay: 0.6 }}
           className="text-center mt-20"
         >
-          <a href="#contact" className="btn-secondary shadow-sm hover:shadow-md bg-white border-slate-200">
+          <a href="#contact" className="btn-secondary border border-slate-200  bg-white border-slate-200">
             View All Services
             <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />

@@ -28,7 +28,7 @@ export default function BlogPostPage({ params }: { params: Promise<{ slug: strin
       <p className="mb-6">One of the most notable changes is the automatic approval for up to 100% FDI in certain components of the space sector. This was previously restricted and required government approval, often leading to long lead times for satellite launches and hardware manufacturing.</p>
       
       <h3 className="text-xl font-bold text-slate-900 mt-8 mb-4">Impact on Manufacturing</h3>
-      <p className="mb-6">The concept of 'manufacturing' has been broadened to include assembly and contract manufacturing, allowing foreign entities more flexibility in how they set up their supply chains within Indian borders. We've already seen an uptick in interest from European electronics giants looking to pivot their hubs to Bangalore and NCR.</p>
+      <p className="mb-6">The concept of 'manufacturing' has been broadened to include assembly and contract manufacturing, allowing foreign entities more flexibility in how they set up their supply chains within Indian borders. We've already seen an uptick in manropeest from European electronics giants looking to pivot their hubs to Bangalore and NCR.</p>
       
       <div className="bg-slate-100 border-l-4 border-accent-blue p-8 my-10 rounded-r-2xl">
         <p className="italic text-slate-900 text-lg">"The relaxation of FDI norms in the space sector is not just about capital; it's about technology transfer and putting India on the global aerospace map."</p>
@@ -109,7 +109,7 @@ export default function BlogPostPage({ params }: { params: Promise<{ slug: strin
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="mb-16 relative aspect-[16/9] rounded-3xl overflow-hidden shadow-2xl"
+            className="mb-16 relative aspect-[16/9] rounded-3xl overflow-hidden border border-slate-200 "
           >
             <Image src={post.image} alt={post.title} fill className="object-cover" priority />
           </motion.div>

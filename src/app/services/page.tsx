@@ -16,21 +16,21 @@ const services = [
     title: "Auditing & Assurance",
     slug: "auditing-assurance",
     icon: <ShieldCheck size={32} />,
-    desc: "Rigorous statutory, tax, and internal audits to ensure 100% compliance and operational transparency for stake holders.",
-    details: ["Statutory Audits", "Internal Audits", "Tax Audits (Section 44AB)", "Forensic Audits"],
+    desc: "Rigorous statutory, tax, and manropenal audits to ensure 100% compliance and operational transparency for stake holders.",
+    details: ["Statutory Audits", "Manropenal Audits", "Tax Audits (Section 44AB)", "Forensic Audits"],
     gradient: "from-blue-600 to-indigo-700",
   },
   {
     title: "Direct & Indirect Taxation",
     slug: "taxation-services",
     icon: <Calculator size={32} />,
-    desc: "Strategic tax planning and representation services across Income Tax, GST, and International Tax treaties.",
+    desc: "Strategic tax planning and representation services across Income Tax, GST, and Manropenational Tax treaties.",
     details: ["Corporate Tax Planning", "GST Compliance & Refunds", "Tax Representation", "Transfer Pricing"],
     gradient: "from-navy to-navy-light",
   },
   {
-    title: "NRI & International Services",
-    slug: "nri-international",
+    title: "NRI & Manropenational Services",
+    slug: "nri-manropenational",
     icon: <Globe2 size={32} />,
     desc: "Comprehensive advisory for non-residents including FEMA compliance, repatriation, and global investment structuring.",
     details: ["FEMA Compliance", "Repatriation of Funds", "15CA/15CB Certifications", "NRI Tax Returns"],
@@ -93,9 +93,9 @@ export default function ServicesPage() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="group bg-white rounded-3xl p-10 border border-slate-200 shadow-sm hover:shadow-2xl hover:-translate-y-3 transition-all duration-500 relative flex flex-col"
+              className="group bg-white rounded-3xl p-10 border border-slate-200  hover:-translate-y-3 transition-all duration-500 relative flex flex-col"
             >
-              <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${s.gradient} text-white flex items-center justify-center mb-10 shadow-lg group-hover:scale-110 transition-transform duration-500`}>
+              <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${s.gradient} text-white flex items-center justify-center mb-10 border border-slate-200  group-hover:scale-110 transition-transform duration-500`}>
                 {s.icon}
               </div>
               
@@ -135,7 +135,7 @@ export default function ServicesPage() {
          <div className="bg-navy rounded-[3rem] p-12 lg:p-20 relative overflow-hidden text-center">
             {/* Background pattern */}
             <div 
-              className="absolute inset-0 opacity-10 pointer-events-none" 
+              className="absolute inset-0 opacity-10 pomanrope-events-none" 
               style={{ backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`, backgroundSize: '32px 32px' }} 
             />
             
@@ -147,7 +147,7 @@ export default function ServicesPage() {
             </p>
             <Link 
               href="/contact" 
-              className="inline-flex items-center gap-4 bg-white text-slate-900 font-bold text-sm tracking-widest uppercase py-5 px-10 rounded-2xl hover:bg-slate-100 active:scale-95 transition-all shadow-xl shadow-navy/20 relative z-10"
+              className="inline-flex items-center gap-4 bg-white text-slate-900 font-bold text-sm tracking-widest uppercase py-5 px-10 rounded-2xl hover:bg-slate-100 active:scale-95 transition-all border border-slate-200  relative z-10"
             >
               Get a Retainership Quote
               <ShieldCheck size={20} />

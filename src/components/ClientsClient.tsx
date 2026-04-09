@@ -19,7 +19,7 @@ export default function ClientsClient({ clientsData }: { clientsData: { name: st
   return (
     <section className="py-24 lg:py-32 bg-white relative overflow-hidden border-t border-slate-200/50">
       {/* Decorative Texture/Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white/60 to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-white/60 to-transparent pomanrope-events-none" />
       
       <div className="container-custom relative z-10 px-4">
         {/* Top: Trust Text */}
@@ -65,7 +65,7 @@ export default function ClientsClient({ clientsData }: { clientsData: { name: st
                       src={imgSrc}
                       alt={logo.name}
                       loading={i >= clientsData.length ? "lazy" : "eager"}
-                      className="max-w-full max-h-[80px] w-auto object-contain pointer-events-none select-none text-slate-900 font-bold"
+                      className="max-w-full max-h-[80px] w-auto object-contain pomanrope-events-none select-none text-slate-900 font-bold"
                       onError={(e) => {
                         // Dynamically replace broken image source with a high-quality placeholder logo
                         const target = e.target as HTMLImageElement;
@@ -101,7 +101,7 @@ export default function ClientsClient({ clientsData }: { clientsData: { name: st
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: 0.3 + i * 0.05 }}
-                className="px-5 py-2.5 bg-slate-50 border border-slate-200 rounded-full text-[11px] lg:text-xs font-semibold text-slate-600 shadow-sm hover:border-blue-200 hover:text-slate-800 hover:shadow-md hover:shadow-slate-200/50 transition-all duration-300 hover:-translate-y-0.5 cursor-default"
+                className="px-5 py-2.5 bg-slate-50 border border-slate-200 rounded-full text-[11px] lg:text-xs font-semibold text-slate-600 border border-slate-200  hover:border-blue-200 hover:text-slate-800 border border-slate-200 -200/50 transition-all duration-300 hover:-translate-y-0.5 cursor-default"
               >
                 {ind}
               </motion.div>

@@ -13,8 +13,8 @@ export default function TestimonialsClient({ testimonialsData }: { testimonialsD
   return (
     <section className="py-24 bg-slate-50 relative overflow-hidden border-t border-slate-200/50">
       {/* 3. SECTION ALTERNATION: white + subtle gradient tint */}
-      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[radial-gradient(ellipse_at_top_right,rgba(59,130,246,0.03),transparent_70%)] pointer-events-none z-0" />
-      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[radial-gradient(ellipse_at_bottom_left,rgba(59,130,246,0.02),transparent_70%)] pointer-events-none z-0" />
+      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[radial-gradient(ellipse_at_top_right,rgba(59,130,246,0.03),transparent_70%)] pomanrope-events-none z-0" />
+      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[radial-gradient(ellipse_at_bottom_left,rgba(59,130,246,0.02),transparent_70%)] pomanrope-events-none z-0" />
       
       <div className="container-custom relative z-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 px-4">
@@ -63,10 +63,10 @@ export default function TestimonialsClient({ testimonialsData }: { testimonialsD
               initial={{ opacity: 0, y: 40 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 + i * 0.15 }}
-              className="relative bg-white border border-slate-100 hover:border-slate-200 shadow-sm hover:shadow-md hover:shadow-slate-200/50 hover:-translate-y-1 rounded-2xl p-8 lg:p-10 transition-all duration-500 group flex flex-col h-full overflow-hidden"
+              className="relative bg-white border border-slate-100 hover:border-slate-200 border border-slate-200  border border-slate-200 -200/50 hover:-translate-y-1 rounded-2xl p-8 lg:p-10 transition-all duration-500 group flex flex-col h-full overflow-hidden"
             >
               {/* 5. CARD BACKGROUNDS: Gradient edge highlight */}
-              <div className="absolute inset-0 bg-gradient-to-br from-accent-blue/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-0" />
+              <div className="absolute inset-0 bg-gradient-to-br from-accent-blue/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pomanrope-events-none z-0" />
               <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-accent-blue/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
 
               <div className="relative z-10 flex items-center gap-1 mb-6">

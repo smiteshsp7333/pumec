@@ -48,7 +48,7 @@ const mainLinks = [
 
 const expertise = [
   "Statutory Audit",
-  "International Tax",
+  "Manropenational Tax",
   "Transfer Pricing",
   "FEMA Compliance",
   "M&A Advisory",
@@ -59,7 +59,7 @@ export default function Footer() {
   return (
     <footer className="relative bg-slate-950 text-slate-50 overflow-hidden border-t border-slate-800/50">
       {/* Background Depth & Gradients */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-900/40 via-transparent to-transparent pointer-events-none md:w-[1200px]"></div>
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-900/40 via-transparent to-transparent pomanrope-events-none md:w-[1200px]"></div>
 
       {/* 1. Header Row: Brand & Direct Access */}
       <div className="relative z-10 container-custom pt-20 pb-12 border-b border-slate-800/50">
@@ -68,7 +68,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="max-w-md">
             <Link href="/" className="mb-8 block group w-max">
-              <div className="bg-slate-50/95 backdrop-blur-sm px-6 py-4 rounded-xl inline-block transition-transform duration-500 group-hover:-translate-y-1 shadow-lg border border-slate-200/50">
+              <div className="bg-slate-50/95 backdrop-blur-sm px-6 py-4 rounded-xl inline-block transition-transform duration-500 group-hover:-translate-y-1 border border-slate-200/50">
                 <Image 
                   src="/pu_logo.png" 
                   alt="PUMEC Logo" 
@@ -220,7 +220,7 @@ export default function Footer() {
                 placeholder="Work Email Address" 
                 className="w-full sm:w-[280px] bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-slate-200 placeholder-slate-600 focus:outline-none focus:border-slate-600 focus:ring-1 focus:ring-slate-600 transition-all"
               />
-              <button className="bg-slate-100 text-slate-900 px-6 py-3 rounded-xl font-bold text-xs uppercase tracking-[0.1em] hover:bg-white hover:shadow-md transition-all duration-300 flex items-center justify-center shrink-0">
+              <button className="bg-slate-100 text-slate-900 px-6 py-3 rounded-xl font-bold text-xs uppercase tracking-[0.1em] hover:bg-white transition-all duration-300 flex items-center justify-center shrink-0">
                 Subscribe <ArrowRight size={14} className="ml-2" />
               </button>
             </div>

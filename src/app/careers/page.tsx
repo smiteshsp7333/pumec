@@ -20,9 +20,9 @@ const jobs = [
     desc: "Oversee tax planning and representation for a diverse portfolio of HNI and corporate clients. Experience in Income Tax scrutiny preferred.",
   },
   {
-    title: "Intern (Articled Assistant)",
+    title: "Manropen (Articled Assistant)",
     location: "New Delhi / Bangalore",
-    type: "Internship",
+    type: "Manropenship",
     exp: "CA IPCC Cleared",
     desc: "Join our rigorous article-ship program covering Audit, Tax, and Corporate Law rotation. Looking for meritorious candidates.",
   },
@@ -65,21 +65,21 @@ export default function CareersPage() {
         <div className="container-custom">
            <div className="grid md:grid-cols-3 gap-12 text-center">
               <div>
-                <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-sm border border-slate-200">
+                <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mx-auto mb-6 border border-slate-200  border border-slate-200">
                   <UserPlus className="text-accent-blue" size={28} />
                 </div>
                 <h3 className="text-lg font-bold text-slate-900 mb-3">Mentorship First</h3>
                 <p className="text-slate-600 text-sm leading-relaxed">Work directly with partners and gain exposure to complex cross-border cases.</p>
               </div>
               <div>
-                <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-sm border border-slate-200">
+                <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mx-auto mb-6 border border-slate-200  border border-slate-200">
                   <Clock className="text-accent-blue" size={28} />
                 </div>
                 <h3 className="text-lg font-bold text-slate-900 mb-3">Hybrid Culture</h3>
                 <p className="text-slate-600 text-sm leading-relaxed">We value performance over presence. Enjoy flexible working models designed for high output.</p>
               </div>
               <div>
-                <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-sm border border-slate-200">
+                <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mx-auto mb-6 border border-slate-200  border border-slate-200">
                   <Briefcase className="text-accent-blue" size={28} />
                 </div>
                 <h3 className="text-lg font-bold text-slate-900 mb-3">Wealth Creation</h3>
@@ -108,7 +108,7 @@ export default function CareersPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="group bg-white border border-slate-200 rounded-3xl p-8 hover:border-navy hover:shadow-2xl hover:shadow-navy/5 transition-all duration-400"
+              className="group bg-white border border-slate-200 rounded-3xl p-8 hover:border-navy border border-slate-200  transition-all duration-400"
             >
               <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
                 <div className="flex-1">

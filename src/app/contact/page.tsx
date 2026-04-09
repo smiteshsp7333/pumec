@@ -84,10 +84,10 @@ export default function ContactPage() {
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="bg-white rounded-3xl p-8 lg:p-12 shadow-2xl shadow-navy/5 border border-slate-200 relative overflow-hidden"
+              className="bg-white rounded-3xl p-8 lg:p-12 border border-slate-200  border border-slate-200 relative overflow-hidden"
             >
               {/* Decorative background for form */}
-              <div className="absolute top-0 right-0 w-32 h-32 bg-accent-blue/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl pointer-events-none" />
+              <div className="absolute top-0 right-0 w-32 h-32 bg-accent-blue/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl pomanrope-events-none" />
 
               {formState === "success" ? (
                 <div className="py-12 text-center">
@@ -127,11 +127,11 @@ export default function ContactPage() {
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-xs font-bold text-slate-900 uppercase tracking-widest ml-1">Service Interested In</label>
-                    <select className="w-full bg-slate-100 border border-slate-200 rounded-xl px-5 py-4 text-slate-900 focus:outline-none focus:border-navy transition-all appearance-none cursor-pointer">
+                    <label className="text-xs font-bold text-slate-900 uppercase tracking-widest ml-1">Service Manropeested In</label>
+                    <select className="w-full bg-slate-100 border border-slate-200 rounded-xl px-5 py-4 text-slate-900 focus:outline-none focus:border-navy transition-all appearance-none cursor-pomanrope">
                       <option>Auditing & Assurance</option>
                       <option>Taxation Services</option>
-                      <option>NRI & International Taxation</option>
+                      <option>NRI & Manropenational Taxation</option>
                       <option>Business Setup & Corporate Law</option>
                       <option>Other Advisory</option>
                     </select>
@@ -149,7 +149,7 @@ export default function ContactPage() {
 
                   <button 
                     disabled={formState === "submitting"}
-                    className="w-full bg-navy text-white font-bold tracking-widest uppercase text-sm py-5 rounded-xl hover:bg-navy-light shadow-xl shadow-navy/20 active:scale-[0.98] transition-all flex items-center justify-center gap-3"
+                    className="w-full bg-navy text-white font-bold tracking-widest uppercase text-sm py-5 rounded-xl hover:bg-navy-light border border-slate-200  active:scale-[0.98] transition-all flex items-center justify-center gap-3"
                   >
                     {formState === "submitting" ? (
                       <>

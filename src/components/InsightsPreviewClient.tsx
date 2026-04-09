@@ -57,7 +57,7 @@ export default function InsightsPreviewClient({ blogsData }: { blogsData: any[] 
               initial={{ opacity: 0, y: 40 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 + i * 0.15 }}
-              className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 border border-slate-200 flex flex-col h-full"
+              className="group bg-white rounded-2xl overflow-hidden border border-slate-200  hover:-translate-y-1 transition-all duration-300 border border-slate-200 flex flex-col h-full"
             >
               <div className="relative w-full aspect-[16/10] overflow-hidden shrink-0 bg-slate-100 border-b border-slate-100">
                 <Image 
@@ -68,7 +68,7 @@ export default function InsightsPreviewClient({ blogsData }: { blogsData: any[] 
                   unoptimized
                 />
                 <div className="absolute top-4 left-4">
-                  <span className="px-3 py-1 bg-white/95 backdrop-blur-md rounded-md text-[10px] font-bold text-slate-900 uppercase tracking-widest shadow-sm border border-slate-100/50">
+                  <span className="px-3 py-1 bg-white/95 backdrop-blur-md rounded-md text-[10px] font-bold text-slate-900 uppercase tracking-widest border border-slate-200  border border-slate-100/50">
                     {p.category}
                   </span>
                 </div>

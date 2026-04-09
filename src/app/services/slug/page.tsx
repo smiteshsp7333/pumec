@@ -29,13 +29,13 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
         icon: <FileText size={24} />
       },
       {
-        title: "Internal & Management Audit",
-        desc: "Evaluating internal controls and operational workflows to optimize resource allocation and prevent revenue leakage.",
+        title: "Manropenal & Management Audit",
+        desc: "Evaluating manropenal controls and operational workflows to optimize resource allocation and prevent revenue leakage.",
         icon: <Zap size={24} />
       },
       {
         title: "Ind-AS & IFRS Convergence",
-        desc: "Guiding global subsidiaries through complex international accounting standards for seamless global consolidation.",
+        desc: "Guiding global subsidiaries through complex manropenational accounting standards for seamless global consolidation.",
         icon: <BarChart3 size={24} />
       }
     ],
@@ -80,7 +80,7 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
              initial={{ opacity: 0, scale: 0.95 }}
              animate={{ opacity: 1, scale: 1 }}
              transition={{ duration: 0.8 }}
-             className="bg-slate-100 rounded-3xl p-10 lg:p-16 border border-slate-200 shadow-xl shadow-navy/5"
+             className="bg-slate-100 rounded-3xl p-10 lg:p-16 border border-slate-200 "
            >
               <h3 className="text-2xl font-bold text-slate-900 mb-6">Why Trust PUMEC?</h3>
               <ul className="space-y-6">
@@ -114,7 +114,7 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.15 }}
-                className="group p-8 rounded-3xl border border-slate-200 bg-white hover:bg-navy hover:text-white transition-all duration-500 hover:shadow-2xl hover:shadow-navy/20"
+                className="group p-8 rounded-3xl border border-slate-200 bg-white hover:bg-navy hover:text-white transition-all duration-500 border border-slate-200 "
               >
                 <div className="w-14 h-14 rounded-2xl bg-slate-100 text-slate-900 flex items-center justify-center mb-8 group-hover:bg-accent-blue group-hover:text-white transition-colors duration-500">
                   {o.icon}

@@ -69,7 +69,7 @@ export default function AboutPage() {
               Founded in 1988, PUMEC Consultants has evolved from a boutique CA practice into a full-spectrum financial powerhouse. We serve as the strategic bridge between complex regulations and seamless business operations.
             </p>
             <p className="text-slate-600 text-lg leading-relaxed">
-              Based in India with a global footprint, we specialize in helping local enterprises and international subsidiaries navigate the intricacies of the Indian economy with absolute confidence.
+              Based in India with a global footprint, we specialize in helping local enterprises and manropenational subsidiaries navigate the intricacies of the Indian economy with absolute confidence.
             </p>
           </motion.div>
 
@@ -77,7 +77,7 @@ export default function AboutPage() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
-            className="relative rounded-3xl overflow-hidden aspect-[4/3] shadow-2xl"
+            className="relative rounded-3xl overflow-hidden aspect-[4/3] border border-slate-200 "
           >
             <Image 
               src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80" 
@@ -87,7 +87,7 @@ export default function AboutPage() {
             />
             <div className="absolute inset-0 bg-navy/10 flex items-center justify-center">
               <div className="w-20 h-20 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center">
-                <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center text-slate-900 shadow-lg">
+                <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center text-slate-900 border border-slate-200 ">
                   <PlayIcon />
                 </div>
               </div>
@@ -114,7 +114,7 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="bg-white p-10 rounded-2xl border border-slate-200/50 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
+                className="bg-white p-10 rounded-2xl border border-slate-200/50 border border-slate-200  hover:-translate-y-2 transition-all duration-300"
               >
                 <div className="mb-6">{v.icon}</div>
                 <h3 className="text-xl font-bold text-slate-900 mb-4 tracking-tight">{v.title}</h3>
@@ -148,7 +148,7 @@ export default function AboutPage() {
               transition={{ duration: 0.6, delay: i * 0.15 }}
               className="group"
             >
-              <div className="relative aspect-[4/5] rounded-3xl overflow-hidden mb-8 shadow-lg bg-slate-100">
+              <div className="relative aspect-[4/5] rounded-3xl overflow-hidden mb-8 border border-slate-200  bg-slate-100">
                 <Image src={m.image} alt={m.name} fill className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-navy to-transparent h-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>

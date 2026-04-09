@@ -90,8 +90,8 @@ export default function InsightsPage() {
                   key={cat} 
                   className={`px-5 py-2.5 rounded-xl text-[11px] font-bold uppercase tracking-[0.15em] whitespace-nowrap transition-all duration-300 ${
                     i === 0 
-                    ? "bg-slate-900 text-white shadow-md" 
-                    : "bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 hover:text-slate-900 hover:border-slate-300 hover:shadow-sm"
+                    ? "bg-slate-900 text-white border border-slate-200 " 
+                    : "bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 hover:text-slate-900 hover:border-slate-300 border border-slate-200 "
                   }`}
                 >
                   {cat}
@@ -121,7 +121,7 @@ export default function InsightsPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="flex flex-col h-full bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 group overflow-hidden"
+              className="flex flex-col h-full bg-white rounded-2xl border border-slate-200  hover:-translate-y-1 transition-all duration-300 group overflow-hidden"
             >
               <Link href={`/insights/${post.slug}`} className="block relative w-full aspect-[16/10] overflow-hidden bg-slate-100 border-b border-slate-100 shrink-0">
                  <Image 
@@ -132,7 +132,7 @@ export default function InsightsPage() {
                    unoptimized
                  />
                  <div className="absolute top-4 left-4">
-                   <span className="px-3 py-1 bg-white/95 backdrop-blur-md rounded-md text-[10px] font-bold text-slate-900 uppercase tracking-widest shadow-sm border border-slate-100/50">
+                   <span className="px-3 py-1 bg-white/95 backdrop-blur-md rounded-md text-[10px] font-bold text-slate-900 uppercase tracking-widest border border-slate-200  border border-slate-100/50">
                      {post.category}
                    </span>
                  </div>
@@ -171,7 +171,7 @@ export default function InsightsPage() {
         
         {/* Pagination placeholder */}
         <div className="mt-20 flex justify-center border-t border-slate-200 pt-12">
-           <button className="bg-navy text-white font-bold tracking-widest uppercase text-xs px-10 py-5 rounded-2xl hover:bg-navy-light shadow-xl shadow-navy/20 active:scale-95 transition-all">
+           <button className="bg-navy text-white font-bold tracking-widest uppercase text-xs px-10 py-5 rounded-2xl hover:bg-navy-light border border-slate-200  active:scale-95 transition-all">
              Load More Articles
            </button>
         </div>
