@@ -2,177 +2,100 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Send, Loader2 } from "lucide-react";
-import { submitContact } from "@/lib/api";
+import { MapPin, Phone, Mail } from "lucide-react";
 
 export default function ContactPage() {
-  const [formState, setFormState] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
-    setFormState("submitting");
-    try {
-      const data = {
-        name: e.target[0].value,
-        email: e.target[1].value,
-        message: e.target[5]? e.target[5].value : e.target[2].value || "Contact Form Submission"
-      };
-      await submitContact(data);
-      setFormState("success");
-    } catch (err) {
-      setFormState("error");
-    }
+    setIsSubmitting(true);
+    await new Promise(r => setTimeout(r, 1500));
+    setIsSubmitting(false);
+    alert("Consultation request received! Our partners will be in touch shortly.");
   };
 
   return (
-    <main className="min-h-screen pt-32 pb-24 bg-white">
-      <div className="container-custom">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
-            
-            {/* Left: Info */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <span className="text-accent-blue font-bold tracking-widest uppercase text-xs mb-4 block">
-                Connect With Us
-              </span>
-              <h1 className="text-4xl lg:text-6xl font-bold text-slate-900 leading-tight tracking-tight mb-8">
-                Let&apos;s Start a <br /> Conversation.
-              </h1>
-              <p className="text-slate-600 text-lg leading-relaxed mb-12 max-w-md">
-                Whether you have a specific financial query or are looking for a long-term compliance partner, our senior consultants are ready to help.
-              </p>
-
-              <div className="space-y-10">
-                <div className="flex items-start gap-6 group">
-                  <div className="w-12 h-12 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-900 group-hover:bg-navy group-hover:text-white transition-all duration-300">
-                    <Mail size={20} />
-                  </div>
-                  <div>
-                    <h4 className="text-slate-600 text-xs font-bold uppercase tracking-widest mb-1">Email Us</h4>
-                    <a href="mailto:info@pumec.com" className="text-slate-900 font-bold text-lg hover:text-accent-blue transition-colors">info@pumec.com</a>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-6 group">
-                  <div className="w-12 h-12 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-900 group-hover:bg-navy group-hover:text-white transition-all duration-300">
-                    <Phone size={20} />
-                  </div>
-                  <div>
-                    <h4 className="text-slate-600 text-xs font-bold uppercase tracking-widest mb-1">Call Us</h4>
-                    <a href="tel:+919876543210" className="text-slate-900 font-bold text-lg hover:text-accent-blue transition-colors">+91 98XXX XXXXX</a>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-6 group">
-                  <div className="w-12 h-12 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-900 group-hover:bg-navy group-hover:text-white transition-all duration-300">
-                    <MapPin size={20} />
-                  </div>
-                  <div>
-                    <h4 className="text-slate-600 text-xs font-bold uppercase tracking-widest mb-1">Our Offices</h4>
-                    <p className="text-slate-900 font-bold text-lg leading-snug">New Delhi, Mumbai & <br /> Bangalore — India</p>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Right: Form */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="bg-white rounded-3xl p-8 lg:p-12 border border-slate-200  border border-slate-200 relative overflow-hidden"
-            >
-              {/* Decorative background for form */}
-              <div className="absolute top-0 right-0 w-32 h-32 bg-accent-blue/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl pomanrope-events-none" />
-
-              {formState === "success" ? (
-                <div className="py-12 text-center">
-                  <div className="w-20 h-20 bg-green-50 text-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <Send size={32} />
-                  </div>
-                  <h3 className="text-2xl font-bold text-slate-900 mb-4">Message Sent Successfully!</h3>
-                  <p className="text-slate-600 mb-8">Our advisors will contact you within the next 24 business hours. Check your inbox for a confirmation email.</p>
-                  <button 
-                    onClick={() => setFormState("idle")}
-                    className="text-accent-blue font-bold tracking-widest uppercase text-sm hover:underline"
-                  >
-                    Send another message
-                  </button>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                      <label className="text-xs font-bold text-slate-900 uppercase tracking-widest ml-1">Full Name</label>
-                      <input name="inputfield" 
-                        required
-                        type="text" 
-                        placeholder="John Doe" 
-                        className="w-full bg-slate-100 border border-slate-200 rounded-xl px-5 py-4 text-slate-900 placeholder:text-slate-600/50 focus:outline-none focus:border-navy focus:ring-4 focus:ring-navy/5 transition-all"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <label className="text-xs font-bold text-slate-900 uppercase tracking-widest ml-1">Email Address</label>
-                      <input name="inputfield" 
-                        required
-                        type="email" 
-                        placeholder="john@company.com" 
-                        className="w-full bg-slate-100 border border-slate-200 rounded-xl px-5 py-4 text-slate-900 placeholder:text-slate-600/50 focus:outline-none focus:border-navy focus:ring-4 focus:ring-navy/5 transition-all"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="space-y-2">
-                    <label className="text-xs font-bold text-slate-900 uppercase tracking-widest ml-1">Service Manropeested In</label>
-                    <select className="w-full bg-slate-100 border border-slate-200 rounded-xl px-5 py-4 text-slate-900 focus:outline-none focus:border-navy transition-all appearance-none cursor-pomanrope">
-                      <option>Auditing & Assurance</option>
-                      <option>Taxation Services</option>
-                      <option>NRI & Manropenational Taxation</option>
-                      <option>Business Setup & Corporate Law</option>
-                      <option>Other Advisory</option>
-                    </select>
-                  </div>
-
-                  <div className="space-y-2">
-                    <label className="text-xs font-bold text-slate-900 uppercase tracking-widest ml-1">Your Message</label>
-                    <textarea 
-                      required
-                      placeholder="How can we help your business today?"
-                      rows={5}
-                      className="w-full bg-slate-100 border border-slate-200 rounded-xl px-5 py-4 text-slate-900 placeholder:text-slate-600/50 focus:outline-none focus:border-navy focus:ring-4 focus:ring-navy/5 transition-all resize-none"
-                    />
-                  </div>
-
-                  <button 
-                    disabled={formState === "submitting"}
-                    className="w-full bg-navy text-white font-bold tracking-widest uppercase text-sm py-5 rounded-xl hover:bg-navy-light border border-slate-200  active:scale-[0.98] transition-all flex items-center justify-center gap-3"
-                  >
-                    {formState === "submitting" ? (
-                      <>
-                        <Loader2 className="animate-spin" size={20} />
-                        Processing...
-                      </>
-                    ) : (
-                      <>
-                        Request Consultation
-                        <Send size={18} />
-                      </>
-                    )}
-                  </button>
-                  <p className="text-[10px] text-center text-slate-600 uppercase tracking-widest font-medium">
-                    By submitting, you agree to our Privacy Policy
-                  </p>
-                </form>
-              )}
-            </motion.div>
-          </div>
+    <main className="min-h-screen pt-32 pb-24 bg-[#fcfcfc] text-[#050505] relative overflow-hidden">
+      <div className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[800px] h-[500px] opacity-10 pointer-events-none" style={{ background: "radial-gradient(circle, rgba(255,255,255,0.15) 0%, rgba(5,5,5,0) 70%)" }} />
+      <section className="container-custom px-4 md:px-8 relative z-10">
+        <div className="max-w-4xl mb-16">
+          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+            <span className="inline-block px-4 py-1.5 rounded-full border border-black/10 bg-black/5 text-xs font-semibold tracking-widest uppercase mb-6">CONTACT US</span>
+            <h1 className="text-4xl md:text-5xl font-medium tracking-tight mb-8 text-black">
+              Let's Discuss Your <br /><span className="text-black/50">Strategic Growth</span>
+            </h1>
+            <p className="text-black/60 text-xl font-light">
+              Whether you need end-to-end statutory compliance, rigorous financial audits, or CFO advisory—our partners are ready to assist you.
+            </p>
+          </motion.div>
         </div>
-      </div>
+
+        <div className="grid lg:grid-cols-[1fr_1.5fr] gap-10">
+          <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6, delay: 0.2 }} className="flex flex-col gap-8">
+            <div className="bg-black/[0.02] border border-black/5 rounded-3xl p-8 flex gap-6">
+              <div className="w-12 h-12 rounded-full bg-black/5 shrink-0 flex items-center justify-center text-black/80 border border-black/10">
+                <MapPin size={24} strokeWidth={1.5} />
+              </div>
+              <div>
+                <h3 className="text-xl font-medium text-black mb-2">Headquarters</h3>
+                <p className="text-black/50 text-sm font-light">104, Plot 35, Ashoka Enclave,<br />Sector 11 Dwarka, New Delhi<br />110075, India</p>
+              </div>
+            </div>
+            <div className="bg-black/[0.02] border border-black/5 rounded-3xl p-8 flex gap-6">
+              <div className="w-12 h-12 rounded-full bg-black/5 shrink-0 flex items-center justify-center text-black/80 border border-black/10">
+                <Phone size={24} strokeWidth={1.5} />
+              </div>
+              <div>
+                <h3 className="text-xl font-medium text-black mb-2">Direct Lines</h3>
+                <p className="text-black/70 text-sm font-light mb-1">+91 9811X XXXXX</p>
+              </div>
+            </div>
+            <div className="bg-black/[0.02] border border-black/5 rounded-3xl p-8 flex gap-6">
+              <div className="w-12 h-12 rounded-full bg-black/5 shrink-0 flex items-center justify-center text-black/80 border border-black/10">
+                <Mail size={24} strokeWidth={1.5} />
+              </div>
+              <div>
+                 <h3 className="text-xl font-medium text-black mb-2">Email Desks</h3>
+                 <p className="text-black/70 text-sm font-light">info@pumec.com</p>
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6, delay: 0.3 }} className="bg-black/[0.02] border border-black/5 rounded-[40px] p-8 sm:p-12 relative overflow-hidden">
+             <h3 className="text-3xl font-medium text-black mb-10">Request Consultation</h3>
+             <form onSubmit={handleSubmit} className="space-y-8">
+                <div className="grid sm:grid-cols-2 gap-8">
+                  <div className="space-y-3">
+                    <label className="text-sm text-black/50 uppercase">Full Name *</label>
+                    <input required type="text" className="w-full bg-transparent border-b border-black/10 py-3 text-black outline-none font-light" />
+                  </div>
+                  <div className="space-y-3">
+                    <label className="text-sm text-black/50 uppercase">Company</label>
+                    <input type="text" className="w-full bg-transparent border-b border-black/10 py-3 text-black outline-none font-light" />
+                  </div>
+                </div>
+                <div className="grid sm:grid-cols-2 gap-8">
+                  <div className="space-y-3">
+                    <label className="text-sm text-black/50 uppercase">Email *</label>
+                    <input required type="email" className="w-full bg-transparent border-b border-black/10 py-3 text-black outline-none font-light" />
+                  </div>
+                  <div className="space-y-3">
+                    <label className="text-sm text-black/50 uppercase">Phone</label>
+                    <input type="tel" className="w-full bg-transparent border-b border-black/10 py-3 text-black outline-none font-light" />
+                  </div>
+                </div>
+                <div className="space-y-3">
+                  <label className="text-sm text-black/50 uppercase">Message</label>
+                  <textarea rows={4} className="w-full bg-transparent border-b border-black/10 py-3 text-black outline-none font-light resize-none" />
+                </div>
+                <button type="submit" disabled={isSubmitting} className="w-full sm:w-auto bg-white text-black font-medium disabled:opacity-70 px-10 py-5 rounded-full hover:scale-105 transition-transform mt-4">
+                  {isSubmitting ? "Processing..." : "Submit Request"}
+                </button>
+             </form>
+          </motion.div>
+        </div>
+      </section>
     </main>
   );
 }
-

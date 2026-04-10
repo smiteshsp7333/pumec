@@ -4,46 +4,10 @@ import { useRef, useState, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
 
 const stats = [
-  { 
-    value: 30, suffix: "+", 
-    label: "Years of Excellence", 
-    sub: "Est. in the early 1990s",
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
-      </svg>
-    )
-  },
-  { 
-    value: 2500, suffix: "+", 
-    label: "Clients Served", 
-    sub: "Across India & globally",
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z" />
-      </svg>
-    )
-  },
-  { 
-    value: 20, suffix: "+", 
-    label: "Industries Covered", 
-    sub: "From FMCG to FinTech",
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" />
-      </svg>
-    )
-  },
-  { 
-    value: 100, suffix: "%", 
-    label: "Compliance Rate", 
-    sub: "Zero regulatory penalties",
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
-    )
-  },
+  { value: 30, suffix: "+", label: "Years of Excellence", sub: "Driving strategic growth globally" },
+  { value: 2500, suffix: "+", label: "Clients Served", sub: "Across diverse industries" },
+  { value: 20, suffix: "+", label: "Industries Covered", sub: "Deep sector expertise" },
+  { value: 100, suffix: "%", label: "Commitment", sub: "Dedicated to your success" }
 ];
 
 function NumCounter({ target, suffix }: { target: number; suffix: string }) {
@@ -73,9 +37,9 @@ function NumCounter({ target, suffix }: { target: number; suffix: string }) {
   }, [inView, target]);
 
   return (
-    <span ref={ref} className="tabular-nums">
+    <span ref={ref} className="tabular-nums inline-flex items-baseline">
       {count.toLocaleString()}
-      <span className="text-accent-blue ml-0.5">{suffix}</span>
+      <span className="text-white/50 ml-1">{suffix}</span>
     </span>
   );
 }
@@ -85,13 +49,11 @@ export default function Stats() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="stats" className="pt-28 pb-24 bg-white relative overflow-hidden border-b border-slate-200/50">
-      <div className="absolute inset-0 bg-gradient-to-br from-white to-transparent opacity-50 absolute pointer-events-none" />
-      
-      <div className="container-custom relative z-10">
+    <section id="stats" className="py-24 bg-[#050505] text-[#f2f2f2] relative overflow-hidden border-b border-white/5">
+      <div className="container-custom relative z-10 px-4 md:px-8">
         <div
           ref={ref}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 sm:gap-x-10 sm:gap-y-16 lg:gap-0 lg:divide-x-2 lg:divide-border-subtle"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8"
         >
           {stats.map((s, i) => (
             <motion.div
@@ -99,22 +61,17 @@ export default function Stats() {
               initial={{ opacity: 0, y: 40 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: i * 0.15, ease: [0.2, 0.6, 0.2, 1] }}
-              className="text-center lg:px-6 relative flex flex-col items-center group hover:scale-[1.02] hover:-translate-y-1 transition-all duration-300"
+              className="flex flex-col items-center sm:items-start text-center sm:text-left"
             >
-              <div className="w-12 h-12 bg-slate-50 rounded-full shadow-inner flex items-center justify-center text-slate-700 mb-6 group-hover:text-blue-600 transition-colors duration-300 border border-slate-200">
-                {s.icon}
-              </div>
-              
-              <div className="text-5xl lg:text-6xl font-black text-slate-900 mb-4 tracking-tighter transition-colors duration-300 group-hover:text-slate-900-light drop-shadow-sm">
+              <div className="text-5xl lg:text-7xl font-medium mb-4 tracking-tighter">
                 <NumCounter target={s.value} suffix={s.suffix} />
               </div>
               
-              <div className="text-slate-900 font-bold text-sm tracking-widest uppercase mb-2 relative">
+              <div className="text-white/90 font-medium text-sm tracking-widest uppercase mb-2">
                 {s.label}
-                <div className="absolute -bottom-2.5 mx-auto left-0 right-0 w-8 group-hover:w-16 h-[2px] bg-accent-blue/50 transition-all duration-400 ease-out" />
               </div>
               
-              <div className="text-slate-600 text-xs tracking-wider uppercase font-medium mt-4 opacity-80 group-hover:opacity-100 transition-opacity">
+              <div className="text-white/50 text-xs tracking-wider uppercase font-light">
                 {s.sub}
               </div>
             </motion.div>
@@ -124,4 +81,3 @@ export default function Stats() {
     </section>
   );
 }
-

@@ -5,42 +5,39 @@ import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
-
-
 export default function InsightsPreviewClient({ blogsData }: { blogsData: any[] }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="py-24 bg-[#F1F5F9]">
-      <div className="container-custom">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16">
+    <section className="py-24 lg:py-32 bg-[#fcfcfc] text-[#050505] relative overflow-hidden border-b border-black/5">
+      <div className="container-custom px-4 md:px-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 lg:mb-24 gap-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
             className="max-w-2xl"
           >
-            <span className="text-accent-blue font-bold tracking-widest uppercase text-xs mb-3 block">
-              Knowledge & Insights
+            <span className="inline-block px-4 py-1.5 rounded-full border border-black/10 bg-black/5 text-xs font-semibold tracking-widest uppercase mb-6">
+              INSIGHTS & NEWS
             </span>
-            <h2 className="text-3xl lg:text-5xl font-bold text-slate-900 leading-tight tracking-tight">
+            <h2 className="text-4xl lg:text-[56px] font-medium leading-[1.1] tracking-tight text-black/90">
               Stay Updated with <br /> Regulatory Shifts
             </h2>
           </motion.div>
           
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
+            initial={{ opacity: 0, x: 20 }}
+            animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="mt-8 md:mt-0"
           >
              <Link 
                href="/insights" 
-               className="inline-flex items-center gap-2 text-slate-900 font-bold text-sm tracking-wider uppercase hover:text-accent-blue transition-colors group"
+               className="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-black/20 hover:bg-black/10 transition-colors text-sm font-medium"
              >
                Explore All Insights
-               <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                  <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                </svg>
              </Link>
@@ -49,52 +46,49 @@ export default function InsightsPreviewClient({ blogsData }: { blogsData: any[] 
 
         <div 
           ref={ref}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
         >
-          {blogsData.map((p, i) => (
+          {blogsData.slice(0, 3).map((p, i) => (
             <motion.article
               key={p.title}
               initial={{ opacity: 0, y: 40 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 + i * 0.15 }}
-              className="group bg-white rounded-2xl overflow-hidden border border-slate-200  hover:-translate-y-1 transition-all duration-300 border border-slate-200 flex flex-col h-full"
+              className="group bg-black/[0.02] border border-black/5 hover:bg-black/[0.04] transition-colors duration-500 rounded-3xl overflow-hidden flex flex-col h-full"
             >
-              <div className="relative w-full aspect-[16/10] overflow-hidden shrink-0 bg-slate-100 border-b border-slate-100">
+              <div className="relative w-full aspect-[4/3] overflow-hidden bg-black/5">
                 <Image 
-                  src={p.image} 
+                  src={p.image || ''} 
                   alt={p.title} 
                   fill 
-                  className="object-cover group-hover:scale-105 transition-transform duration-700" 
+                  className="object-cover" 
                   unoptimized
                 />
                 <div className="absolute top-4 left-4">
-                  <span className="px-3 py-1 bg-white/95 backdrop-blur-md rounded-md text-[10px] font-bold text-slate-900 uppercase tracking-widest border border-slate-200  border border-slate-100/50">
+                  <span className="px-4 py-2 bg-[#fcfcfc]/80 backdrop-blur-md rounded-full text-[10px] font-medium text-black uppercase tracking-widest border border-black/10">
                     {p.category}
                   </span>
                 </div>
               </div>
 
-              <div className="p-6 lg:p-8 flex flex-col flex-1">
-                <time className="text-accent-blue text-[10px] font-bold uppercase tracking-widest mb-3 block">
+              <div className="p-8 flex flex-col flex-1">
+                <time className="text-black/40 text-[10px] font-medium uppercase tracking-widest mb-4 block">
                   {new Date(p.created_at || Date.now()).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}
                 </time>
-                <h3 className="text-xl font-bold text-slate-900 mb-4 group-hover:text-accent-blue transition-colors line-clamp-2 leading-snug">
+                <h3 className="text-2xl font-medium text-black mb-4 line-clamp-2 leading-snug group-hover:text-black/80 transition-colors">
                   <Link href={`/insights/${p.slug}`}>
                     {p.title}
                   </Link>
                 </h3>
-                <p className="text-slate-600 text-sm leading-relaxed mb-6 line-clamp-3">
+                <p className="text-black/50 text-sm leading-relaxed mb-8 line-clamp-3 font-light">
                   {p.excerpt}
                 </p>
-                <div className="mt-auto pt-2">
+                <div className="mt-auto">
                   <Link 
                     href={`/insights/${p.slug}`}
-                    className="inline-flex items-center gap-2 text-slate-900 text-xs font-bold uppercase tracking-widest group-hover:gap-3 group-hover:text-accent-blue transition-all"
+                    className="inline-flex items-center text-sm font-medium uppercase tracking-widest text-[#050505] group-hover:text-black hover:underline underline-offset-8 transition-all"
                   >
                     Read full article
-                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
                   </Link>
                 </div>
               </div>
@@ -105,4 +99,3 @@ export default function InsightsPreviewClient({ blogsData }: { blogsData: any[] 
     </section>
   );
 }
-

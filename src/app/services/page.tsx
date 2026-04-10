@@ -64,7 +64,7 @@ const services = [
 
 export default function ServicesPage() {
   return (
-    <main className="min-h-screen pt-32 pb-24 bg-slate-100">
+    <main className="min-h-screen pt-32 pb-24 bg-[#fcfcfc]">
       {/* Header */}
       <section className="container-custom mb-20 text-center">
         <motion.div
@@ -72,13 +72,13 @@ export default function ServicesPage() {
            animate={{ opacity: 1, y: 0 }}
            transition={{ duration: 0.6 }}
         >
-          <span className="text-accent-blue font-bold tracking-widest uppercase text-xs mb-4 block">
+          <span className="text-black font-bold tracking-widest uppercase text-xs mb-4 block">
             Our Expertise
           </span>
-          <h1 className="text-4xl lg:text-7xl font-bold text-slate-900 leading-tight tracking-tight mb-8">
+          <h1 className="text-4xl lg:text-7xl font-bold text-black leading-tight tracking-tight mb-8">
             Tailored Solutions <br /> For Complex Needs
           </h1>
-          <p className="text-slate-600 text-lg max-w-2xl mx-auto font-medium">
+          <p className="text-black/60 text-lg max-w-2xl mx-auto font-medium">
              From startup compliance to multinational tax strategy — we provide the rigorous architecture your business needs to excel in the Indian market.
           </p>
         </motion.div>
@@ -93,24 +93,24 @@ export default function ServicesPage() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="group bg-white rounded-3xl p-10 border border-slate-200  hover:-translate-y-3 transition-all duration-500 relative flex flex-col"
+              className="group bg-black/[0.02]/[0.02]/[0.02] rounded-[32px] p-8 sm:p-10 border border-black/5   transition-all duration-500 relative flex flex-col"
             >
-              <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${s.gradient} text-white flex items-center justify-center mb-10 border border-slate-200  group-hover:scale-110 transition-transform duration-500`}>
+              <div className={`w-16 h-16 rounded-2xl text-black/80 border bg-black/[0.02]/[0.02]/5 border-black/10 flex items-center justify-center mb-10 border border-black/5  group-hover:scale-110 transition-transform duration-500`}>
                 {s.icon}
               </div>
               
-              <h3 className="text-2xl font-black text-slate-900 mb-5 tracking-tight group-hover:text-accent-blue transition-colors leading-tight">
+              <h3 className="text-2xl font-black text-black mb-5 tracking-tight group-hover:text-black transition-colors leading-tight">
                 {s.title}
               </h3>
               
-              <p className="text-slate-600 text-sm leading-relaxed mb-8 font-medium">
+              <p className="text-black/60 text-sm leading-relaxed mb-8 font-medium">
                 {s.desc}
               </p>
 
               <div className="space-y-3 flex-1 mb-10">
                 {s.details.map((detail) => (
-                  <div key={detail} className="flex items-center gap-2 text-slate-900 text-xs font-bold tracking-widest uppercase opacity-70">
-                    <div className="w-1 h-1 rounded-full bg-accent-blue" />
+                  <div key={detail} className="flex items-center gap-2 text-black text-xs font-bold tracking-widest uppercase opacity-70">
+                    <div className="w-1 h-1 rounded-full bg-black/[0.02]/[0.02]/20" />
                     {detail}
                   </div>
                 ))}
@@ -118,7 +118,7 @@ export default function ServicesPage() {
 
               <Link 
                 href={`/services/${s.slug}`}
-                className="inline-flex items-center gap-2 bg-slate-100 text-slate-900 text-[10px] font-black uppercase tracking-widest py-3 px-6 rounded-full hover:bg-navy hover:text-white transition-all w-fit"
+                className="inline-flex items-center gap-2 bg-[#fcfcfc] text-black text-[10px] font-black uppercase tracking-widest py-3 px-6 rounded-full hover:bg-black/[0.02]/[0.02]/[0.03] hover:text-black transition-all w-fit"
               >
                 Deep Dive
                 <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
@@ -132,22 +132,22 @@ export default function ServicesPage() {
 
       {/* Trust Banner */}
       <section className="container-custom mt-24">
-         <div className="bg-navy rounded-[3rem] p-12 lg:p-20 relative overflow-hidden text-center">
+         <div className="bg-black/[0.02]/[0.02]/[0.03] rounded-[3rem] p-12 lg:p-20 relative overflow-hidden text-center">
             {/* Background pattern */}
             <div 
               className="absolute inset-0 opacity-10 pomanrope-events-none" 
               style={{ backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`, backgroundSize: '32px 32px' }} 
             />
             
-            <h2 className="text-3xl lg:text-5xl font-bold text-white mb-8 relative z-10 leading-tight tracking-tight">
+            <h2 className="text-3xl lg:text-5xl font-bold text-black mb-8 relative z-10 leading-tight tracking-tight">
               Looking for a Comprehensive <br /> Retainership Partner?
             </h2>
-            <p className="text-white/70 text-lg mb-12 max-w-2xl mx-auto relative z-10 font-medium">
+            <p className="text-black/70 text-lg mb-12 max-w-2xl mx-auto relative z-10 font-medium">
               Join dozens of Indian and multinational firms who trust PUMEC for end-to-end accounting, payroll, and compliance outsourcing.
             </p>
             <Link 
               href="/contact" 
-              className="inline-flex items-center gap-4 bg-white text-slate-900 font-bold text-sm tracking-widest uppercase py-5 px-10 rounded-2xl hover:bg-slate-100 active:scale-95 transition-all border border-slate-200  relative z-10"
+              className="inline-flex items-center gap-4 bg-black/[0.02]/[0.02]/[0.02] text-black font-bold text-sm tracking-widest uppercase py-5 px-10 rounded-2xl hover:bg-[#fcfcfc] active:scale-95 transition-all border border-black/5  relative z-10"
             >
               Get a Retainership Quote
               <ShieldCheck size={20} />

@@ -30,8 +30,8 @@ export default function Navbar() {
       transition={{ duration: 0.6, ease: "easeOut" }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-400 ${
         scrolled
-          ? "bg-navy border-b border-transparent"
-          : "bg-navy/90 backdrop-blur-md border-b border-white/5"
+          ? "bg-[#050505] border-b border-transparent"
+          : "bg-[#050505]/90 backdrop-blur-md border-b border-white/5"
       }`}
     >
       <div className="container-custom">
@@ -68,7 +68,7 @@ export default function Navbar() {
           <div className="hidden md:flex flex-1 justify-end items-center">
             <Link
               href="/contact"
-              className="bg-white text-slate-900 font-semibold text-sm py-3 px-7 rounded hover:-translate-y-0.5 hover:bg-slate-100 transition-all duration-300 border border-transparent"
+              className="bg-white text-black font-semibold text-sm py-3 px-7 rounded hover:-translate-y-0.5 hover:bg-gray-200 transition-all duration-300 border border-transparent"
             >
               Get Consultation
             </Link>
@@ -97,7 +97,7 @@ export default function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25 }}
-            className="md:hidden bg-navy border-t border-white/10"
+            className="md:hidden bg-[#050505] border-t border-white/10"
           >
             <div className="container-custom py-6 flex flex-col gap-5">
               {navItems.map((item) => (
@@ -113,7 +113,7 @@ export default function Navbar() {
               <Link 
                 href="/contact" 
                 onClick={() => setMobileOpen(false)}
-                className="mt-4 flex justify-center bg-white text-slate-900 font-semibold text-base py-3.5 px-6 rounded hover:bg-slate-100 transition-colors border border-transparent"
+                className="mt-4 flex justify-center bg-white text-black font-semibold text-base py-3.5 px-6 rounded hover:bg-gray-200 transition-colors border border-transparent"
               >
                 Get Consultation
               </Link>
