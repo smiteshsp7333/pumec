@@ -46,7 +46,7 @@ export default function ClientsClient({ clientsData }: { clientsData: { name: st
                       loading={i >= (clientsData?.length || 0) ? "lazy" : "eager"}
                       className="max-w-full max-h-[60px] w-auto object-contain pointer-events-none select-none"
                       onError={(e) => {
-                        const target = e.target; /* ignore type casting in node string */
+                        const target = e.target as HTMLImageElement;
                         target.src = `https://placehold.co/400x120/1a1a1a/ffffff.png?text=${encodeURIComponent(logo?.name)}&font=Montserrat`;
                       }}
                     />
