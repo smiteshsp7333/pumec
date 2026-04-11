@@ -2,7 +2,19 @@
 
 import { motion } from "framer-motion";
 
-export default function ClientsClient({ clientsData }: { clientsData: { name: string, logo_url: string }[] }) {
+export default function ClientsClient({ clientsData }: { clientsData?: { name: string, logo_url: string }[] }) {
+  // Use specific local logos to ensure high quality and visibility
+  const staticLogos = [
+    { name: "Infosys", src: "/logos/infosys.svg" },
+    { name: "Tata Group", src: "/logos/tata.svg" },
+    { name: "Wipro", src: "/logos/wipro.svg" },
+    { name: "HDFC Bank", src: "/logos/hdfc.svg" },
+    { name: "Aditya Birla", src: "/logos/Aditya-Birla-Group-Logo-Vector-scaled.jpg" },
+    { name: "ICICI Bank", src: "/logos/icici.svg" },
+    { name: "Mahindra", src: "/logos/mahindra.svg" },
+    { name: "Reliance", src: "/logos/reliance.svg" },
+  ];
+
   return (
     <section className="py-12 bg-[#fcfcfc] border-y border-black/5 relative overflow-hidden">
       <div className="container-custom relative z-10 px-4">
@@ -30,29 +42,23 @@ export default function ClientsClient({ clientsData }: { clientsData: { name: st
             style={{ maskImage: 'linear-gradient(to right, transparent, black 15%, black 85%, transparent)', WebkitMaskImage: 'linear-gradient(to right, transparent, black 15%, black 85%, transparent)' }}
           >
             <div className="flex w-max animate-marquee items-center gap-12 md:gap-16 lg:gap-24">
-              {[...(clientsData || []), ...(clientsData || [])].map((logo, i) => {
-                const imgSrc = logo?.logo_url?.startsWith("http") || logo?.logo_url?.startsWith("/") 
-                  ? logo.logo_url 
-                  : `http://127.0.0.1:8000/storage/${logo?.logo_url}`;
-
-                return (
-                  <div
-                    key={`${logo?.name}-${i}`}
-                    className="flex items-center justify-center w-[140px] md:w-[180px] h-16 shrink-0"
-                  >
-                    <img
-                      src={imgSrc}
-                      alt={logo?.name}
-                      loading={i >= (clientsData?.length || 0) ? "lazy" : "eager"}
-                      className="max-w-full max-h-[60px] w-auto object-contain pointer-events-none select-none drop-shadow-sm"
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        target.src = `https://placehold.co/400x120/fcfcfc/000000.png?text=${encodeURIComponent(logo?.name)}&font=Montserrat`;
-                      }}
-                    />
-                  </div>
-                );
-              })}
+              {[...staticLogos, ...staticLogos].map((logo, i) => (
+                <div
+                  key={`${logo.name}-${i}`}
+                  className="flex items-center justify-center w-[140px] md:w-[180px] h-16 shrink-0"
+                >
+                  <img
+                    src={logo.src}
+                    alt={logo.name}
+                    loading={i >= staticLogos.length ? "lazy" : "eager"}
+                    className="max-w-full max-h-[50px] w-auto object-contain pointer-events-none select-none mix-blend-multiply"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.style.display = 'none';
+                    }}
+                  />
+                </div>
+              ))}
             </div>
           </div>
         </motion.div>
@@ -76,7 +82,7 @@ export default function ClientsClient({ clientsData }: { clientsData: { name: st
           }
         }
         .animate-marquee {
-          animation: marquee 15s linear infinite;
+          animation: marquee 10s linear infinite;
         }
       `}</style>
     </section>
