@@ -38,7 +38,7 @@ export default function ClientsClient({ clientsData }: { clientsData: { name: st
                 return (
                   <div
                     key={`${logo?.name}-${i}`}
-                    className="flex items-center justify-center w-[140px] md:w-[180px] h-16 shrink-0 opacity-50 hover:opacity-100 transition-opacity duration-300 grayscale invert"
+                    className="flex items-center justify-center w-[140px] md:w-[180px] h-16 shrink-0"
                   >
                     <img
                       src={imgSrc}
@@ -76,7 +76,7 @@ export default function ClientsClient({ clientsData }: { clientsData: { name: st
           }
         }
         .animate-marquee {
-          animation: marquee 40s linear infinite;
+          animation: marquee 20s linear infinite;
         }
       `}</style>
     </section>
