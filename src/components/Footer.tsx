@@ -98,7 +98,7 @@ export default function Footer() {
           {/* Logo & Social Setup */}
           <div className="min-w-[240px]">
             <Link href="/" className="inline-block mb-6">
-              <Image src="/pu_logo.png" alt="PUMEC Logo" width={140} height={40} unoptimized className="h-8 w-auto brightness-0 invert" />
+              <Image src="/pu_logo.png" alt="PUMEC Logo" width={140} height={40} unoptimized className="h-8 w-auto" />
             </Link>
             <div className="flex items-center gap-4 mt-4">
                <a href="#" className="w-8 h-8 flex items-center justify-center text-white/50 hover:text-white transition-colors">
