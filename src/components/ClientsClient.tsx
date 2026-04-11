@@ -5,14 +5,11 @@ import { motion } from "framer-motion";
 export default function ClientsClient({ clientsData }: { clientsData?: { name: string, logo_url: string }[] }) {
   // Use specific local logos to ensure high quality and visibility
   const staticLogos = [
-    { name: "Infosys", src: "/logos/infosys.svg" },
-    { name: "Tata Group", src: "/logos/tata.svg" },
-    { name: "Wipro", src: "/logos/wipro.svg" },
-    { name: "HDFC Bank", src: "/logos/hdfc.svg" },
+    { name: "Infosys", src: "/logos/infosys.png" },
+    { name: "Tata Group", src: "/logos/Tata_logo.svg" },
+    { name: "Wipro", src: "/logos/Wipro_Primary_Logo_Color_RGB.svg.png" },
+    { name: "HDFC Bank", src: "/logos/HDFC-LOGO.png" },
     { name: "Aditya Birla", src: "/logos/Aditya-Birla-Group-Logo-Vector-scaled.jpg" },
-    { name: "ICICI Bank", src: "/logos/icici.svg" },
-    { name: "Mahindra", src: "/logos/mahindra.svg" },
-    { name: "Reliance", src: "/logos/reliance.svg" },
   ];
 
   return (
@@ -42,16 +39,16 @@ export default function ClientsClient({ clientsData }: { clientsData?: { name: s
             style={{ maskImage: 'linear-gradient(to right, transparent, black 15%, black 85%, transparent)', WebkitMaskImage: 'linear-gradient(to right, transparent, black 15%, black 85%, transparent)' }}
           >
             <div className="flex w-max animate-marquee items-center gap-12 md:gap-16 lg:gap-24">
-              {[...staticLogos, ...staticLogos].map((logo, i) => (
+              {[...staticLogos, ...staticLogos, ...staticLogos].map((logo, i) => (
                 <div
                   key={`${logo.name}-${i}`}
-                  className="flex items-center justify-center w-[140px] md:w-[180px] h-16 shrink-0"
+                  className="flex items-center justify-center w-[160px] md:w-[200px] h-[100px] bg-white border border-gray-100 rounded-lg shadow-sm shrink-0 p-4"
                 >
                   <img
                     src={logo.src}
                     alt={logo.name}
                     loading={i >= staticLogos.length ? "lazy" : "eager"}
-                    className="max-w-full max-h-[50px] w-auto object-contain pointer-events-none select-none mix-blend-multiply"
+                    className="max-w-full max-h-[60px] w-auto object-contain pointer-events-none select-none mix-blend-multiply"
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
                       target.style.display = 'none';
@@ -82,7 +79,7 @@ export default function ClientsClient({ clientsData }: { clientsData?: { name: s
           }
         }
         .animate-marquee {
-          animation: marquee 10s linear infinite;
+          animation: marquee 25s linear infinite;
         }
       `}</style>
     </section>
