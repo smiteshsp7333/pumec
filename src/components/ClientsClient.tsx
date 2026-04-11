@@ -44,10 +44,10 @@ export default function ClientsClient({ clientsData }: { clientsData: { name: st
                       src={imgSrc}
                       alt={logo?.name}
                       loading={i >= (clientsData?.length || 0) ? "lazy" : "eager"}
-                      className="max-w-full max-h-[60px] w-auto object-contain pointer-events-none select-none"
+                      className="max-w-full max-h-[60px] w-auto object-contain pointer-events-none select-none drop-shadow-sm"
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
-                        target.src = `https://placehold.co/400x120/1a1a1a/ffffff.png?text=${encodeURIComponent(logo?.name)}&font=Montserrat`;
+                        target.src = `https://placehold.co/400x120/fcfcfc/000000.png?text=${encodeURIComponent(logo?.name)}&font=Montserrat`;
                       }}
                     />
                   </div>
@@ -76,7 +76,7 @@ export default function ClientsClient({ clientsData }: { clientsData: { name: st
           }
         }
         .animate-marquee {
-          animation: marquee 20s linear infinite;
+          animation: marquee 15s linear infinite;
         }
       `}</style>
     </section>
