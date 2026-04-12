@@ -8,7 +8,7 @@ export default function Hero() {
   return (
     <section className="relative w-full min-h-[90vh] flex flex-col justify-center overflow-hidden bg-[#050505] text-[#f2f2f2] px-6 lg:px-12 pt-32 pb-20">
       {/* Background Banner Image */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 bg-[#050505]">
         <Image 
           src="/hero_highres.png"
           alt="Consulting Banner"
@@ -17,10 +17,8 @@ export default function Hero() {
           className="object-cover object-center"
           quality={100}
         />
-        {/* Smooth gradient fading from left to ensure text legibility, leaving the right side clear */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#050505]/95 via-[#050505]/50 to-transparent sm:w-[80%]" />
-        {/* Very light overall overlay to prevent glaring bright spots behind white text */}
-        <div className="absolute inset-0 bg-black/10" />
+        {/* A simple overlay to ensure the white text remains legible over the image */}
+        <div className="absolute inset-0 bg-black/40 sm:bg-gradient-to-r sm:from-black/70 sm:via-black/40 sm:to-black/10" />
       </div>
 
       <div className="absolute top-[-10%] left-0 w-[800px] h-[500px] opacity-10 pointer-events-none" style={{ background: "radial-gradient(circle, rgba(255,255,255,0.15) 0%, rgba(5,5,5,0) 70%)" }} />

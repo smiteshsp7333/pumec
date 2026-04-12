@@ -12,11 +12,11 @@ export default function Home() {
     <main className="flex min-h-screen flex-col bg-[#fcfcfc] text-[#050505] overflow-x-hidden pt-20">
       <Hero />
       <Clients />
+      <InsightsPreview />
       <WhyUs />
       <Services />
       <Stats />
       <Testimonials />
-      <InsightsPreview />
       <CtaBanner />
     </main>
   );
