@@ -17,12 +17,11 @@ export default function InsightsPreviewClient({ blogsData }: { blogsData: any[] 
         ? imagePath 
         : `http://127.0.0.1:8000/storage/${imagePath}`;
     }
-    // These paths match the unoptimized external fallback images provided by Unsplash
-    // which mimic the exact images you requested (tax papers & phone, charts on laptop, suit).
+    // Fallback images located in the public folder
     const fallbacks = [
-      "/image.png",
-      "/image.png",
-      "/image.png"
+      "/photo-1554224155-6726b3ff858f.avif",
+      "/photo-1460925895917-afdab827c52f.avif",
+      "/photo-1507679799987-c73779587ccf.avif"
     ];
     return fallbacks[fallbackIndex % fallbacks.length];
   };
