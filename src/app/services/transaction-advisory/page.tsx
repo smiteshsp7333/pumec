@@ -1,7 +1,7 @@
+import AnimatedSection from '@/components/AnimatedSection';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, CheckCircle2, TrendingUp } from 'lucide-react';
-import AnimatedSection from '@/components/AnimatedSection';
 
 export const metadata: Metadata = {
   title: "M&A Tax Advisory & Transaction Structuring India",

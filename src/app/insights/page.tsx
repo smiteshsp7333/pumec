@@ -1,11 +1,10 @@
-"use client";
+"use client";\nimport AnimatedSection from \"@/components/AnimatedSection\";
 
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Search, Calendar, ChevronRight, User } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import AnimatedSection from '@/components/AnimatedSection';
 
 export default function InsightsPage() {
   return (

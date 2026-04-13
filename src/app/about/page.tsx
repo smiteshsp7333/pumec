@@ -1,7 +1,7 @@
+import AnimatedSection from '@/components/AnimatedSection';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { 
-import AnimatedSection from '@/components/AnimatedSection';
   ArrowRight, CheckCircle2, ChevronRight, Target, Compass, 
   Briefcase, Lightbulb, Users, Factory, Award, Building, Globe, Scale, LayoutGrid
 } from 'lucide-react';

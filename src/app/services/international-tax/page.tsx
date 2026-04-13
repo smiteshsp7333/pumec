@@ -1,7 +1,7 @@
+import AnimatedSection from '@/components/AnimatedSection';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, CheckCircle2, ChevronRight, Scale, Globe, FileDiff, Network, ShieldAlert } from 'lucide-react';
-import AnimatedSection from '@/components/AnimatedSection';
 
 export const metadata: Metadata = {
   title: "International Tax & Structuring Advisory Services in India | Cross-Border Tax Experts | PUMEC Consultants Pvt Ltd",

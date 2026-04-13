@@ -1,9 +1,8 @@
-"use client";
+"use client";\nimport AnimatedSection from \"@/components/AnimatedSection\";
 
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { 
-import AnimatedSection from '@/components/AnimatedSection';
   ShieldCheck, 
   Calculator, 
   Globe2, 

@@ -1,7 +1,7 @@
+import AnimatedSection from '@/components/AnimatedSection';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, CheckCircle2, ChevronRight, Scale, Globe, FileText, AlertTriangle, Activity } from 'lucide-react';
-import AnimatedSection from '@/components/AnimatedSection';
 
 export const metadata: Metadata = {
   title: "Transfer Pricing Advisory Services in India | Transfer Pricing Compliance & Documentation | PUMEC Consultants Pvt Ltd",

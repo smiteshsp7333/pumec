@@ -1,10 +1,9 @@
-"use client";
+"use client";\nimport AnimatedSection from \"@/components/AnimatedSection\";
 
 import { use } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { 
-import AnimatedSection from '@/components/AnimatedSection';
   ChevronLeft, 
   ShieldCheck, 
   ArrowRight, 

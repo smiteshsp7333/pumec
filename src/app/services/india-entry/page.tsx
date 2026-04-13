@@ -1,7 +1,7 @@
+import AnimatedSection from '@/components/AnimatedSection';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, CheckCircle2, ChevronRight, Briefcase, FileSearch, TrendingUp, Handshake, ShieldCheck } from 'lucide-react';
-import AnimatedSection from '@/components/AnimatedSection';
 
 export const metadata: Metadata = {
   title: "India Market Entry & Expansion Advisory for Multinational Companies | PUMEC Consultants Pvt Ltd",

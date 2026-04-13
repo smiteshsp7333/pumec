@@ -1,7 +1,7 @@
+import AnimatedSection from '@/components/AnimatedSection';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, CheckCircle2, ChevronRight, Target, Search, Network, Scale, RefreshCcw, Briefcase } from 'lucide-react';
-import AnimatedSection from '@/components/AnimatedSection';
 
 export const metadata: Metadata = {
   title: "Corporate & Transaction Advisory Services in India | M&A, Due Diligence & Deal Structuring Experts | PUMEC Consultants Pvt Ltd",

@@ -1,9 +1,9 @@
 'use client';
+import AnimatedSection from '@/components/AnimatedSection';
 
 import { useState } from 'react';
 import { Mail, Phone, MapPin, Globe, ArrowRight, Building, CheckCircle2, AlertCircle } from 'lucide-react';
 import Link from 'next/link';
-import AnimatedSection from '@/components/AnimatedSection';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({

@@ -1,7 +1,7 @@
+import AnimatedSection from '@/components/AnimatedSection';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, CheckCircle2, ChevronRight, Scale, AlertTriangle, FileWarning, Clock, TrendingDown } from 'lucide-react';
-import AnimatedSection from '@/components/AnimatedSection';
 
 export const metadata: Metadata = {
   title: "Litigation & Dispute Resolution Services in India | Tax Litigation, FEMA & Regulatory Disputes | PUMEC Consultants Pvt Ltd",

@@ -1,7 +1,7 @@
+import AnimatedSection from '@/components/AnimatedSection';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, CheckCircle2, ChevronRight, Shield, FileSignature, Landmark, RefreshCcw, FileWarning } from 'lucide-react';
-import AnimatedSection from '@/components/AnimatedSection';
 
 export const metadata: Metadata = {
   title: "FEMA & Regulatory Compliance Services in India | RBI, FDI & Cross-Border Compliance Experts | PUMEC Consultants Pvt Ltd",
