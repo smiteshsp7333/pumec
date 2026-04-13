@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import AnimatedSection from "@/components/AnimatedSection";
 
 export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -16,7 +17,7 @@ export default function ContactPage() {
 
   return (
     <main className="min-h-screen pt-32 pb-24 bg-white text-[#050505] relative overflow-hidden font-sans">
-      <section className="container-custom px-4 md:px-8 relative z-10 max-w-6xl mx-auto">
+      <AnimatedSection className="container-custom px-4 md:px-8 relative z-10 max-w-6xl mx-auto">
         <div className="grid lg:grid-cols-[1fr_2fr] gap-16">
           
           {/* Left Column - Text content */}
@@ -185,7 +186,7 @@ export default function ContactPage() {
             </form>
           </motion.div>
         </div>
-      </section>
+      </AnimatedSection>
     </main>
   );
 }

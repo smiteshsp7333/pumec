@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, CheckCircle2, TrendingUp } from 'lucide-react';
+import AnimatedSection from "@/components/AnimatedSection";
 
 export const metadata: Metadata = {
   title: "M&A Tax Advisory & Transaction Structuring India",
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
 export default function TransactionAdvisoryPage() {
   return (
     <main className="flex-1 bg-white">
-      <section className="bg-[#1F3A5F] text-white pt-24 pb-20 px-6 lg:px-12 relative overflow-hidden">
+      <AnimatedSection className="bg-[#1F3A5F] text-white pt-24 pb-20 px-6 lg:px-12 relative overflow-hidden">
         <div className="max-w-4xl mx-auto relative z-10 text-center">
           <span className="text-[#F57C00] font-bold tracking-widest uppercase text-sm mb-4 block">Transaction Advisory (M&A Tax)</span>
           <h1 className="text-4xl md:text-5xl font-heading font-bold leading-tight mb-6">
@@ -21,9 +22,9 @@ export default function TransactionAdvisoryPage() {
             Ensure maximum value and minimal risk through pre-deal tax diligence, optimized M&A structuring, and seamless post-transaction alignment.
           </p>
         </div>
-      </section>
+      </AnimatedSection>
 
-      <section className="py-20 px-6 lg:px-12 bg-[#F4F6F8]">
+      <AnimatedSection className="py-20 px-6 lg:px-12 bg-[#F4F6F8]">
         <div className="max-w-6xl mx-auto text-center mb-16">
           <h2 className="text-3xl font-heading font-bold text-[#1F3A5F] mb-4">SERVICES</h2>
           <div className="w-16 h-1 bg-[#F57C00] mx-auto rounded"></div>
@@ -41,9 +42,9 @@ export default function TransactionAdvisoryPage() {
             </div>
           ))}
         </div>
-      </section>
+      </AnimatedSection>
 
-      <section className="py-24 px-6 lg:px-12 bg-white">
+      <AnimatedSection className="py-24 px-6 lg:px-12 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <span className="text-[#2FA4A9] font-bold tracking-widest uppercase text-sm mb-2 block">Frameworks</span>
@@ -87,14 +88,14 @@ export default function TransactionAdvisoryPage() {
             ))}
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
-      <section className="bg-gradient-to-br from-[#1F3A5F] to-[#0D1B2A] text-white py-20 px-6 lg:px-12 text-center">
+      <AnimatedSection className="bg-gradient-to-br from-[#1F3A5F] to-[#0D1B2A] text-white py-20 px-6 lg:px-12 text-center">
         <h2 className="text-3xl font-heading font-bold mb-6">Execute transactions with clarity and control</h2>
         <Link href="/contact" className="inline-flex items-center bg-[#F57C00] hover:bg-[#E65100] text-white px-8 py-4 rounded-md font-bold transition-transform hover:-translate-y-1 mt-4 shadow-lg">
           Speak to a Partner <ArrowRight className="ml-2 w-5 h-5" />
         </Link>
-      </section>
+      </AnimatedSection>
     </main>
   );
 }

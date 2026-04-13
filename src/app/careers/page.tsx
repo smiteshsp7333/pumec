@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import AnimatedSection from "@/components/AnimatedSection";
 export default function CareersPage() {
   return (
     <main className="min-h-screen pt-32 pb-24 bg-[#fcfcfc] text-[#050505]">

@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, CheckCircle2, ChevronRight, Briefcase, FileSearch, TrendingUp, Handshake, ShieldCheck } from 'lucide-react';
+import AnimatedSection from "@/components/AnimatedSection";
 
 export const metadata: Metadata = {
   title: "India Market Entry & Expansion Advisory for Multinational Companies | PUMEC Consultants Pvt Ltd",
@@ -12,7 +13,7 @@ export default function MarketEntryAdvisoryPage() {
   return (
     <main className="flex-1 bg-white">
       {/* Hero Section */}
-      <section className="bg-[#1F3A5F] text-white pt-24 pb-20 px-6 lg:px-12 relative overflow-hidden">
+      <AnimatedSection className="bg-[#1F3A5F] text-white pt-24 pb-20 px-6 lg:px-12 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 bg-[url('/path/to/hero-pattern.png')] bg-cover bg-center"></div>
         <div className="max-w-4xl mx-auto relative z-10 text-center">
           <span className="text-[#F57C00] font-bold tracking-widest uppercase text-sm mb-4 block">Market Entry & Expansion Advisory</span>
@@ -23,10 +24,10 @@ export default function MarketEntryAdvisoryPage() {
             Expert advisory for foreign companies on India entry strategy, business setup, regulatory compliance, and tax-efficient structuring
           </p>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Introduction / Market Context */}
-      <section className="py-20 px-6 lg:px-12 bg-white">
+      <AnimatedSection className="py-20 px-6 lg:px-12 bg-white">
         <div className="max-w-4xl mx-auto text-gray-700 font-sans leading-relaxed space-y-6">
           <div className="text-center mb-10">
             <h2 className="text-3xl font-heading font-bold text-[#1F3A5F] mb-4 uppercase">Introduction / Market Context</h2>
@@ -42,10 +43,10 @@ export default function MarketEntryAdvisoryPage() {
             At PUMEC Consultants Pvt Ltd, we provide comprehensive Market Entry & Expansion Advisory Services designed to help multinational companies establish, operate, and scale efficiently in India. Our approach combines strategic planning with hands-on execution to minimize risks and maximize returns.
           </p>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Key Challenges */}
-      <section className="py-20 px-6 lg:px-12 bg-[#F4F6F8]">
+      <AnimatedSection className="py-20 px-6 lg:px-12 bg-[#F4F6F8]">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-heading font-bold text-[#1F3A5F] mb-4 uppercase">Key Challenges for Multinational Companies</h2>
@@ -88,10 +89,10 @@ export default function MarketEntryAdvisoryPage() {
             ))}
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Comprehensive Solutions */}
-      <section className="py-24 px-6 lg:px-12 bg-white">
+      <AnimatedSection className="py-24 px-6 lg:px-12 bg-white">
         <div className="max-w-5xl mx-auto">
           <div className="mb-16 md:text-center">
             <span className="text-[#2FA4A9] font-bold tracking-widest uppercase text-sm mb-2 block">Our Expertise</span>
@@ -165,10 +166,10 @@ export default function MarketEntryAdvisoryPage() {
             ))}
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Why Choose Us */}
-      <section className="py-20 px-6 lg:px-12 bg-[#F4F6F8]">
+      <AnimatedSection className="py-20 px-6 lg:px-12 bg-[#F4F6F8]">
         <div className="max-w-4xl mx-auto">
            <div className="text-center mb-12">
             <h2 className="text-3xl font-heading font-bold text-[#1F3A5F] mb-4 uppercase">Why Choose Our Advisory Services</h2>
@@ -200,10 +201,10 @@ export default function MarketEntryAdvisoryPage() {
             ))}
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Case Study */}
-      <section className="py-20 px-6 lg:px-12 bg-white">
+      <AnimatedSection className="py-20 px-6 lg:px-12 bg-white">
         <div className="max-w-4xl mx-auto">
           <div className="bg-[#0D1B2A] rounded-2xl p-10 lg:p-14 text-white shadow-2xl relative overflow-hidden">
              
@@ -239,10 +240,10 @@ export default function MarketEntryAdvisoryPage() {
              </div>
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Internal Linking Suggestions */}
-      <section className="py-12 bg-white border-t border-gray-100">
+      <AnimatedSection className="py-12 bg-white border-t border-gray-100">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <p className="text-[#4A5A6A] font-semibold mb-6">Explore more about our services and insights:</p>
           <div className="flex flex-wrap justify-center gap-4 text-sm">
@@ -255,10 +256,10 @@ export default function MarketEntryAdvisoryPage() {
             <Link href="/insights/fema-compliance-checklist" className="text-[#1F3A5F] hover:text-[#F57C00] underline underline-offset-4 decoration-[#2FA4A9] transition-colors">Insights: FEMA Compliance Checklist</Link>
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* CTA Section */}
-      <section className="bg-gradient-to-br from-[#1F3A5F] to-[#0D1B2A] text-white py-24 px-6 lg:px-12 text-center">
+      <AnimatedSection className="bg-gradient-to-br from-[#1F3A5F] to-[#0D1B2A] text-white py-24 px-6 lg:px-12 text-center">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-4xl font-heading font-bold mb-6 text-white">Ready to enter India with confidence?</h2>
           <p className="text-xl text-gray-300 mb-10 font-sans">
@@ -268,7 +269,7 @@ export default function MarketEntryAdvisoryPage() {
             Schedule a Consultation <ArrowRight className="ml-3 w-6 h-6" />
           </Link>
         </div>
-      </section>
+      </AnimatedSection>
     </main>
   );
 }

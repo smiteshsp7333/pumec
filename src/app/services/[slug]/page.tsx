@@ -1,3 +1,4 @@
+import AnimatedSection from "@/components/AnimatedSection";
 export default async function ServicePage({ params }: { params: Promise<{ slug: string }> }) {
   // Convert slug like "going-global" to "Going Global"
   const resolvedParams = await params;

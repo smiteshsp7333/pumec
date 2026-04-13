@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import AnimatedSection from "@/components/AnimatedSection";
 
 export const metadata: Metadata = {
   title: "Risk & Compliance Framework | PUMEC Consultants Pvt Ltd",
@@ -9,7 +10,7 @@ export default function RiskCompliancePage() {
   return (
     <main className="flex-1 bg-[#F4F6F8]">
       {/* Hero Section */}
-      <section className="bg-[#1F3A5F] text-white pt-24 pb-16 px-6 lg:px-12 relative overflow-hidden">
+      <AnimatedSection className="bg-[#1F3A5F] text-white pt-24 pb-16 px-6 lg:px-12 relative overflow-hidden">
         <div className="max-w-4xl mx-auto relative z-10 text-center">
           <span className="text-[#F57C00] font-bold tracking-widest uppercase text-sm mb-4 block">Risk Management</span>
           <h1 className="text-4xl md:text-5xl font-heading font-bold leading-tight mb-4">
@@ -19,10 +20,10 @@ export default function RiskCompliancePage() {
             PUMEC Consultants Private Limited
           </p>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Content Section */}
-      <section className="py-16 px-6 lg:px-12 bg-white">
+      <AnimatedSection className="py-16 px-6 lg:px-12 bg-white">
         <div className="max-w-4xl mx-auto text-gray-700 font-sans leading-relaxed space-y-10">
           
           <div className="text-center mb-12">
@@ -211,7 +212,7 @@ export default function RiskCompliancePage() {
             </ul>
           </div>
         </div>
-      </section>
+      </AnimatedSection>
     </main>
   );
 }
