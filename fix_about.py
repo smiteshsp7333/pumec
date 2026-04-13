@@ -1,7 +1,9 @@
-import { Metadata } from 'next';
+import os
+
+code = """import { Metadata } from 'next';
 import Link from 'next/link';
 import { 
-  ArrowRight, CheckCircle2, ChevronRight, Target, Compass, 
+  ArrowRight, CheckCircle2, ChevronRight, Target, Bullseye, 
   Briefcase, Lightbulb, Users, Factory, Award, Building, Globe, Scale, LayoutGrid
 } from 'lucide-react';
 
@@ -98,10 +100,10 @@ export default function AboutPage() {
           {/* Mission */}
           <div className="bg-[#1F3A5F] p-10 rounded-2xl shadow-xl text-white relative overflow-hidden group">
              <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
-               <Compass className="w-32 h-32 text-white" />
+               <Bullseye className="w-32 h-32 text-white" />
             </div>
             <div className="relative z-10">
-              <Compass className="w-12 h-12 text-[#F57C00] mb-6" />
+              <Bullseye className="w-12 h-12 text-[#F57C00] mb-6" />
               <h2 className="text-3xl font-heading font-bold text-white mb-6 uppercase">Our Mission</h2>
               <ul className="space-y-4">
                 {[
@@ -328,7 +330,7 @@ export default function AboutPage() {
           </p>
           <div className="flex flex-col items-center">
              <Link href="/contact" className="inline-flex items-center bg-[#F57C00] hover:bg-[#E65100] text-white px-10 py-5 rounded-md font-bold text-xl transition-all shadow-xl hover:shadow-2xl hover:-translate-y-2 mb-6">
-                Get in touch today
+                👉 Get in touch today
              </Link>
              <p className="text-[#2FA4A9] font-bold text-lg tracking-wide uppercase">
                 To explore how we can support your business growth
@@ -339,3 +341,8 @@ export default function AboutPage() {
     </main>
   );
 }
+"""
+
+with open('c:/Users/smite/OneDrive/Desktop/client1/src/app/about/page.tsx', 'w', encoding='utf-8') as f:
+    f.write(code)
+print('Done writing about page.tsx')

@@ -1,30 +1,30 @@
 import type { Metadata } from "next";
-import { Manrope } from "next/font/google";
+import { Montserrat, Open_Sans } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
-const manrope = Manrope({
+const montserrat = Montserrat({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
-  variable: "--font-manrope",
+  weight: ["400", "600", "700"],
+  variable: "--font-heading",
+  display: "swap",
+});
+
+const openSans = Open_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-sans",
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "PUMEC Consultants Pvt Ltd | Chartered Accountants & Financial Advisors",
+  title: "PUMEC Consultants Pvt Ltd | India Entry & Tax Advisory",
   description:
-    "PUMEC is a leading Chartered Accountancy and consulting firm offering Auditing, Taxation, NRI Services, Business Setup, Mergers & Acquisitions, and Corporate Law compliance across India.",
+    "International advisory firm specializing in India entry strategy, international taxation, cross-border structuring, transfer pricing, and regulatory advisory.",
   keywords:
-    "Chartered Accountant, CA firm India, taxation services, audit, NRI consulting, business setup, corporate law, PUMEC",
-  openGraph: {
-    title: "PUMEC Consultants Pvt Ltd",
-    description: "Your Trusted Financial & Compliance Partner",
-    type: "website",
-    url: "https://pumec.com",
-  },
+    "India entry strategy, international tax advisory, cross-border structuring, transfer pricing, FEMA advisory",
 };
-
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 
 export default function RootLayout({
   children,
@@ -32,8 +32,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${manrope.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col font-[var(--font-manrope)]">
+    <html lang="en" className={`${montserrat.variable} ${openSans.variable} h-full antialiased`}>
+      <body className="min-h-full flex flex-col font-sans bg-gray-50 text-gray-800">
         <Navbar />
         {children}
         <Footer />

@@ -1,161 +1,32 @@
-@import "tailwindcss";
-
+@import 'tailwindcss';
 @theme {
-  --color-bg-light: #FFFFFF;
-  --color-bg-gray: #F8FAFC;
-  --color-navy: #0B1F3A;
-  --color-navy-light: #1A365D;
-  --color-accent-blue: #3B82F6;
-  --color-text-main: #1E293B;
-  --color-text-muted: #64748B;
-  --color-border-subtle: #E2E8F0;
+  --color-primary-blue: #1F3A5F;
+  --color-secondary-gray: #4A5A6A;
+  --color-accent-teal: #2FA4A9;
+  --color-cta-orange: #F57C00;
+  --color-dark-navy: #0D1B2A;
+  --color-light-bg: #F4F6F8;
+  --color-white: #FFFFFF;
 }
-
 @layer base {
   :root {
-    --bg-light: var(--color-bg-light);
-    --bg-gray: var(--color-bg-gray);
-    --navy: var(--color-navy);
-    --navy-light: var(--color-navy-light);
-    --accent-blue: var(--color-accent-blue);
-    --text-main: var(--color-text-main);
-    --text-muted: var(--color-text-muted);
-    --border-subtle: var(--color-border-subtle);
+    --primary-blue: var(--color-primary-blue);
+    --secondary-gray: var(--color-secondary-gray);
+    --accent-teal: var(--color-accent-teal);
+    --cta-orange: var(--color-cta-orange);
+    --dark-navy: var(--color-dark-navy);
+    --light-bg: var(--color-light-bg);
+    --white: var(--color-white);
   }
-
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-
-  html {
-    scroll-behavior: smooth;
-  }
-
   body {
-    font-family: 'Manrope', sans-serif;
-    color: var(--text-main);
-    background: var(--bg-light);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    font-family: var(--font-sans), sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    background: var(--light-bg);
   }
-}
-
-@layer utilities {
-  .section-padding {
-    padding: 96px 0;
-  }
-
-  .container-custom {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 0 48px;
-  }
-
-  .nav-link {
-    color: var(--text-muted);
-    font-size: 0.875rem;
-    font-weight: 500;
-    letter-spacing: 0.02em;
-    transition: color 0.3s ease;
-    position: relative;
-  }
-
-  .nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 0;
-    height: 1px;
-    background: var(--navy);
-    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .nav-link:hover {
-    color: var(--navy);
-  }
-
-  .nav-link:hover::after {
-    width: 100%;
-  }
-
-  .btn-primary {
-    background: var(--navy);
-    color: #FFFFFF;
-    font-weight: 500;
-    font-size: 0.875rem;
-    letter-spacing: 0.02em;
-    padding: 16px 36px;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-    border: 1px solid var(--navy);
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .btn-primary:hover {
-    background: var(--navy-light);
-    border-color: var(--navy-light);
-    transform: translateY(-2px);
-    border: 1px solid var(--border-subtle);
-  }
-
-  .btn-secondary {
-    background: transparent;
-    color: var(--navy);
-    font-weight: 500;
-    font-size: 0.875rem;
-    letter-spacing: 0.02em;
-    padding: 16px 36px;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-    border: 1px solid var(--border-subtle);
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .btn-secondary:hover {
-    background: var(--bg-gray);
-    border-color: var(--navy);
-    transform: translateY(-2px);
-  }
-
-  .service-card {
-    background: #FFFFFF;
-    border: 1px solid var(--border-subtle);
-    border-radius: 8px;
-    padding: 40px 32px;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
-    border: 1px solid var(--border-subtle);
-  }
-
-  .service-card:hover {
-    transform: translateY(-4px);
-    border-color: var(--navy);
-    border: 1px solid var(--border-subtle);
-  }
-
-  .scrollbar-hide {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-  .scrollbar-hide::-webkit-scrollbar {
-    display: none;
-  }
-}
-
-@media (max-width: 768px) {
-  .container-custom {
-    padding: 0 24px;
-  }
-  .section-padding {
-    padding: 80px 0;
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading), sans-serif;
+    font-weight: 600;
   }
 }

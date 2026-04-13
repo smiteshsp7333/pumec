@@ -1,4 +1,6 @@
-import { Metadata } from 'next';
+import os
+
+code = """import { Metadata } from 'next';
 import Link from 'next/link';
 import { 
   ArrowRight, CheckCircle2, ChevronRight, Building, Globe, 
@@ -423,7 +425,7 @@ export default function HomePage() {
           </p>
           <div className="flex flex-col items-center">
              <Link href="/contact" className="inline-flex items-center bg-[#F57C00] hover:bg-[#E65100] text-white px-10 py-5 rounded-md font-bold text-xl transition-all shadow-xl hover:shadow-2xl hover:-translate-y-2 mb-6">
-                Schedule a consultation today
+                👉 Schedule a consultation today
              </Link>
              <p className="text-[#2FA4A9] font-bold text-lg tracking-wide uppercase">
                 And accelerate your India growth journey
@@ -434,3 +436,8 @@ export default function HomePage() {
     </main>
   );
 }
+"""
+
+with open('c:/Users/smite/OneDrive/Desktop/client1/src/app/page.tsx', 'w', encoding='utf-8') as f:
+    f.write(code)
+print('Done writing homepage page.tsx')

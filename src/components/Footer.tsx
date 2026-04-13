@@ -1,157 +1,141 @@
-"use client";
-
-import { useState } from "react";
+import React from "react";
 import Link from "next/link";
-import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown } from "lucide-react";
-
-const Linkedin = ({ size = 18, strokeWidth = 2 }: { size?: number; strokeWidth?: number }) => (<svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>);
-const Twitter = ({ size = 18, strokeWidth = 2 }: { size?: number; strokeWidth?: number }) => (<svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>);
-const Youtube = ({ size = 18, strokeWidth = 2 }: { size?: number; strokeWidth?: number }) => (<svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round"><path d="M2.5 7.1A1.7 1.7 0 0 1 4.2 5.5h15.6a1.7 1.7 0 0 1 1.7 1.6v9.8a1.7 1.7 0 0 1-1.7 1.6H4.2A1.7 1.7 0 0 1 2.5 16.9V7.1z"/><path d="m9.5 14.5 6-4-6-4v8z"/></svg>);
-
-const faqs = [
-  {
-    question: "What is PUMEC's core consulting mission?",
-    answer: "PUMEC Consultants is dedicated to empowering ambitious organizations with strategic financial audits, striving to make a positive impact in the business trajectories of our clients through precision and deep regulatory expertise."
-  },
-  {
-    question: "How can I partner with your advisory team?",
-    answer: "You can reach out to us via our Contact Options or book a direct consultation online. We typically begin with a discovery call to understand your organization's unique challenges."
-  },
-  {
-    question: "What sectors do you specialize in?",
-    answer: "We carry three decades of trust across multiple sectors, especially focusing on corporate enterprises, international startups, and domestic manufacturing compliant with GST."
-  },
-  {
-    question: "How does the statutory audit process work?",
-    answer: "Our statutory audit process begins with comprehensive risk assessments. We meticulously review financial statements, adhering strictly to the latest national and international compliance frameworks."
-  },
-  {
-    question: "Do you offer dedicated international tax support?",
-    answer: "Yes, our team holds deep regulatory expertise in handling international taxation, transfer pricing, and cross-border financial strategies to significantly reduce compliance friction."
-  }
-];
+import { MapPin, Mail, Phone, ChevronRight } from "lucide-react";
 
 export default function Footer() {
-  const [openFaq, setOpenFaq] = useState<number | null>(0);
-
   return (
-    <footer className="relative bg-[#050505] text-[#f2f2f2] overflow-hidden">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] pointer-events-none md:w-[1200px] max-w-full"
-           style={{ background: "radial-gradient(ellipse at top, rgba(255,255,255,0.05) 0%, rgba(5,5,5,0) 70%)" }} />
-
-      <div className="container-custom px-4 md:px-8 pt-24 pb-12 relative z-10 max-w-6xl mx-auto">
+    <footer className="bg-[#1F3A5F] text-white">
+      {/* Top Main Section */}
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12 border-b border-white/10">
         
-        {/* FAQ Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 mb-32">
-          <div>
-            <span className="inline-block text-white/50 text-[10px] font-bold tracking-[0.2em] uppercase mb-6">
-              FAQ
-            </span>
-            <h2 className="text-4xl md:text-5xl font-serif text-white mb-6 leading-tight">
-              Questions your might<br />love to ask, we have<br />answered
+        {/* Block 1: Firm Overview (Takes up 2 cols) */}
+        <div className="lg:col-span-2 pr-0 lg:pr-8">
+          <Link href="/" className="inline-block mb-6 bg-white p-3 rounded shadow-sm">
+            <h2 className="font-heading font-extrabold text-2xl tracking-tight leading-none mb-1">
+              <span className="text-[#1F3A5F]">P</span>
+              <span className="text-[#2FA4A9]">U</span>
+              <span className="text-[#F57C00]">M</span>
+              <span className="text-[#4A5A6A]">E</span>
+              <span className="text-[#0D1B2A]">C</span>
             </h2>
-            <p className="text-white/50 text-sm font-light leading-relaxed max-w-md">
-              Delve into the Details with Our Frequently Asked Questions Section — Your Comprehensive Guide to Understanding PUMEC Mission, Contributions, and Ways to Get Involved.
+            <div className="flex flex-col">
+               <span className="text-[9px] font-bold text-[#1F3A5F] uppercase tracking-wider leading-tight">Consultants</span>
+               <span className="text-[8px] font-semibold text-[#4A5A6A] leading-tight">Pvt Ltd</span>
+            </div>
+          </Link>
+          <p className="text-gray-300 text-sm leading-relaxed mb-6 font-sans pr-4">
+            International advisory firm specializing in India entry strategy, international taxation, cross-border structuring, transfer pricing, and regulatory advisory.
+            <br className="mb-3" />
+            We support multinational companies and investors in establishing and managing compliant, tax-efficient operations in India.
+          </p>
+          <div className="mt-8 border-t border-white/10 pt-6">
+            <h4 className="text-xs uppercase tracking-widest text-[#2FA4A9] font-bold mb-3">Global Reach</h4>
+            <p className="text-gray-400 text-xs leading-relaxed">
+              Serving clients across:<br/>
+              USA <span className="mx-1 opacity-50">|</span> UK <span className="mx-1 opacity-50">|</span> Europe <span className="mx-1 opacity-50">|</span> UAE <span className="mx-1 opacity-50">|</span> Singapore <span className="mx-1 opacity-50">|</span> Global Markets
             </p>
           </div>
-
-          <div className="flex flex-col">
-            {faqs.map((faq, index) => (
-              <div key={index} className="border-b border-white/20">
-                <button
-                  onClick={() => setOpenFaq(openFaq === index ? null : index)}
-                  className="w-full flex items-center justify-between py-6 text-left"
-                >
-                  <span className={`text-sm font-medium ${openFaq === index ? 'text-white' : 'text-white/80 hover:text-white'}`}>
-                    {faq.question}
-                  </span>
-                  <ChevronDown 
-                    size={16} 
-                    className={`text-white/50 transition-transform duration-300 ${openFaq === index ? 'rotate-180' : ''}`} 
-                  />
-                </button>
-                <AnimatePresence>
-                  {openFaq === index && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3 }}
-                      className="overflow-hidden"
-                    >
-                      <p className="pb-6 text-white/50 text-sm font-light leading-relaxed">
-                        {faq.answer}
-                      </p>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            ))}
-          </div>
         </div>
 
-        {/* Multi-column Links */}
-        <div className="flex flex-col md:flex-row justify-between gap-12 lg:gap-8 mb-20">
+        {/* Block 2: Services */}
+        <div>
+          <h3 className="font-heading font-semibold text-[15px] mb-6 text-white tracking-wide">Services</h3>
+          <ul className="space-y-3 md:space-y-4 text-sm text-gray-300 font-sans">
+            <li><Link href="/services/india-entry" className="hover:text-[#F57C00] transition-colors leading-tight block">India Entry & Investment Advisory</Link></li>
+            <li><Link href="/services/business-setup" className="hover:text-[#F57C00] transition-colors leading-tight block">Business Setup in India</Link></li>
+            <li><Link href="/services/international-tax" className="hover:text-[#F57C00] transition-colors leading-tight block">International Tax Advisory</Link></li>
+            <li><Link href="/services/cross-border" className="hover:text-[#F57C00] transition-colors leading-tight block">Cross-Border Structuring</Link></li>
+            <li><Link href="/services/transfer-pricing" className="hover:text-[#F57C00] transition-colors leading-tight block">Transfer Pricing Advisory</Link></li>
+            <li><Link href="/services/fema-advisory" className="hover:text-[#F57C00] transition-colors leading-tight block">FEMA & RBI Compliance</Link></li>
+            <li><Link href="/services/transaction-advisory" className="hover:text-[#F57C00] transition-colors leading-tight block">Transaction Advisory (M&A Tax)</Link></li>
+          </ul>
+        </div>
+
+        {/* Block 3: Solutions */}
+        <div>
+          <h3 className="font-heading font-semibold text-[15px] mb-6 text-white tracking-wide">Solutions</h3>
+          <ul className="space-y-3 md:space-y-4 text-sm text-gray-300 font-sans">
+            <li><Link href="/solutions/india-entry" className="hover:text-[#F57C00] transition-colors leading-tight block">India Entry Strategy Framework</Link></li>
+            <li><Link href="/solutions/investment-structuring" className="hover:text-[#F57C00] transition-colors leading-tight block">Investment Structuring & FDI Advisory</Link></li>
+            <li><Link href="/solutions/transfer-pricing" className="hover:text-[#F57C00] transition-colors leading-tight block">Transfer Pricing Compliance Framework</Link></li>
+            <li><Link href="/solutions/fema" className="hover:text-[#F57C00] transition-colors leading-tight block">FEMA Regulatory Compliance System</Link></li>
+            <li><Link href="/solutions/cross-border" className="hover:text-[#F57C00] transition-colors leading-tight block">Cross-Border Transaction Structuring</Link></li>
+            <li><Link href="/solutions/tax" className="hover:text-[#F57C00] transition-colors leading-tight block">Tax Due Diligence & Deal Structuring</Link></li>
+          </ul>
+        </div>
+
+        {/* Block 4: Industries & Insights */}
+        <div>
+          <h3 className="font-heading font-semibold text-[15px] mb-6 text-white tracking-wide">Industries</h3>
+          <ul className="space-y-3 text-sm text-gray-300 font-sans mb-8">
+            <li><Link href="/industries/tech" className="hover:text-[#F57C00] transition-colors">Technology & IT Services</Link></li>
+            <li><Link href="/industries/manufacturing" className="hover:text-[#F57C00] transition-colors">Manufacturing</Link></li>
+            <li><Link href="/industries/ecommerce" className="hover:text-[#F57C00] transition-colors">E-commerce & Digital</Link></li>
+            <li><Link href="/industries/professional" className="hover:text-[#F57C00] transition-colors">Professional Services</Link></li>
+            <li><Link href="/industries/investments" className="hover:text-[#F57C00] transition-colors">Investment & Holding Companies</Link></li>
+          </ul>
+
+          <h3 className="font-heading font-semibold text-[15px] mb-5 text-white tracking-wide">Insights</h3>
+          <ul className="space-y-3 text-sm text-gray-300 font-sans mb-5">
+            <li><Link href="/insights/india-entry" className="hover:text-[#2FA4A9] transition-colors">India Entry Strategy</Link></li>
+            <li><Link href="/insights/international-tax" className="hover:text-[#2FA4A9] transition-colors">International Tax</Link></li>
+            <li><Link href="/insights/transfer-pricing" className="hover:text-[#2FA4A9] transition-colors">Transfer Pricing</Link></li>
+          </ul>
+          <Link href="/insights" className="text-[#F57C00] hover:text-white transition-colors text-[13px] font-bold uppercase tracking-wider flex items-center group">
+            View All Insights <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+          </Link>
+        </div>
+
+        {/* Block 5: Contact */}
+        <div className="bg-[#152B4A] -mt-6 p-6 rounded-b border-t-4 border-[#F57C00] shadow-lg">
+          <h3 className="font-heading font-semibold text-[15px] mb-6 text-[#2FA4A9] tracking-wide">Contact Us</h3>
           
-          {/* Logo & Social Setup */}
-          <div className="min-w-[240px]">
-            <Link href="/" className="inline-block mb-6">
-              <Image src="/pu_logo.png" alt="PUMEC Logo" width={140} height={40} unoptimized className="h-8 w-auto" />
-            </Link>
-            <div className="flex items-center gap-4 mt-4">
-               <a href="#" className="w-8 h-8 flex items-center justify-center text-white/50 hover:text-white transition-colors">
-                 <Linkedin size={16} strokeWidth={1.5} />
-               </a>
-               <a href="#" className="w-8 h-8 flex items-center justify-center text-white/50 hover:text-white transition-colors">
-                 <Twitter size={16} strokeWidth={1.5} />
-               </a>
-               <a href="#" className="w-8 h-8 flex items-center justify-center text-white/50 hover:text-white transition-colors">
-                 <Youtube size={16} strokeWidth={1.5} />
-               </a>
-            </div>
+          <ul className="space-y-5 text-sm font-sans mb-8">
+            <li className="flex items-start">
+              <MapPin className="w-5 h-5 text-[#F57C00] mr-3 mt-0.5 shrink-0" />
+              <span className="text-gray-300 leading-snug">India</span>
+            </li>
+            <li className="flex items-center">
+              <Mail className="w-5 h-5 text-[#F57C00] mr-3 shrink-0" />
+              <a href="mailto:info@pumec.com" className="text-gray-300 hover:text-white transition-colors">info@pumec.com</a>
+            </li>
+            <li className="flex items-center">
+              <Phone className="w-5 h-5 text-[#F57C00] mr-3 shrink-0" />
+              <a href="tel:+91XXXXXXXXXX" className="text-gray-300 hover:text-white transition-colors">+91-XXXXXXXXXX</a>
+            </li>
+          </ul>
+          
+           <Link href="/contact" className="w-full bg-[#F57C00] hover:bg-[#E65100] text-white px-5 py-3 rounded text-[14px] font-semibold transition-all flex items-center justify-between shadow-md hover:shadow-lg">
+              Speak to a Partner 
+              <span className="text-lg leading-none translate-y-[1px]">→</span>
+           </Link>
+        </div>
+      </div>
+
+      {/* Bottom Bar: Legal / Compliance */}
+      <div className="bg-[#0D1B2A]">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 py-5 flex flex-col md:flex-row justify-between items-center text-xs text-gray-400 font-sans gap-4 md:gap-0">
+          <div className="flex space-x-6">
+            <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link href="/terms-of-use" className="hover:text-white transition-colors">Terms of Use</Link>
+            <Link href="/disclaimer" className="hover:text-white transition-colors">Disclaimer</Link>
           </div>
-
-          <div className="flex flex-wrap md:justify-end gap-16 lg:gap-32 w-full">
-            {/* Website Links */}
-            <div>
-              <h4 className="text-white font-medium mb-6 text-sm">Website</h4>
-              <ul className="space-y-4 text-xs font-medium tracking-wide">
-                <li><Link href="/services" className="text-white/50 hover:text-white transition-colors block">Services</Link></li>
-                <li><Link href="/insights" className="text-white/50 hover:text-white transition-colors block">Insights</Link></li>
-                <li><Link href="/careers" className="text-white/50 hover:text-white transition-colors block">Team</Link></li>
-                <li><Link href="/contact" className="text-white/50 hover:text-white transition-colors block">Pricing</Link></li>
-              </ul>
-            </div>
-
-            {/* Company Links */}
-            <div>
-              <h4 className="text-white font-medium mb-6 text-sm">Company</h4>
-              <ul className="space-y-4 text-xs font-medium tracking-wide">
-                <li><Link href="/contact" className="text-white/50 hover:text-white transition-colors block">Contact</Link></li>
-                <li><Link href="/about" className="text-white/50 hover:text-white transition-colors block">About</Link></li>
-                <li><Link href="#" className="text-white/50 hover:text-white transition-colors block">FAQ</Link></li>
-                <li><Link href="/careers" className="text-white/50 hover:text-white transition-colors block">Career</Link></li>
-              </ul>
-            </div>
-
-            {/* Others */}
-            <div>
-              <h4 className="text-white font-medium mb-6 text-sm">Others</h4>
-              <ul className="space-y-4 text-xs font-medium tracking-wide">
-                <li><Link href="#" className="text-white/50 hover:text-white transition-colors block">Terms of service</Link></li>
-                <li><Link href="#" className="text-white/50 hover:text-white transition-colors block">Privacy</Link></li>
-                <li><Link href="#" className="text-white/50 hover:text-white transition-colors block">404 page</Link></li>
-              </ul>
-            </div>
+          <div className="text-center md:text-right text-[#4A5A6A] hidden md:block">
+            &copy; {new Date().getFullYear()} PUMEC Consultants Pvt Ltd. All rights reserved.
           </div>
         </div>
-
-        {/* Bottom Bar */}
-        <div className="pt-8 border-t border-white/20 flex items-center justify-center text-[11px] font-medium tracking-widest text-white/40 uppercase text-center">
-           <p>(c) {new Date().getFullYear()} PUMEC Consultants. All rights reserved.</p>
-        </div>
+      </div>
+      
+      {/* Final Tagline Strip */}
+      <div className="bg-gradient-to-r from-[#2FA4A9] via-[#F57C00] to-[#1F3A5F]">
+         <div className="py-[1px] opacity-80" />
+      </div>
+      <div className="bg-[#09131e]">
+         <div className="max-w-7xl mx-auto px-6 lg:px-12 py-3 text-center">
+            <p className="text-[10px] sm:text-xs text-gray-500 uppercase tracking-[0.15em] font-semibold">
+              India Entry <span className="mx-2 opacity-50">|</span> International Tax <span className="mx-2 opacity-50">|</span> Cross-Border Structuring <span className="mx-2 opacity-50">|</span> Transfer Pricing <span className="mx-2 opacity-50">|</span> Regulatory Advisory
+            </p>
+         </div>
       </div>
     </footer>
   );
