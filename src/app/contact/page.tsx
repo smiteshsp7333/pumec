@@ -1,6 +1,6 @@
-import AnimatedSection from '../../components/AnimatedSection';
 "use client";
 
+import AnimatedSection from '../../components/AnimatedSection';
 import { useState } from "react";
 import { motion } from "framer-motion";
 

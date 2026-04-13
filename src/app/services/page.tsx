@@ -1,6 +1,6 @@
-import AnimatedSection from '../../components/AnimatedSection';
 "use client";
 
+import AnimatedSection from '../../components/AnimatedSection';
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { 
