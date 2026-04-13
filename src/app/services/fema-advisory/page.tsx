@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, CheckCircle2, ChevronRight, Shield, FileSignature, Landmark, RefreshCcw, FileWarning } from 'lucide-react';
+import AnimatedSection from '@/components/AnimatedSection';
 
 export const metadata: Metadata = {
   title: "FEMA & Regulatory Compliance Services in India | RBI, FDI & Cross-Border Compliance Experts | PUMEC Consultants Pvt Ltd",
@@ -60,7 +61,7 @@ export default function FEMAAdvisoryPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
 
       {/* Hero Section */}
-      <section className="bg-[#1F3A5F] text-white pt-24 pb-20 px-6 lg:px-12 relative overflow-hidden">
+      <AnimatedSection className="bg-[#1F3A5F] text-white pt-24 pb-20 px-6 lg:px-12 relative overflow-hidden">
         <div className="max-w-4xl mx-auto relative z-10 text-center">
           <span className="text-[#F57C00] font-bold tracking-widest uppercase text-sm mb-4 block">FEMA & Regulatory Compliance</span>
           <h1 className="text-4xl md:text-5xl font-heading font-bold leading-tight mb-6">
@@ -70,10 +71,10 @@ export default function FEMAAdvisoryPage() {
             End-to-end FEMA advisory, RBI compliance, and cross-border regulatory solutions for multinational companies
           </p>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Introduction / Market Context */}
-      <section className="py-20 px-6 lg:px-12 bg-white">
+      <AnimatedSection className="py-20 px-6 lg:px-12 bg-white">
         <div className="max-w-4xl mx-auto text-gray-700 font-sans leading-relaxed space-y-6">
           <div className="text-center mb-10">
             <h2 className="text-3xl font-heading font-bold text-[#1F3A5F] mb-4 uppercase">Introduction / Market Context</h2>
@@ -89,10 +90,10 @@ export default function FEMAAdvisoryPage() {
             At PUMEC Consultants Pvt Ltd, we provide specialized FEMA & regulatory compliance services in India, enabling businesses to navigate complex RBI compliance requirements, manage FDI compliance in India, and execute cross-border transactions with confidence.
           </p>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Key Challenges */}
-      <section className="py-20 px-6 lg:px-12 bg-[#F4F6F8]">
+      <AnimatedSection className="py-20 px-6 lg:px-12 bg-[#F4F6F8]">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-heading font-bold text-[#1F3A5F] mb-4 uppercase">Key Challenges in FEMA & Regulatory Compliance</h2>
@@ -135,10 +136,10 @@ export default function FEMAAdvisoryPage() {
             ))}
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Comprehensive Solutions */}
-      <section className="py-24 px-6 lg:px-12 bg-white">
+      <AnimatedSection className="py-24 px-6 lg:px-12 bg-white">
         <div className="max-w-5xl mx-auto">
           <div className="mb-16 md:text-center">
             <span className="text-[#2FA4A9] font-bold tracking-widest uppercase text-sm mb-2 block">Our Expertise</span>
@@ -213,10 +214,10 @@ export default function FEMAAdvisoryPage() {
             ))}
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Why Choose Us */}
-      <section className="py-20 px-6 lg:px-12 bg-[#F4F6F8]">
+      <AnimatedSection className="py-20 px-6 lg:px-12 bg-[#F4F6F8]">
         <div className="max-w-4xl mx-auto">
            <div className="text-center mb-12">
             <h2 className="text-3xl font-heading font-bold text-[#1F3A5F] mb-4 uppercase">Why Choose Our FEMA & Regulatory Advisory</h2>
@@ -248,10 +249,10 @@ export default function FEMAAdvisoryPage() {
             ))}
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Case Study */}
-      <section className="py-20 px-6 lg:px-12 bg-white">
+      <AnimatedSection className="py-20 px-6 lg:px-12 bg-white">
         <div className="max-w-4xl mx-auto">
           <div className="bg-[#0D1B2A] rounded-2xl p-10 lg:p-14 text-white shadow-2xl relative overflow-hidden">
              
@@ -295,10 +296,10 @@ export default function FEMAAdvisoryPage() {
              </div>
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Internal Linking Suggestions */}
-      <section className="py-12 bg-white border-t border-gray-100">
+      <AnimatedSection className="py-12 bg-white border-t border-gray-100">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <p className="text-[#4A5A6A] font-semibold mb-6">Explore more about our services and insights:</p>
           <div className="flex flex-wrap justify-center gap-4 text-sm">
@@ -313,10 +314,10 @@ export default function FEMAAdvisoryPage() {
             <Link href="/insights/rbi-approval-process-guide" className="text-[#1F3A5F] hover:text-[#F57C00] underline underline-offset-4 decoration-[#2FA4A9] transition-colors">Insights: RBI Approval Process Guide</Link>
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* CTA Section */}
-      <section className="bg-gradient-to-br from-[#1F3A5F] to-[#0D1B2A] text-white py-24 px-6 lg:px-12 text-center">
+      <AnimatedSection className="bg-gradient-to-br from-[#1F3A5F] to-[#0D1B2A] text-white py-24 px-6 lg:px-12 text-center">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-4xl font-heading font-bold mb-6 text-white">Ensure complete FEMA and regulatory compliance in India.</h2>
           <p className="text-xl text-gray-300 mb-10 font-sans">
@@ -326,7 +327,7 @@ export default function FEMAAdvisoryPage() {
             Connect With Our Experts <ArrowRight className="ml-3 w-6 h-6" />
           </Link>
         </div>
-      </section>
+      </AnimatedSection>
     </main>
   );
 }

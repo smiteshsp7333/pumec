@@ -5,12 +5,13 @@ import { motion } from "framer-motion";
 import { Search, Calendar, ChevronRight, User } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import AnimatedSection from '@/components/AnimatedSection';
 
 export default function InsightsPage() {
   return (
     <main className="min-h-screen pt-32 pb-24 bg-[#fcfcfc] text-[#050505] relative overflow-hidden">
       <div className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[800px] h-[500px] opacity-10 pointer-events-none" style={{ background: "radial-gradient(circle, rgba(255,255,255,0.15) 0%, rgba(5,5,5,0) 70%)" }} />
-      <section className="container-custom px-4 md:px-8 relative z-10">
+      <AnimatedSection className="container-custom px-4 md:px-8 relative z-10">
         <div className="max-w-4xl mb-16">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <span className="inline-block px-4 py-1.5 rounded-full border border-black/10 bg-black/5 text-xs font-semibold tracking-widest uppercase mb-6">INSIGHTS & NEWS</span>
@@ -47,7 +48,7 @@ export default function InsightsPage() {
             </motion.div>
           ))}
         </div>
-      </section>
+      </AnimatedSection>
     </main>
   );
 }

@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { 
+import AnimatedSection from '@/components/AnimatedSection';
   ShieldCheck, 
   Calculator, 
   Globe2, 
@@ -66,7 +67,7 @@ export default function ServicesPage() {
   return (
     <main className="min-h-screen pt-32 pb-24 bg-[#fcfcfc]">
       {/* Header */}
-      <section className="container-custom mb-20 text-center">
+      <AnimatedSection className="container-custom mb-20 text-center">
         <motion.div
            initial={{ opacity: 0, y: 30 }}
            animate={{ opacity: 1, y: 0 }}
@@ -82,10 +83,10 @@ export default function ServicesPage() {
              From startup compliance to multinational tax strategy — we provide the rigorous architecture your business needs to excel in the Indian market.
           </p>
         </motion.div>
-      </section>
+      </AnimatedSection>
 
       {/* Services Grid */}
-      <section className="container-custom">
+      <AnimatedSection className="container-custom">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
           {services.map((s, i) => (
             <motion.div
@@ -128,10 +129,10 @@ export default function ServicesPage() {
             </motion.div>
           ))}
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Trust Banner */}
-      <section className="container-custom mt-24">
+      <AnimatedSection className="container-custom mt-24">
          <div className="bg-black/[0.02]/[0.02]/[0.03] rounded-[3rem] p-12 lg:p-20 relative overflow-hidden text-center">
             {/* Background pattern */}
             <div 
@@ -153,7 +154,7 @@ export default function ServicesPage() {
               <ShieldCheck size={20} />
             </Link>
          </div>
-      </section>
+      </AnimatedSection>
     </main>
   );
 }

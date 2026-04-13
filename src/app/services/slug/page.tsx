@@ -4,6 +4,7 @@ import { use } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { 
+import AnimatedSection from '@/components/AnimatedSection';
   ChevronLeft, 
   ShieldCheck, 
   ArrowRight, 
@@ -100,7 +101,7 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
         </div>
 
         {/* Core Offerings */}
-        <section className="mb-32">
+        <AnimatedSection className="mb-32">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-5xl font-bold text-slate-900 tracking-tight mb-4">Core Offerings</h2>
             <div className="h-1.5 w-24 bg-accent-blue mx-auto rounded-full" />
@@ -126,10 +127,10 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
               </motion.div>
             ))}
           </div>
-        </section>
+        </AnimatedSection>
 
         {/* Detailed Description */}
-        <section className="bg-navy rounded-[3rem] p-12 lg:p-24 text-white overflow-hidden relative mb-32">
+        <AnimatedSection className="bg-navy rounded-[3rem] p-12 lg:p-24 text-white overflow-hidden relative mb-32">
            <div className="max-w-4xl mx-auto relative z-10">
               <h2 className="text-3xl lg:text-5xl font-bold mb-10 leading-tight">Driving Transparency in a <br /> Volatile Economy.</h2>
               <p className="text-white/80 text-lg lg:text-xl leading-relaxed mb-12 italic">
@@ -154,10 +155,10 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
            </div>
            {/* Abstract visual */}
            <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent-blue/20 blur-[120px] rounded-full translate-x-1/2 translate-y-1/2" />
-        </section>
+        </AnimatedSection>
 
         {/* FAQ Section Placeholder */}
-        <section className="max-w-3xl mx-auto">
+        <AnimatedSection className="max-w-3xl mx-auto">
           <h2 className="text-3xl font-bold text-slate-900 mb-12 text-center underline decoration-accent-blue decoration-4 underline-offset-8">Common Inquiries</h2>
           <div className="space-y-6">
             {service.faqs.map((faq) => (
@@ -167,7 +168,7 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
               </div>
             ))}
           </div>
-        </section>
+        </AnimatedSection>
       </div>
     </main>
   );

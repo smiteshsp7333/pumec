@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { 
+import AnimatedSection from '@/components/AnimatedSection';
   ArrowRight, CheckCircle2, ChevronRight, Target, Compass, 
   Briefcase, Lightbulb, Users, Factory, Award, Building, Globe, Scale, LayoutGrid
 } from 'lucide-react';
@@ -43,7 +44,7 @@ export default function AboutPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutPageSchema) }} />
 
       {/* Hero Section */}
-      <section className="bg-[#1F3A5F] text-white pt-24 pb-20 px-6 lg:px-12 relative overflow-hidden">
+      <AnimatedSection className="bg-[#1F3A5F] text-white pt-24 pb-20 px-6 lg:px-12 relative overflow-hidden">
         {/* Decorative elements */}
         <div className="absolute top-0 right-0 transform translate-x-1/3 -translate-y-1/4 opacity-20">
           <div className="w-80 h-80 bg-[#F57C00] rounded-full blur-3xl"></div>
@@ -58,10 +59,10 @@ export default function AboutPage() {
             Leading Business Consulting Firm in India
           </p>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Introduction / Overview */}
-      <section className="py-20 px-6 lg:px-12 bg-white">
+      <AnimatedSection className="py-20 px-6 lg:px-12 bg-white">
         <div className="max-w-4xl mx-auto text-gray-700 font-sans leading-relaxed space-y-6">
           <div className="text-center mb-10">
             <h2 className="text-3xl font-heading font-bold text-[#1F3A5F] mb-4 uppercase">
@@ -76,10 +77,10 @@ export default function AboutPage() {
             With a strong focus on cross-border advisory in India and India market entry consulting, we help organizations navigate complex regulatory frameworks while ensuring compliance, efficiency, and long-term growth.
           </p>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Vision & Mission */}
-      <section className="py-20 px-6 lg:px-12 bg-[#F4F6F8]">
+      <AnimatedSection className="py-20 px-6 lg:px-12 bg-[#F4F6F8]">
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
           {/* Vision */}
           <div className="bg-white p-10 rounded-2xl shadow-sm border border-gray-100 hover:border-[#1F3A5F] transition-all hover:shadow-lg group relative overflow-hidden">
@@ -119,10 +120,10 @@ export default function AboutPage() {
             </div>
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Core Expertise */}
-      <section className="py-24 px-6 lg:px-12 bg-white">
+      <AnimatedSection className="py-24 px-6 lg:px-12 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <span className="text-[#2FA4A9] font-bold tracking-widest uppercase text-sm mb-2 block">What We Do</span>
@@ -169,10 +170,10 @@ export default function AboutPage() {
             ))}
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Our Approach */}
-      <section className="py-20 px-6 lg:px-12 bg-[#0D1B2A] text-white">
+      <AnimatedSection className="py-20 px-6 lg:px-12 bg-[#0D1B2A] text-white">
         <div className="max-w-5xl mx-auto flex flex-col lg:flex-row items-center gap-12">
           <div className="lg:w-1/2">
              <span className="text-[#2FA4A9] font-bold tracking-widest uppercase text-sm mb-2 block">Methodology</span>
@@ -201,10 +202,10 @@ export default function AboutPage() {
             </div>
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Why Choose Us & Our Clients */}
-      <section className="py-24 px-6 lg:px-12 bg-white">
+      <AnimatedSection className="py-24 px-6 lg:px-12 bg-white">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* Why Choose Us */}
           <div>
@@ -265,10 +266,10 @@ export default function AboutPage() {
             </div>
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Industries We Serve */}
-      <section className="py-20 px-6 lg:px-12 bg-[#F4F6F8]">
+      <AnimatedSection className="py-20 px-6 lg:px-12 bg-[#F4F6F8]">
         <div className="max-w-4xl mx-auto text-center">
            <h2 className="text-3xl font-heading font-bold text-[#1F3A5F] uppercase mb-4">Industries We Serve</h2>
            <p className="text-gray-600 text-lg mb-8">We provide business consulting services in India across key sectors:</p>
@@ -288,10 +289,10 @@ export default function AboutPage() {
               ))}
            </div>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Commitment to Excellence */}
-      <section className="py-20 px-6 lg:px-12 bg-white">
+      <AnimatedSection className="py-20 px-6 lg:px-12 bg-white">
         <div className="max-w-4xl mx-auto text-center">
            <h2 className="text-3xl font-heading font-bold text-[#1F3A5F] uppercase mb-6">Our Commitment to Excellence</h2>
            <div className="w-16 h-1 bg-[#2FA4A9] mx-auto rounded mb-8"></div>
@@ -299,10 +300,10 @@ export default function AboutPage() {
              At <span className="font-bold text-[#1F3A5F]">PUMEC Consultants Pvt Ltd</span>, we are committed to delivering high-quality professional services in India with integrity, precision, and a client-centric approach. Our goal is to build long-term relationships by providing reliable consulting services in India that drive measurable results.
            </p>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Internal Linking / SEO Silo */}
-      <section className="py-12 bg-white border-t border-gray-100">
+      <AnimatedSection className="py-12 bg-white border-t border-gray-100">
         <div className="max-w-5xl mx-auto px-6 text-center">
           <p className="text-[#4A5A6A] font-semibold mb-6 uppercase tracking-wider text-sm">Explore Our Consulting Frameworks:</p>
           <div className="flex flex-wrap justify-center gap-4 text-sm md:text-base">
@@ -315,10 +316,10 @@ export default function AboutPage() {
             <Link href="/services/transfer-pricing" className="text-[#1F3A5F] hover:text-[#F57C00] font-medium underline underline-offset-4 decoration-[#2FA4A9] transition-colors">Transfer Pricing Compliance</Link>
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Call to Action Section */}
-      <section className="bg-gradient-to-br from-[#1F3A5F] to-[#0D1B2A] text-white py-24 px-6 lg:px-12 text-center">
+      <AnimatedSection className="bg-gradient-to-br from-[#1F3A5F] to-[#0D1B2A] text-white py-24 px-6 lg:px-12 text-center">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6 text-white leading-tight">
             Looking for a trusted business consulting firm in India?
@@ -335,7 +336,7 @@ export default function AboutPage() {
              </p>
           </div>
         </div>
-      </section>
+      </AnimatedSection>
     </main>
   );
 }

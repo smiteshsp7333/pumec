@@ -1,9 +1,10 @@
-'use client';
+import os
+
+code = """'use client';
 
 import { useState } from 'react';
 import { Mail, Phone, MapPin, Globe, ArrowRight, Building, CheckCircle2, AlertCircle } from 'lucide-react';
 import Link from 'next/link';
-import AnimatedSection from '@/components/AnimatedSection';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -53,7 +54,7 @@ export default function ContactPage() {
   return (
     <main className="flex-1 bg-[#F4F6F8]">
       {/* Hero Section */}
-      <AnimatedSection className="bg-[#1F3A5F] text-white pt-24 pb-20 px-6 lg:px-12 relative overflow-hidden">
+      <section className="bg-[#1F3A5F] text-white pt-24 pb-20 px-6 lg:px-12 relative overflow-hidden">
         <div className="absolute top-0 right-0 transform translate-x-1/4 -translate-y-1/4 opacity-20">
           <div className="w-96 h-96 bg-[#F57C00] rounded-full blur-3xl"></div>
         </div>
@@ -67,10 +68,10 @@ export default function ContactPage() {
             Partner with our experts for tax advisory, corporate compliance, and strategic business consulting in India.
           </p>
         </div>
-      </AnimatedSection>
+      </section>
 
       {/* Main Content Area */}
-      <AnimatedSection className="py-20 px-6 lg:px-12 -mt-10">
+      <section className="py-20 px-6 lg:px-12 -mt-10">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 relative z-20">
           
           {/* Left Panel: Contact Information */}
@@ -249,7 +250,13 @@ export default function ContactPage() {
             )}
           </div>
         </div>
-      </AnimatedSection>
+      </section>
     </main>
   );
 }
+"""
+
+with open('c:/Users/smite/OneDrive/Desktop/client1/src/app/contact/page.tsx', 'w', encoding='utf-8') as f:
+    f.write(code)
+
+print("Contact page React component generated safely.")

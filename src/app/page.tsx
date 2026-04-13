@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { 
+import AnimatedSection from '@/components/AnimatedSection';
   ArrowRight, CheckCircle2, ChevronRight, Building, Globe, 
   ArrowRightLeft, Shield, Briefcase, Scale, Laptop, Landmark, 
   Factory, HeartPulse, ShoppingCart, Star, Zap, Users, ShieldCheck, MapPin
@@ -75,7 +76,7 @@ export default function HomePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       {/* Hero Section */}
-      <section className="bg-[#1F3A5F] text-white pt-28 pb-24 px-6 lg:px-12 relative overflow-hidden">
+      <AnimatedSection className="bg-[#1F3A5F] text-white pt-28 pb-24 px-6 lg:px-12 relative overflow-hidden">
         {/* Abstract shapes for premium consulting look */}
         <div className="absolute top-0 right-0 transform translate-x-1/4 -translate-y-1/4 opacity-10">
           <div className="w-96 h-96 bg-[#F57C00] rounded-full blur-3xl"></div>
@@ -103,10 +104,10 @@ export default function HomePage() {
             </Link>
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Intro / About Section */}
-      <section className="py-20 px-6 lg:px-12 bg-white">
+      <AnimatedSection className="py-20 px-6 lg:px-12 bg-white">
         <div className="max-w-4xl mx-auto text-gray-700 font-sans leading-relaxed space-y-6 text-center md:text-left">
           <p className="text-lg md:text-xl font-medium text-[#1F3A5F]">
             PUMEC Consultants Pvt Ltd is a premier provider of business consulting services in India, offering specialized expertise in tax advisory, international tax, FEMA compliance, transfer pricing, and corporate advisory services in India. We support multinational companies, investors, and growing enterprises with strategic, regulatory, and operational solutions.
@@ -116,10 +117,10 @@ export default function HomePage() {
             As a trusted partner for India market entry consulting and cross-border advisory services, we help businesses navigate India’s complex regulatory environment while optimizing performance, compliance, and growth.
           </p>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Core Services Grid */}
-      <section id="services" className="py-24 px-6 lg:px-12 bg-[#F4F6F8]">
+      <AnimatedSection id="services" className="py-24 px-6 lg:px-12 bg-[#F4F6F8]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <span className="text-[#2FA4A9] font-bold tracking-widest uppercase text-sm mb-2 block">Our Expertise</span>
@@ -287,10 +288,10 @@ export default function HomePage() {
 
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Why Choose Us */}
-      <section className="py-24 px-6 lg:px-12 bg-white">
+      <AnimatedSection className="py-24 px-6 lg:px-12 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-[#1F3A5F] uppercase">Why Choose PUMEC Consultants Pvt Ltd</h2>
@@ -327,10 +328,10 @@ export default function HomePage() {
             ))}
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Industries We Serve */}
-      <section className="py-20 px-6 lg:px-12 bg-[#1F3A5F] text-white">
+      <AnimatedSection className="py-20 px-6 lg:px-12 bg-[#1F3A5F] text-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-white uppercase">Industries We Serve</h2>
@@ -355,10 +356,10 @@ export default function HomePage() {
             ))}
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* FAQ Section */}
-      <section className="py-24 px-6 lg:px-12 bg-[#F4F6F8]">
+      <AnimatedSection className="py-24 px-6 lg:px-12 bg-[#F4F6F8]">
         <div className="max-w-4xl mx-auto">
            <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-[#1F3A5F] uppercase">Frequently Asked Questions</h2>
@@ -390,10 +391,10 @@ export default function HomePage() {
             ))}
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Internal Linking Area */}
-      <section className="py-12 bg-white border-t border-b border-gray-100">
+      <AnimatedSection className="py-12 bg-white border-t border-b border-gray-100">
         <div className="max-w-5xl mx-auto px-6 text-center">
           <p className="text-[#4A5A6A] font-semibold mb-6 uppercase tracking-wider text-sm">Explore Our Core Services Areas:</p>
           <div className="flex flex-wrap justify-center gap-4 text-sm md:text-base">
@@ -410,10 +411,10 @@ export default function HomePage() {
             <Link href="/services/litigation-dispute" className="text-[#1F3A5F] hover:text-[#F57C00] font-medium underline underline-offset-4 decoration-[#2FA4A9] transition-colors">Litigation & Dispute Resolution</Link>
           </div>
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* Call to Action Section */}
-      <section className="bg-gradient-to-br from-[#1F3A5F] to-[#0D1B2A] text-white py-24 px-6 lg:px-12 text-center">
+      <AnimatedSection className="bg-gradient-to-br from-[#1F3A5F] to-[#0D1B2A] text-white py-24 px-6 lg:px-12 text-center">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6 text-white leading-tight">
             Looking for expert business consulting services in India?
@@ -430,7 +431,7 @@ export default function HomePage() {
              </p>
           </div>
         </div>
-      </section>
+      </AnimatedSection>
     </main>
   );
 }
