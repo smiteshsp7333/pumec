@@ -9,6 +9,9 @@
   --color-white: #FFFFFF;
 }
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
   :root {
     --primary-blue: var(--color-primary-blue);
     --secondary-gray: var(--color-secondary-gray);
