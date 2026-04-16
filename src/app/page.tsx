@@ -1,6 +1,7 @@
 import AnimatedSection from '../components/AnimatedSection';
 import { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { 
   ArrowRight, CheckCircle2, ChevronRight, Building, Globe, 
   ArrowRightLeft, Shield, Briefcase, Scale, Laptop, Landmark, 
@@ -77,12 +78,18 @@ export default function HomePage() {
 
       {/* Hero Section */}
       <AnimatedSection className="bg-[#1F3A5F] text-white pt-32 pb-28 px-6 lg:px-12 relative overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <Image src="/photo-1460925895917-afdab827c52f.avif" alt="Business Consulting in India" fill className="object-cover opacity-30 mix-blend-luminosity" priority />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#1F3A5F] via-[#1F3A5F]/95 to-[#1F3A5F]/80"></div>
+        </div>
+
         {/* Abstract shapes for premium consulting look */}
-        <div className="absolute top-0 right-0 w-full h-full bg-[url('/grid-pattern.svg')] opacity-[0.03] pointer-events-none mix-blend-overlay"></div>
-        <div className="absolute top-0 right-0 transform translate-x-1/4 -translate-y-1/4 opacity-10">
+        <div className="absolute top-0 right-0 w-full h-full bg-[url('/grid-pattern.svg')] opacity-[0.03] pointer-events-none mix-blend-overlay z-0"></div>
+        <div className="absolute top-0 right-0 transform translate-x-1/4 -translate-y-1/4 opacity-20 z-0">
           <div className="w-[500px] h-[500px] bg-[#F57C00] rounded-full blur-[100px]"></div>
         </div>
-        <div className="absolute bottom-0 left-0 transform -translate-x-1/4 translate-y-1/4 opacity-10">
+        <div className="absolute bottom-0 left-0 transform -translate-x-1/4 translate-y-1/4 opacity-20 z-0">
           <div className="w-[600px] h-[600px] bg-[#2FA4A9] rounded-full blur-[120px]"></div>
         </div>
         
@@ -361,9 +368,15 @@ export default function HomePage() {
 
       {/* Industries We Serve */}
       <AnimatedSection className="py-32 px-6 lg:px-12 bg-[#09131E] text-white relative overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <Image src="/photo-1554224155-6726b3ff858f.avif" alt="Industries We Serve" fill className="object-cover opacity-20 mix-blend-luminosity" />
+          <div className="absolute inset-0 bg-[#09131E]/90 backdrop-blur-[2px]"></div>
+        </div>
+
         {/* Abstract background */}
-        <div className="absolute top-0 right-0 w-full h-full bg-[url('/grid-pattern.svg')] opacity-[0.02] pointer-events-none"></div>
-        <div className="absolute right-0 bottom-0 w-[500px] h-[500px] bg-[#1F3A5F] rounded-full blur-[100px] opacity-40 translate-x-1/3 translate-y-1/3 pointer-events-none"></div>
+        <div className="absolute top-0 right-0 w-full h-full bg-[url('/grid-pattern.svg')] opacity-[0.03] pointer-events-none z-0"></div>
+        <div className="absolute right-0 bottom-0 w-[500px] h-[500px] bg-[#1F3A5F] rounded-full blur-[100px] opacity-50 translate-x-1/3 translate-y-1/3 pointer-events-none z-0"></div>
 
         <div className="max-w-[1400px] mx-auto relative z-10">
           <div className="flex flex-col flex-wrap md:flex-row md:items-end justify-between font-heading mb-20 gap-8 border-b-2 border-white/5 pb-12">
@@ -459,9 +472,15 @@ export default function HomePage() {
 
       {/* Call to Action Section */}
       <AnimatedSection className="bg-[#1F3A5F] text-white py-32 px-6 lg:px-12 text-center relative overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <Image src="/photo-1507679799987-c73779587ccf.avif" alt="Partner with PUMEC" fill className="object-cover opacity-40 mix-blend-overlay" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#1F3A5F] via-[#1F3A5F]/90 to-[#1F3A5F]/80"></div>
+        </div>
+
         {/* Dynamic Background */}
-        <div className="absolute w-[800px] h-[800px] bg-[#2FA4A9] rounded-full blur-[150px] opacity-20 -top-40 -left-40 pointer-events-none mix-blend-screen"></div>
-        <div className="absolute w-[800px] h-[800px] bg-[#F57C00] rounded-full blur-[150px] opacity-10 -bottom-40 -right-40 pointer-events-none mix-blend-screen"></div>
+        <div className="absolute w-[800px] h-[800px] bg-[#2FA4A9] rounded-full blur-[150px] opacity-30 -top-40 -left-40 pointer-events-none mix-blend-screen z-0"></div>
+        <div className="absolute w-[800px] h-[800px] bg-[#F57C00] rounded-full blur-[150px] opacity-20 -bottom-40 -right-40 pointer-events-none mix-blend-screen z-0"></div>
         
         <div className="max-w-4xl mx-auto relative z-10">
           <span className="text-[#F57C00] font-bold tracking-[0.2em] uppercase text-[11px] mb-6 block">Ready to Scale?</span>
