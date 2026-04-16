@@ -19,11 +19,36 @@ const openSans = Open_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "PUMEC Consultants Pvt Ltd | India Entry & Tax Advisory",
+  metadataBase: new URL("https://pumec.com"),
+  title: {
+    default: "PUMEC | Leading Business & Tax Consulting Firm in India",
+    template: "%s | PUMEC Consultants",
+  },
   description:
-    "International advisory firm specializing in India entry strategy, international taxation, cross-border structuring, transfer pricing, and regulatory advisory.",
-  keywords:
-    "India entry strategy, international tax advisory, cross-border structuring, transfer pricing, FEMA advisory",
+    "PUMEC Consultants Pvt Ltd is India’s premier advisory firm offering expert solutions in international tax, transfer pricing, FEMA compliance, and India market entry.",
+  keywords: [
+    "India market entry strategy",
+    "international tax advisory India",
+    "cross-border structuring",
+    "transfer pricing compliance India",
+    "FEMA regulatory advisory",
+    "business setup in India",
+  ].join(", "),
+  authors: [{ name: "PUMEC Consultants Pvt Ltd" }],
+  openGraph: {
+    title: "PUMEC | Leading Business & Tax Consulting Firm in India",
+    description: "India’s premier advisory firm offering expert solutions in international tax, transfer pricing, and India market entry.",
+    url: "https://pumec.com",
+    siteName: "PUMEC Consultants",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "PUMEC Consultants Logo" }],
+    locale: "en_IN",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PUMEC | Leading Business & Tax Consulting Firm in India",
+  },
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({
@@ -31,8 +56,24 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Schema.org Structured Data
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Consulting",
+    "name": "PUMEC Consultants Pvt Ltd",
+    "url": "https://pumec.com",
+    "logo": "https://pumec.com/logo.png",
+    "description": "Leading business consulting firm in India offering tax, FEMA, transfer pricing, and corporate advisory services.",
+  };
+
   return (
     <html lang="en" className={`${montserrat.variable} ${openSans.variable} h-full antialiased`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="min-h-full flex flex-col font-sans bg-gray-50 text-gray-800">
         <Navbar />
         {children}

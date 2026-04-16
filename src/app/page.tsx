@@ -76,30 +76,37 @@ export default function HomePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       {/* Hero Section */}
-      <AnimatedSection className="bg-[#1F3A5F] text-white pt-28 pb-24 px-6 lg:px-12 relative overflow-hidden">
+      <AnimatedSection className="bg-[#1F3A5F] text-white pt-32 pb-28 px-6 lg:px-12 relative overflow-hidden">
         {/* Abstract shapes for premium consulting look */}
+        <div className="absolute top-0 right-0 w-full h-full bg-[url('/grid-pattern.svg')] opacity-[0.03] pointer-events-none mix-blend-overlay"></div>
         <div className="absolute top-0 right-0 transform translate-x-1/4 -translate-y-1/4 opacity-10">
-          <div className="w-96 h-96 bg-[#F57C00] rounded-full blur-3xl"></div>
+          <div className="w-[500px] h-[500px] bg-[#F57C00] rounded-full blur-[100px]"></div>
         </div>
         <div className="absolute bottom-0 left-0 transform -translate-x-1/4 translate-y-1/4 opacity-10">
-          <div className="w-96 h-96 bg-[#2FA4A9] rounded-full blur-3xl"></div>
+          <div className="w-[600px] h-[600px] bg-[#2FA4A9] rounded-full blur-[120px]"></div>
         </div>
         
-        <div className="max-w-5xl mx-auto relative z-10 text-center lg:text-left">
-          <span className="text-[#F57C00] font-bold tracking-widest uppercase text-sm md:text-base mb-6 block lg:inline-block">
-            India Business Consulting Services
-          </span>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold leading-tight mb-6">
-            Leading Business Consulting Firm in India for Global Companies
+        <div className="max-w-6xl mx-auto relative z-10 flex flex-col items-center lg:items-start text-center lg:text-left">
+          <div className="inline-flex items-center px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm mb-8">
+            <span className="w-2 h-2 rounded-full bg-[#F57C00] mr-2 animate-pulse"></span>
+            <span className="text-white/90 text-xs font-semibold tracking-[0.15em] uppercase">
+              India Business Consulting Services
+            </span>
+          </div>
+          
+          <h1 className="text-4xl md:text-6xl lg:text-[72px] font-heading font-extrabold leading-[1.1] mb-8 tracking-tight">
+            Leading Business Consulting Firm <br className="hidden lg:block"/> in India for <span className="text-[#F57C00]">Global Companies</span>
           </h1>
-          <h2 className="text-xl md:text-2xl text-gray-300 font-sans font-medium max-w-3xl lg:mx-0 mx-auto leading-relaxed mb-10 border-l-4 border-[#2FA4A9] pl-6 py-2">
-            End-to-End Advisory in Tax, FEMA, Transfer Pricing, and Corporate Strategy
+          
+          <h2 className="text-lg md:text-2xl text-gray-300 font-sans font-normal max-w-3xl lg:max-w-2xl leading-relaxed mb-12 border-l-2 border-[#2FA4A9]/50 pl-6 lg:ml-0">
+            End-to-end advisory in Tax, FEMA, Transfer Pricing, and Corporate Strategy, architected for multinational growth and compliance.
           </h2>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-            <Link href="/contact" className="inline-flex justify-center items-center bg-[#F57C00] hover:bg-[#E65100] text-white px-8 py-4 rounded-md font-bold text-lg transition-transform hover:-translate-y-1">
-              Schedule a Consultation <ArrowRight className="ml-2 w-5 h-5" />
+          
+          <div className="flex flex-col sm:flex-row gap-5 justify-center lg:justify-start w-full sm:w-auto">
+            <Link href="/contact" className="group inline-flex justify-center items-center bg-[#F57C00] hover:bg-[#E65100] text-white px-8 py-[18px] rounded-[4px] font-semibold text-base transition-all duration-300 shadow-lg shadow-[#F57C00]/20 hover:shadow-[#F57C00]/40">
+              Schedule a Consultation <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
-            <Link href="#services" className="inline-flex justify-center items-center bg-transparent border-2 border-white hover:bg-white hover:text-[#1F3A5F] text-white px-8 py-4 rounded-md font-bold text-lg transition-all">
+            <Link href="#services" className="group inline-flex justify-center items-center bg-transparent border border-white/20 hover:border-white hover:bg-white/5 text-white px-8 py-[18px] rounded-[4px] font-semibold text-base transition-all duration-300 backdrop-blur-sm">
               Explore Our Expertise
             </Link>
           </div>
@@ -107,14 +114,24 @@ export default function HomePage() {
       </AnimatedSection>
 
       {/* Intro / About Section */}
-      <AnimatedSection className="py-20 px-6 lg:px-12 bg-white">
-        <div className="max-w-4xl mx-auto text-gray-700 font-sans leading-relaxed space-y-6 text-center md:text-left">
-          <p className="text-lg md:text-xl font-medium text-[#1F3A5F]">
-            PUMEC Consultants Pvt Ltd is a premier provider of business consulting services in India, offering specialized expertise in tax advisory, international tax, FEMA compliance, transfer pricing, and corporate advisory services in India. We support multinational companies, investors, and growing enterprises with strategic, regulatory, and operational solutions.
+      <AnimatedSection className="pt-28 pb-32 px-6 lg:px-12 bg-white relative z-20">
+        <div className="max-w-[72rem] mx-auto text-gray-700 font-sans leading-[1.8] space-y-8 flex flex-col items-center">
+          <div className="w-[2px] h-16 bg-gradient-to-b from-[#1F3A5F]/5 to-[#1F3A5F]/40 mx-auto rounded mb-8 -mt-24 pointer-events-none"></div>
+          
+          <h3 className="text-2xl md:text-3xl lg:text-[40px] font-heading font-semibold text-[#1F3A5F] max-w-4xl text-center leading-[1.3] tracking-tight">
+            PUMEC Consultants Pvt Ltd is a premier provider of <span className="text-[#F57C00]">business consulting services</span> in India.
+          </h3>
+          
+          <p className="text-lg md:text-xl font-normal text-gray-500 max-w-3xl text-center leading-relaxed">
+            Offering highly specialized expertise in tax advisory, international tax, FEMA compliance, transfer pricing, and corporate advisory services to multinational companies, investors, and growing enterprises.
           </p>
-          <div className="w-24 h-1 bg-[#F57C00] mx-auto md:mx-0 rounded my-8"></div>
-          <p className="text-gray-600">
-            As a trusted partner for India market entry consulting and cross-border advisory services, we help businesses navigate India’s complex regulatory environment while optimizing performance, compliance, and growth.
+          
+          <div className="h-px w-32 bg-gray-200 mt-12 mb-8 relative">
+             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-2 h-2 rounded-full border-2 border-[#1F3A5F] bg-white"></div>
+          </div>
+          
+          <p className="text-[17px] text-gray-400 font-medium max-w-2xl text-center tracking-wide uppercase italic">
+            Navigating complex regulatory environments while optimizing performance, compliance, and growth.
           </p>
         </div>
       </AnimatedSection>
@@ -291,39 +308,51 @@ export default function HomePage() {
       </AnimatedSection>
 
       {/* Why Choose Us */}
-      <AnimatedSection className="py-24 px-6 lg:px-12 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-[#1F3A5F] uppercase">Why Choose PUMEC Consultants Pvt Ltd</h2>
-            <div className="w-16 h-1 bg-[#2FA4A9] mx-auto rounded mt-6"></div>
+      <AnimatedSection className="py-32 px-6 lg:px-12 bg-white relative overflow-hidden">
+        {/* Subtle background decoration */}
+        <div className="absolute -left-40 top-20 w-96 h-96 bg-[#2FA4A9]/40 rounded-full blur-[120px] mix-blend-multiply opacity-20 pointer-events-none"></div>
+        
+        <div className="max-w-6xl mx-auto relative z-10">
+          <div className="text-center mb-20">
+            <span className="text-[#2FA4A9] font-bold tracking-[0.2em] uppercase text-[11px] mb-4 block">The PUMEC Advantage</span>
+            <h2 className="text-4xl md:text-5xl font-heading font-extrabold text-[#1F3A5F] tracking-tight">Why Choose PUMEC</h2>
+            <div className="w-16 h-1 bg-gradient-to-r from-[#1F3A5F] to-[#2FA4A9] mx-auto rounded mt-8"></div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
             {[
               {
-                icon: <Star className="w-10 h-10 text-[#F57C00] mb-4" />,
+                icon: <Star className="w-7 h-7 text-[#2FA4A9]" strokeWidth={1.5} />,
                 title: "Comprehensive Expertise",
-                desc: "Full-service business consulting firm in India"
+                desc: "Full-service business consulting firm in India delivering tailored solutions."
               },
               {
-                icon: <Globe className="w-10 h-10 text-[#F57C00] mb-4" />,
+                icon: <Globe className="w-7 h-7 text-[#2FA4A9]" strokeWidth={1.5} />,
                 title: "Global Perspective",
-                desc: "Strong experience in cross-border advisory and international tax"
+                desc: "Strong experience in structuring cross-border advisory and international tax."
               },
               {
-                icon: <Zap className="w-10 h-10 text-[#F57C00] mb-4" />,
+                icon: <Zap className="w-7 h-7 text-[#2FA4A9]" strokeWidth={1.5} />,
                 title: "Execution Excellence",
-                desc: "Strategy + implementation approach"
+                desc: "Strategy-first approach coupled with precise on-ground implementation."
               },
               {
-                icon: <Users className="w-10 h-10 text-[#F57C00] mb-4" />,
-                title: "Client-Centric Solutions",
-                desc: "Tailored advisory aligned with business goals"
+                icon: <Users className="w-7 h-7 text-[#2FA4A9]" strokeWidth={1.5} />,
+                title: "Client-Centric Focus",
+                desc: "Bespoke advisory tightly aligned with your specific business goals."
               }
             ].map((feature, idx) => (
-              <div key={idx} className="bg-[#0D1B2A] text-white p-8 rounded-xl shadow-lg border-b-4 border-[#2FA4A9] hover:-translate-y-2 transition-transform">
-                {feature.icon}
-                <h3 className="text-xl font-heading font-bold text-[#F4F6F8] mb-3">{feature.title}</h3>
-                <p className="text-gray-400 font-sans">{feature.desc}</p>
+              <div key={idx} className="group relative bg-white p-10 border border-gray-100 hover:border-transparent rounded-sm hover:-translate-y-2 transition-all duration-300 z-10">
+                {/* Glow effect on hover */}
+                <div className="absolute -inset-0.5 bg-gradient-to-b from-[#2FA4A9]/20 to-transparent rounded-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-[2px] -z-10"></div>
+                <div className="absolute inset-0 bg-white rounded-sm -z-10 pointer-events-none shadow-sm group-hover:shadow-2xl transition-shadow duration-300"></div>
+                
+                <div className="w-16 h-16 rounded-full bg-[#F2F5F8] flex items-center justify-center mb-8 border border-gray-200/50 group-hover:border-[#2FA4A9]/30 group-hover:bg-[#2FA4A9]/5 transition-colors duration-300">
+                  {feature.icon}
+                </div>
+                <h3 className="text-[19px] font-heading font-bold text-[#1F3A5F] mb-4 tracking-tight leading-snug">{feature.title}</h3>
+                <p className="text-gray-500 font-sans text-[15px] leading-relaxed">{feature.desc}</p>
+                <div className="h-0.5 w-0 bg-[#F57C00] group-hover:w-8 transition-all duration-300 mt-8 rounded-full"></div>
               </div>
             ))}
           </div>
@@ -331,27 +360,36 @@ export default function HomePage() {
       </AnimatedSection>
 
       {/* Industries We Serve */}
-      <AnimatedSection className="py-20 px-6 lg:px-12 bg-[#1F3A5F] text-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-white uppercase">Industries We Serve</h2>
-            <p className="text-gray-300 mt-4 text-lg max-w-2xl mx-auto">We provide consulting services in India across multiple industries:</p>
-            <div className="w-16 h-1 bg-[#F57C00] mx-auto rounded mt-6"></div>
+      <AnimatedSection className="py-32 px-6 lg:px-12 bg-[#09131E] text-white relative overflow-hidden">
+        {/* Abstract background */}
+        <div className="absolute top-0 right-0 w-full h-full bg-[url('/grid-pattern.svg')] opacity-[0.02] pointer-events-none"></div>
+        <div className="absolute right-0 bottom-0 w-[500px] h-[500px] bg-[#1F3A5F] rounded-full blur-[100px] opacity-40 translate-x-1/3 translate-y-1/3 pointer-events-none"></div>
+
+        <div className="max-w-[1400px] mx-auto relative z-10">
+          <div className="flex flex-col flex-wrap md:flex-row md:items-end justify-between font-heading mb-20 gap-8 border-b-2 border-white/5 pb-12">
+            <div>
+              <span className="text-[#F57C00] font-bold tracking-[0.2em] uppercase text-[11px] mb-4 block">Sector Specialization</span>
+              <h2 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight">Industries We Serve</h2>
+            </div>
+            <div className="w-10 h-1 bg-[#2FA4A9] rounded hidden md:block mb-3"></div>
+            <p className="text-gray-400 text-[15px] font-sans max-w-sm md:text-right leading-relaxed border-l border-white/10 pl-5">
+              Providing highly specialized consulting in India across distinct, fast-growing global industries.
+            </p>
           </div>
           
-          <div className="flex flex-wrap justify-center gap-6 lg:gap-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-6 mt-16">
             {[
-              { name: "Technology & IT Services", icon: <Laptop className="w-8 h-8" /> },
-              { name: "Financial Services & Fintech", icon: <Landmark className="w-8 h-8" /> },
-              { name: "Manufacturing & Industrial", icon: <Factory className="w-8 h-8" /> },
-              { name: "Healthcare & Pharmaceuticals", icon: <HeartPulse className="w-8 h-8" /> },
-              { name: "E-commerce & Retail", icon: <ShoppingCart className="w-8 h-8" /> }
-            ].map((industry, idx) => (
-              <div key={idx} className="flex flex-col items-center justify-center bg-[#284877] p-6 rounded-lg w-48 hover:bg-[#F57C00] transition-colors shadow-lg">
-                <div className="bg-white/10 p-4 rounded-full mb-4">
-                  {industry.icon}
-                </div>
-                <h3 className="text-center font-bold text-sm md:text-base leading-tight">{industry.name}</h3>
+              { name: "Technology & IT Services", icon: <Laptop className="w-8 h-8 text-[#2FA4A9]" strokeWidth={1} /> },
+              { name: "Financial Services & Fintech", icon: <Landmark className="w-8 h-8 text-[#2FA4A9]" strokeWidth={1} /> },
+              { name: "Manufacturing & Industrial", icon: <Factory className="w-8 h-8 text-[#2FA4A9]" strokeWidth={1} /> },
+              { name: "Healthcare & Pharma", icon: <HeartPulse className="w-8 h-8 text-[#2FA4A9]" strokeWidth={1} /> },
+              { name: "E-commerce & Retail", icon: <ShoppingCart className="w-8 h-8 text-[#2FA4A9]" strokeWidth={1} /> }
+            ].map((industry, i) => (
+              <div key={i} className="group relative border border-white/10 hover:border-white/20 bg-[#1F3A5F]/10 hover:bg-[#1F3A5F]/40 p-8 flex flex-col items-center justify-center text-center rounded-[2px] transition-all duration-500 overflow-hidden min-h-[220px]">
+                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-[#2FA4A9]/20 to-transparent rounded-full blur-xl translate-x-1/2 -translate-y-1/2 group-hover:opacity-100 opacity-0 transition-opacity duration-500"></div>
+                <div className="mb-6 transform group-hover:-translate-y-2 transition-transform duration-500">{industry.icon}</div>
+                <span className="text-sm tracking-wide font-sans font-medium text-gray-200 group-hover:text-white transition-colors leading-[1.4]">{industry.name}</span>
+                <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-[#F57C00] group-hover:w-full transition-all duration-700 ease-out"></div>
               </div>
             ))}
           </div>
@@ -359,11 +397,12 @@ export default function HomePage() {
       </AnimatedSection>
 
       {/* FAQ Section */}
-      <AnimatedSection className="py-24 px-6 lg:px-12 bg-[#F4F6F8]">
+      <AnimatedSection className="py-32 px-6 lg:px-12 bg-[#F8FAFC]">
         <div className="max-w-4xl mx-auto">
-           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-[#1F3A5F] uppercase">Frequently Asked Questions</h2>
-            <div className="w-16 h-1 bg-[#2FA4A9] mx-auto rounded mt-6"></div>
+          <div className="text-center mb-20 text-[#1F3A5F]">
+             <span className="text-[#2FA4A9] font-bold tracking-[0.2em] uppercase text-[11px] mb-4 block">Knowledge Base</span>
+             <h2 className="text-4xl md:text-5xl font-heading font-extrabold tracking-tight">Frequently Asked Questions</h2>
+             <div className="w-16 h-1 bg-gradient-to-r from-[#1F3A5F] to-[#2FA4A9] mx-auto rounded mt-8"></div>
           </div>
           
           <div className="space-y-6">
@@ -381,12 +420,15 @@ export default function HomePage() {
                 a: "Transfer pricing ensures intercompany transactions follow arm’s length standards and comply with Indian tax regulations."
               }
             ].map((faq, i) => (
-              <div key={i} className="bg-white p-6 rounded-lg shadow-sm border-l-4 border-[#F57C00]">
-                <h3 className="text-xl font-bold text-[#1F3A5F] mb-3 flex items-start">
-                  <ShieldCheck className="w-6 h-6 text-[#2FA4A9] mr-3 shrink-0" />
+              <div key={i} className="group bg-white p-8 rounded-sm shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 relative overflow-hidden">
+                {/* Accent bar */}
+                <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#2FA4A9] scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top"></div>
+                
+                <h3 className="text-lg font-heading font-bold text-[#1F3A5F] mb-4 pr-8 leading-snug flex items-start">
+                  <span className="text-[#F57C00] font-mono font-bold mr-4 text-xl opacity-70">0{i+1}.</span>
                   {faq.q}
                 </h3>
-                <p className="text-gray-700 pl-9 font-sans">{faq.a}</p>
+                <p className="text-gray-500 font-sans text-[15px] leading-relaxed pl-10 md:pl-12 border-l-2 border-gray-100 ml-2 group-hover:border-[#F57C00]/30 transition-colors">{faq.a}</p>
               </div>
             ))}
           </div>
@@ -394,40 +436,51 @@ export default function HomePage() {
       </AnimatedSection>
 
       {/* Internal Linking Area */}
-      <AnimatedSection className="py-12 bg-white border-t border-b border-gray-100">
-        <div className="max-w-5xl mx-auto px-6 text-center">
-          <p className="text-[#4A5A6A] font-semibold mb-6 uppercase tracking-wider text-sm">Explore Our Core Services Areas:</p>
-          <div className="flex flex-wrap justify-center gap-4 text-sm md:text-base">
-            <Link href="/services/india-entry" className="text-[#1F3A5F] hover:text-[#F57C00] font-medium underline underline-offset-4 decoration-[#2FA4A9] transition-colors">Market Entry & Expansion Advisory</Link>
-            <span className="text-gray-300 hidden md:inline">|</span>
-            <Link href="/services/international-tax" className="text-[#1F3A5F] hover:text-[#F57C00] font-medium underline underline-offset-4 decoration-[#2FA4A9] transition-colors">International Tax & Structuring</Link>
-            <span className="text-gray-300 hidden md:inline">|</span>
-            <Link href="/services/transfer-pricing" className="text-[#1F3A5F] hover:text-[#F57C00] font-medium underline underline-offset-4 decoration-[#2FA4A9] transition-colors">Transfer Pricing Advisory</Link>
-            <span className="text-gray-300 hidden md:inline">|</span>
-            <Link href="/services/fema-advisory" className="text-[#1F3A5F] hover:text-[#F57C00] font-medium underline underline-offset-4 decoration-[#2FA4A9] transition-colors">FEMA & Regulatory Compliance</Link>
-            <span className="text-gray-300 hidden md:inline">|</span>
-            <Link href="/services/corporate-transaction" className="text-[#1F3A5F] hover:text-[#F57C00] font-medium underline underline-offset-4 decoration-[#2FA4A9] transition-colors">Corporate & Transaction Advisory</Link>
-            <span className="text-gray-300 hidden md:inline">|</span>
-            <Link href="/services/litigation-dispute" className="text-[#1F3A5F] hover:text-[#F57C00] font-medium underline underline-offset-4 decoration-[#2FA4A9] transition-colors">Litigation & Dispute Resolution</Link>
+      <AnimatedSection className="py-16 bg-white border-y border-gray-100 relative overflow-hidden">
+        {/* Subtle grid */}
+        <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-[0.02] pointer-events-none"></div>
+        <div className="max-w-6xl mx-auto px-6 text-center relative z-10">
+          <p className="text-gray-400 font-bold mb-8 uppercase tracking-[0.2em] text-[10px]">Explore Our Core Services Areas</p>
+          <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-4 text-sm md:text-[15px]">
+            <Link href="/services/india-entry" className="text-[#1F3A5F] hover:text-[#2FA4A9] font-medium transition-colors border-b border-transparent hover:border-[#2FA4A9]">Market Entry & Expansion</Link>
+            <span className="text-gray-300/50 hidden md:inline">/</span>
+            <Link href="/services/international-tax" className="text-[#1F3A5F] hover:text-[#2FA4A9] font-medium transition-colors border-b border-transparent hover:border-[#2FA4A9]">International Tax & Structuring</Link>
+            <span className="text-gray-300/50 hidden md:inline">/</span>
+            <Link href="/services/transfer-pricing" className="text-[#1F3A5F] hover:text-[#2FA4A9] font-medium transition-colors border-b border-transparent hover:border-[#2FA4A9]">Transfer Pricing Advisory</Link>
+            <span className="text-gray-300/50 hidden md:inline">/</span>
+            <Link href="/services/fema-advisory" className="text-[#1F3A5F] hover:text-[#2FA4A9] font-medium transition-colors border-b border-transparent hover:border-[#2FA4A9]">FEMA & Regulatory Compliance</Link>
+            <span className="text-gray-300/50 hidden md:inline">/</span>
+            <Link href="/services/corporate-transaction" className="text-[#1F3A5F] hover:text-[#2FA4A9] font-medium transition-colors border-b border-transparent hover:border-[#2FA4A9]">Corporate & Transaction</Link>
+            <span className="text-gray-300/50 hidden md:inline">/</span>
+            <Link href="/services/litigation-dispute" className="text-[#1F3A5F] hover:text-[#2FA4A9] font-medium transition-colors border-b border-transparent hover:border-[#2FA4A9]">Litigation & Dispute</Link>
           </div>
         </div>
       </AnimatedSection>
 
       {/* Call to Action Section */}
-      <AnimatedSection className="bg-gradient-to-br from-[#1F3A5F] to-[#0D1B2A] text-white py-24 px-6 lg:px-12 text-center">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6 text-white leading-tight">
-            Looking for expert business consulting services in India?
+      <AnimatedSection className="bg-[#1F3A5F] text-white py-32 px-6 lg:px-12 text-center relative overflow-hidden">
+        {/* Dynamic Background */}
+        <div className="absolute w-[800px] h-[800px] bg-[#2FA4A9] rounded-full blur-[150px] opacity-20 -top-40 -left-40 pointer-events-none mix-blend-screen"></div>
+        <div className="absolute w-[800px] h-[800px] bg-[#F57C00] rounded-full blur-[150px] opacity-10 -bottom-40 -right-40 pointer-events-none mix-blend-screen"></div>
+        
+        <div className="max-w-4xl mx-auto relative z-10">
+          <span className="text-[#F57C00] font-bold tracking-[0.2em] uppercase text-[11px] mb-6 block">Ready to Scale?</span>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold mb-8 text-white leading-[1.1] tracking-tight">
+            Looking for expert business<br className="hidden md:block"/> consulting services in India?
           </h2>
-          <p className="text-xl md:text-2xl text-gray-300 mb-10 font-sans leading-relaxed">
+          <p className="text-lg md:text-xl text-gray-300/90 mb-12 font-sans leading-relaxed max-w-3xl mx-auto">
              Partner with PUMEC Consultants Pvt Ltd for reliable tax advisory, FEMA compliance, transfer pricing, and corporate advisory services in India.
           </p>
           <div className="flex flex-col items-center">
-             <Link href="/contact" className="inline-flex items-center bg-[#F57C00] hover:bg-[#E65100] text-white px-10 py-5 rounded-md font-bold text-xl transition-all shadow-xl hover:shadow-2xl hover:-translate-y-2 mb-6">
-                Schedule a consultation today
+             <Link href="/contact" className="group inline-flex items-center justify-center bg-[#F57C00] hover:bg-[#E65100] text-white px-10 py-4 font-bold text-sm tracking-wide uppercase transition-all duration-300 hover:shadow-[0_10px_40px_-10px_rgba(245,124,0,0.5)] hover:-translate-y-1 mb-8 rounded-[2px] overflow-hidden relative">
+                <span className="relative z-10 flex items-center">
+                  Schedule a consultation today
+                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                </span>
+                <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out z-0"></div>
              </Link>
-             <p className="text-[#2FA4A9] font-bold text-lg tracking-wide uppercase">
-                And accelerate your India growth journey
+             <p className="text-[#2FA4A9] font-bold text-[13px] tracking-widest uppercase border-t border-[#2FA4A9]/20 pt-8 mt-2 inline-block px-12">
+                Accelerate your India growth journey
              </p>
           </div>
         </div>

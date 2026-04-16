@@ -23,7 +23,7 @@ export default function Navbar() {
 
       {/* Main Nav */}
       <div className="flex justify-between items-center px-6 lg:px-12 py-4 max-w-7xl mx-auto">
-        <Link href="/" className="flex items-center space-x-2">
+        <Link href="/" className="flex items-center space-x-1">
           {/* Letter colors: P(#1F3A5F), U(#2FA4A9), M(#F57C00), E(#4A5A6A), C(#0D1B2A) */}
           <h1 className="font-heading font-extrabold text-[32px] tracking-tight leading-none">
             <span className="text-[#1F3A5F]">P</span>
@@ -32,7 +32,7 @@ export default function Navbar() {
             <span className="text-[#4A5A6A]">E</span>
             <span className="text-[#0D1B2A]">C</span>
           </h1>
-          <div className="flex flex-col ml-2 border-l-2 border-gray-200 pl-3">
+          <div className="flex flex-col ml-1 border-l-2 border-gray-200 pl-2">
              <span className="text-[10px] font-bold text-[#1F3A5F] uppercase tracking-wider leading-tight">Consultants</span>
              <span className="text-[9px] font-semibold text-[#4A5A6A] leading-tight">Pvt Ltd</span>
           </div>

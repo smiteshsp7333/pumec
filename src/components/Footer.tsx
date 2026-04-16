@@ -87,27 +87,27 @@ export default function Footer() {
         </div>
 
         {/* Block 5: Contact */}
-        <div className="bg-[#152B4A] -mt-6 p-6 rounded-b border-t-4 border-[#F57C00] shadow-lg">
+        <div className="bg-[#152B4A] lg:-mt-6 p-4 lg:p-5 rounded-b border-t-4 border-[#F57C00] shadow-lg flex flex-col h-full col-span-1 md:col-span-2 lg:col-span-1">
           <h3 className="font-heading font-semibold text-[15px] mb-6 text-[#2FA4A9] tracking-wide">Contact Us</h3>
           
-          <ul className="space-y-5 text-sm font-sans mb-8">
-            <li className="flex items-start">
-              <MapPin className="w-5 h-5 text-[#F57C00] mr-3 mt-0.5 shrink-0" />
+          <ul className="space-y-4 text-[13px] font-sans mb-8 flex-grow">
+            <li className="flex items-center">
+              <MapPin className="w-4 h-4 text-[#F57C00] mr-2 shrink-0" />
               <span className="text-gray-300 leading-snug">India</span>
             </li>
             <li className="flex items-center">
-              <Mail className="w-5 h-5 text-[#F57C00] mr-3 shrink-0" />
-              <a href="mailto:info@pumec.com" className="text-gray-300 hover:text-white transition-colors">info@pumec.com</a>
+              <Mail className="w-4 h-4 text-[#F57C00] mr-2 shrink-0" />
+              <a href="mailto:info@pumec.com" className="text-gray-300 hover:text-white transition-colors truncate">info@pumec.com</a>
             </li>
             <li className="flex items-center">
-              <Phone className="w-5 h-5 text-[#F57C00] mr-3 shrink-0" />
-              <a href="tel:+91XXXXXXXXXX" className="text-gray-300 hover:text-white transition-colors">+91-XXXXXXXXXX</a>
+              <Phone className="w-4 h-4 text-[#F57C00] mr-2 shrink-0" />
+              <a href="tel:+91XXXXXXXXXX" className="text-gray-300 hover:text-white transition-colors truncate">+(91) XXXXXXXXXX</a>
             </li>
           </ul>
           
-           <Link href="/contact" className="w-full bg-[#F57C00] hover:bg-[#E65100] text-white px-5 py-3 rounded text-[14px] font-semibold transition-all flex items-center justify-between shadow-md hover:shadow-lg">
-              Speak to a Partner 
-              <span className="text-lg leading-none translate-y-[1px]">→</span>
+           <Link href="/contact" className="w-full bg-[#F57C00] hover:bg-[#E65100] text-white px-3 py-3 md:px-5 md:py-[14px] rounded-[4px] text-[13px] md:text-[14px] font-semibold transition-all flex items-center justify-center shadow-md hover:shadow-lg mt-auto group text-center leading-tight">
+              <span>Speak to a Partner</span>
+              <ChevronRight className="w-4 h-4 ml-1.5 shrink-0 group-hover:translate-x-1 transition-transform" />
            </Link>
         </div>
       </div>
