@@ -1,4 +1,5 @@
 import AnimatedSection from '../components/AnimatedSection';
+import Hero from '../components/Hero';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
