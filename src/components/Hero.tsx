@@ -6,15 +6,20 @@ import { useEffect, useState } from "react";
 
 export default function Hero() {
   const [heroData, setHeroData] = useState<any>(null);
+  const [bgImage, setBgImage] = useState<string>("/hero_highres.png");
 
   useEffect(() => {
     fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000/api'}/global-settings`)
       .then(res => res.json())
-      .then(data => setHeroData(data))
+      .then(data => {
+        setHeroData(data);
+        if (data?.hero_image_url) {
+          setBgImage(data.hero_image_url);
+        }
+      })
       .catch(err => console.error("Error fetching hero settings:", err));
   }, []);
 
-  const bgImage = heroData?.hero_image_url || "/hero_highres.png";
   const title = heroData?.hero_title || "Your Partner in <br /><span class=\"text-white/60\">Strategic Excellence</span>";
   const subtitle = heroData?.hero_subtitle || "PUMEC Consultants delivers expert CA services, strategic tax advisory, and full-spectrum business consulting — built on three decades of trust, precision, and deep regulatory expertise.";
   const btnText = heroData?.hero_button_text || "Get Consultation";
@@ -23,16 +28,17 @@ export default function Hero() {
   return (
     <section className="relative w-full min-h-[90vh] flex flex-col justify-center overflow-hidden bg-[#050505] text-[#f2f2f2] px-6 lg:px-12 pt-32 pb-20">
       {/* Background Banner Image */}
-      <div className="absolute inset-0 z-0 bg-[#050505]">
+      <div className="absolute inset-0 z-0 bg-[#000000]">
         {/* We use a regular img tag here to avoid Next.js domain/hostname issues with backend uploads, 
             and fully control the object-fit & ratio perfectly across all screens. */}
         <img 
           src={bgImage}
           alt="Consulting Banner"
-          className="absolute inset-0 w-full h-full object-cover object-center"
+          className="absolute inset-0 w-full h-full object-cover object-[center_top] brightness-125 contrast-110 opacity-90"
+          onError={(e: any) => { e.target.onerror = null; setBgImage("/hero_highres.png"); }}
         />
-        {/* Lighter overlay to make the image much more visible, while keeping text legible */}
-        <div className="absolute inset-0 bg-black/30 sm:bg-gradient-to-r sm:from-black/60 sm:via-black/20 sm:to-transparent" />
+        {/* Lighter overlay to make the image much more visible, focusing clear faces */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/10 to-transparent" />
       </div>
 
       <div className="absolute top-[-10%] left-0 w-[800px] h-[500px] opacity-10 pointer-events-none" style={{ background: "radial-gradient(circle, rgba(255,255,255,0.15) 0%, rgba(5,5,5,0) 70%)" }} />
