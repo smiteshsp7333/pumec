@@ -1,105 +1,50 @@
-"use client";
-
-import { motion } from "framer-motion";
-import Link from "next/link";
-import { useEffect, useState } from "react";
+import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
 
 export default function Hero() {
-  const [heroData, setHeroData] = useState<any>(null);
-  const [bgImage, setBgImage] = useState<string>("/hero_highres.png");
-
-  useEffect(() => {
-    fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000/api'}/global-settings`)
-      .then(res => res.json())
-      .then(data => {
-        setHeroData(data);
-        if (data?.hero_image_url) {
-          setBgImage(data.hero_image_url);
-        }
-      })
-      .catch(err => console.error("Error fetching hero settings:", err));
-  }, []);
-
-  const title = heroData?.hero_title || "Your Partner in <br /><span class=\"text-white/60\">Strategic Excellence</span>";
-  const subtitle = heroData?.hero_subtitle || "PUMEC Consultants delivers expert CA services, strategic tax advisory, and full-spectrum business consulting — built on three decades of trust, precision, and deep regulatory expertise.";
-  const btnText = heroData?.hero_button_text || "Get Consultation";
-  const btnLink = heroData?.hero_button_link || "/contact";
-
   return (
-    <section className="relative w-full min-h-[90vh] flex flex-col justify-center overflow-hidden bg-[#050505] text-[#f2f2f2] px-6 lg:px-12 pt-32 pb-20">
-      {/* Background Banner Image */}
-      <div className="absolute inset-0 z-0 bg-[#000000]">
-        {/* We use a regular img tag here to avoid Next.js domain/hostname issues with backend uploads, 
-            and fully control the object-fit & ratio perfectly across all screens. */}
-        <img 
-          src={bgImage}
-          alt="Consulting Banner"
-          className="absolute inset-0 w-full h-full object-cover object-[center_top] brightness-125 contrast-110 opacity-90"
-          onError={(e: any) => { e.target.onerror = null; setBgImage("/hero_highres.png"); }}
-        />
-        {/* Lighter overlay to make the image much more visible, focusing clear faces */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/10 to-transparent" />
-      </div>
-
-      <div className="absolute top-[-10%] left-0 w-[800px] h-[500px] opacity-10 pointer-events-none" style={{ background: "radial-gradient(circle, rgba(255,255,255,0.15) 0%, rgba(5,5,5,0) 70%)" }} />
-
-      <div className="relative z-10 flex flex-col items-start text-left max-w-3xl w-full container-custom mr-auto">
-        
-        {/* Top Pill Badge */}
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
-          className="mb-8"
-        >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md">
-            <span className="w-2 h-2 rounded-full bg-white/80" />
-            <span className="text-sm font-medium tracking-wide text-white/90">Strategy & Innovation</span>
-          </div>
-        </motion.div>
+    <section
+      className="relative w-full min-h-[90vh] flex flex-col justify-center overflow-hidden px-6 lg:px-12 pt-32 pb-20"
+      style={{ background: 'linear-gradient(135deg, #143553 0%, #20456B 40%, #0B2136 100%)' }}
+    >
+      <div className="relative z-10 flex flex-col items-start text-left w-full max-w-[1240px] mx-auto">
+        {/* Top Badge */}
+        <div className="mb-10 inline-flex items-center gap-3 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md">
+          <span className="w-2 h-2 rounded-full bg-[#F57C00]" />
+          <span className="text-[11px] font-bold tracking-[0.15em] text-white/70p  uppercase opacity-90">
+            India Business Consulting Services
+          </span>
+        </div>
 
         {/* Main Headline */}
-        <motion.h1
-          initial={{ opacity: 0, x: -30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
-          className="text-5xl md:text-7xl lg:text-[84px] font-medium leading-[1.05] tracking-tight mb-8"
-          dangerouslySetInnerHTML={{ __html: title }}
-        />
+        <h1 className="text-[48px] md:text-[64px] lg:text-[74px] font-bold leading-[1.15] tracking-tight mb-8 text-white">
+          Leading Business Consulting<br />
+          Firm<br />
+          in India for <span className="text-[#F57C00]">Global Companies</span>
+        </h1>
 
         {/* Subtext */}
-        <motion.p
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
-          className="text-white/60 text-lg md:text-xl leading-relaxed max-w-2xl mb-12 font-light"
-        >
-          {subtitle}
-        </motion.p>
+        <p className="text-gray-300 text-[18px] md:text-[22px] leading-relaxed max-w-[650px] mb-12 font-medium opacity-90">
+          End-to-end advisory in Tax, FEMA, Transfer Pricing, and<br className="hidden md:block" />
+          Corporate Strategy, architected for multinational growth<br className="hidden md:block" />
+          and compliance.
+        </p>
 
         {/* CTAs */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
-          className="flex flex-col sm:flex-row items-start sm:items-center gap-4"
-        >
+        <div className="flex flex-col sm:flex-row items-center gap-5">
           <Link
-            href={btnLink}
-            className="px-8 py-4 rounded-full bg-white text-black font-medium text-sm hover:scale-105 transition-transform duration-300"
+            href="/contact"
+            className="px-8 py-4 rounded-sm bg-[#F57C00] text-white font-bold text-[15px] hover:bg-[#e66c00] transition-colors flex items-center gap-2 w-full sm:w-auto justify-center"
           >
-            {btnText}
+            Schedule a Consultation <ArrowRight className="w-5 h-5 ml-1" />
           </Link>
           <Link
             href="/services"
-            className="px-8 py-4 rounded-full border border-white/20 text-white font-medium text-sm hover:bg-white/5 hover:scale-105 transition-all duration-300 flex items-center gap-2"
+            className="px-8 py-4 rounded-sm border border-white/20 text-white font-bold text-[15px] hover:bg-white/10 transition-colors w-full sm:w-auto justify-center text-center"
           >
-            Explore Services
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
+            Explore Our Expertise
           </Link>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
