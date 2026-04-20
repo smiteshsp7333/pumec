@@ -1,19 +1,19 @@
 import type { Metadata } from "next";
-import { Montserrat, Open_Sans } from "next/font/google";
+import { Inter, Lato } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const montserrat = Montserrat({
+const inter = Inter({
   subsets: ["latin"],
   weight: ["400", "600", "700"],
   variable: "--font-heading",
   display: "swap",
 });
 
-const openSans = Open_Sans({
+const lato = Lato({
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["400", "700"],
   variable: "--font-sans",
   display: "swap",
 });
@@ -67,7 +67,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className={`${montserrat.variable} ${openSans.variable} h-full antialiased`}>
+    <html lang="en" className={`${inter.variable} ${lato.variable} h-full antialiased`}>
       <head>
         <script
           type="application/ld+json"

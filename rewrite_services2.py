@@ -1,5 +1,7 @@
+import base64
 
-"use client";
+content = b"""
+use client;
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
@@ -52,7 +54,7 @@ const localServices = [
     id: 'fema-advisory',
     icon: <Shield className="w-8 h-8 text-[#F57C00] group-hover:text-[#2FA4A9] transition-colors" strokeWidth={1.5} />,
     title: 'FEMA & Regulatory Compliance Services in India',
-    description: 'Navigating India\'s foreign exchange regulations requires expert guidance. Our FEMA compliance services in India and RBI compliance advisory ensure seamless cross-border transactions.',
+    description: 'Navigating India\\'s foreign exchange regulations requires expert guidance. Our FEMA compliance services in India and RBI compliance advisory ensure seamless cross-border transactions.',
     bulletTitle: 'We provide:',
     bullets: [
       'FEMA advisory services in India',
@@ -93,23 +95,6 @@ const localServices = [
 ];
 
 export default function ServicesClient({ servicesData }: { servicesData?: any[] }) {
-  const displayServices = servicesData && servicesData.length > 0 ? servicesData : localServices;
-
-  const renderIcon = (service: any) => {
-    if (service.icon && typeof service.icon === 'object') return service.icon; // Local
-    
-    // Remote
-    switch(service.icon) {
-      case 'Globe2': return <Globe className="w-8 h-8 text-[#F57C00] group-hover:text-[#2FA4A9] transition-colors" strokeWidth={1.5} />;
-      case 'Calculator': return <Building2 className="w-8 h-8 text-[#F57C00] group-hover:text-[#2FA4A9] transition-colors" strokeWidth={1.5} />;
-      case 'TrendingUp': return <ArrowRightLeft className="w-8 h-8 text-[#F57C00] group-hover:text-[#2FA4A9] transition-colors" strokeWidth={1.5} />;
-      case 'ShieldCheck': return <Shield className="w-8 h-8 text-[#F57C00] group-hover:text-[#2FA4A9] transition-colors" strokeWidth={1.5} />;
-      case 'Briefcase': return <Briefcase className="w-8 h-8 text-[#F57C00] group-hover:text-[#2FA4A9] transition-colors" strokeWidth={1.5} />;
-      case 'Building': return <Building2 className="w-8 h-8 text-[#F57C00] group-hover:text-[#2FA4A9] transition-colors" strokeWidth={1.5} />;
-      default: return <CheckCircle2 className="w-8 h-8 text-[#F57C00] group-hover:text-[#2FA4A9] transition-colors" strokeWidth={1.5} />;
-    }
-  };
-
   return (
     <section id="services" className="py-20 pb-28 bg-[#F9FAFB] relative block w-full">
       <div className="container mx-auto px-6 lg:px-12 max-w-[1300px] relative z-10 w-full">
@@ -144,9 +129,9 @@ export default function ServicesClient({ servicesData }: { servicesData?: any[] 
 
         {/* Services Grid (2 Columns) */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 w-full">
-          {displayServices.map((service, i) => (
+          {localServices.map((service, i) => (
             <motion.div
-              key={service.id || service.slug || i}
+              key={service.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -155,7 +140,7 @@ export default function ServicesClient({ servicesData }: { servicesData?: any[] 
             >
               {/* Icon Box */}
               <div className="mb-6">
-                {renderIcon(service)}
+                {service.icon}
               </div>
 
               {/* Title */}
@@ -165,13 +150,13 @@ export default function ServicesClient({ servicesData }: { servicesData?: any[] 
               
               {/* Description */}
               <p className="text-gray-500 text-[15.5px] leading-relaxed mb-8 font-sans pr-2">
-                {service.description || service.desc}
+                {service.description}
               </p>
 
               {/* Bullet Box */}
               <div className="bg-[#F8FAFC] group-hover:bg-[#F0FDFE] transition-colors duration-300 rounded-[4px] p-6 mb-8 mt-auto border border-gray-50 group-hover:border-[#2FA4A9]/20">
                 <h4 className="text-[14.5px] font-bold text-[#F57C00] mb-4">
-                   {service.bulletTitle || service.hero_subtitle || "Key Offerings:"}
+                   {service.bulletTitle}
                 </h4>
                 <ul className="space-y-3">
                   {service.bullets.map((point, idx) => (
@@ -203,3 +188,7 @@ export default function ServicesClient({ servicesData }: { servicesData?: any[] 
     </section>
   );
 }
+"""
+
+with open('src/components/ServicesClient.tsx', 'w', encoding='utf-8') as f:
+    f.write(content.decode('utf-8'))

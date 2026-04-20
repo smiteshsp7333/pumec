@@ -7,6 +7,9 @@
   --color-dark-navy: #0D1B2A;
   --color-light-bg: #F4F6F8;
   --color-white: #FFFFFF;
+  --color-brand-green: #34d399;
+  --color-brand-gold: #FFD700;
+  --color-brand-purple: #6C63FF;
 }
 @layer base {
   html {
@@ -20,6 +23,11 @@
     --dark-navy: var(--color-dark-navy);
     --light-bg: var(--color-light-bg);
     --white: var(--color-white);
+    --brand-green: var(--color-brand-green);
+    --brand-gold: var(--color-brand-gold);
+    --brand-purple: var(--color-brand-purple);
+    --font-sans: 'Lato', 'Helvetica Neue', Arial, sans-serif;
+    --font-heading: 'Inter', 'Lato', 'Helvetica Neue', Arial, sans-serif;
   }
   body {
     font-family: var(--font-sans), sans-serif;

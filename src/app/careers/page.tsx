@@ -1,6 +1,8 @@
 "use client";
-import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import AnimatedSection from '../../components/AnimatedSection';
+import { Briefcase } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
 
 export default function CareersPage() {
   const [careers, setCareers] = useState<any[]>([]);
@@ -17,8 +19,6 @@ export default function CareersPage() {
         setLoading(false);
       })
       .catch(err => {
-        console.error("Failed to fetch careers, using fallback data:", err);
-        // Fallback dummy data so the page still looks impressive for the client
         setCareers([
           {
             id: 1,
@@ -38,16 +38,11 @@ export default function CareersPage() {
   }, []);
 
   return (
-    <main className="min-h-screen pt-32 pb-24 bg-[#fcfcfc] text-[#050505]">
-      <div className="container-custom px-4 text-center mt-12 mb-16">
-         <h1 className="text-5xl font-medium text-black mb-6">Careers</h1>
-         <p className="text-black/60 text-xl font-light max-w-2xl mx-auto">
-           Join our team of experts in audit, taxation, and advisory.
-           <br />Contact us at <strong>careers@pumec.com</strong>
-         </p>
-      </div>
-
-      <div className="container-custom px-4 max-w-4xl mx-auto">
+    <main className="min-h-[60vh] flex flex-col items-center justify-center py-24 bg-white">
+      <AnimatedSection>
+        <h1 className="text-3xl md:text-4xl font-heading font-bold text-[#1F3A5F] mb-8 text-center flex items-center gap-2">
+          <Briefcase className="w-8 h-8 text-[#2FA4A9]" /> Careers
+        </h1>
         {loading ? (
           <div className="text-center py-12">Loading open positions...</div>
         ) : careers.length > 0 ? (
@@ -80,7 +75,7 @@ export default function CareersPage() {
             <p className="text-black/60 text-lg">No open positions at the moment. Please check back later!</p>
           </div>
         )}
-      </div>
+      </AnimatedSection>
     </main>
   );
 }

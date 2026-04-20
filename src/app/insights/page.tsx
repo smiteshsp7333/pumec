@@ -1,7 +1,8 @@
 'use client';
-import { Calendar, ChevronRight } from "lucide-react";
-import Link from "next/link";
-import { motion } from "framer-motion";
+import AnimatedSection from '../../components/AnimatedSection';
+import { Calendar, ChevronRight } from 'lucide-react';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 const insights = [
   {
@@ -44,22 +45,14 @@ const insights = [
 
 export default function InsightsPage() {
   return (
-    <main className="min-h-screen pt-32 pb-24 bg-[#FAFAFA] relative overflow-hidden">
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mb-16">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <span className="inline-block px-4 py-1.5 rounded-full border border-gray-200 bg-white text-[10px] text-gray-500 font-bold tracking-[0.2em] uppercase mb-6">
-              INSIGHTS & NEWS
-            </span>
-            <h1 className="text-4xl md:text-5xl lg:text-[56px] tracking-tight text-[#1c3359] mb-8 leading-tight">
-              Our Latest <br /><span className="font-light text-gray-400">Thoughts</span>
-            </h1>
-            <p className="text-gray-500 text-[15px] max-w-xl leading-relaxed">
-              Explore articles, news, and insights directly from our partners on regulatory changes, audit standards, and corporate growth strategies.
-            </p>
-          </motion.div>
-        </div>
-
+    <main className="min-h-[60vh] flex flex-col items-center justify-center py-24 bg-white">
+      <AnimatedSection>
+        <h1 className="text-3xl md:text-4xl font-heading font-bold text-[#1F3A5F] mb-8 text-center flex items-center gap-2">
+          <Calendar className="w-8 h-8 text-[#F57C00]" /> Insights
+        </h1>
+        <p className="text-gray-500 text-[15px] max-w-xl leading-relaxed">
+          Explore articles, news, and insights directly from our partners on regulatory changes, audit standards, and corporate growth strategies.
+        </p>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {insights.map((insight, i) => (
             <motion.div 
@@ -99,7 +92,7 @@ export default function InsightsPage() {
             </motion.div>
           ))}
         </div>
-      </section>
+      </AnimatedSection>
     </main>
   );
 }
