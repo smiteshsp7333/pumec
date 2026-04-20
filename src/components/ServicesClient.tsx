@@ -1,4 +1,3 @@
-
 "use client";
 
 import { motion } from 'framer-motion';
@@ -174,9 +173,9 @@ export default function ServicesClient({ servicesData }: { servicesData?: any[] 
                    {service.bulletTitle || service.hero_subtitle || "Key Offerings:"}
                 </h4>
                 <ul className="space-y-3">
-                  {service.bullets.map((point, idx) => (
-                    <li key={idx} className="flex items-start gap-3 text-[14.5px] font-medium text-gray-600 leading-snug">
-                      <CheckCircle2 className="w-[18px] h-[18px] text-[#F57C00] mt-[1px] shrink-0" strokeWidth={2} />
+                  {service.bullets.map((point: string, idx: number) => (
+                    <li key={idx} className="flex items-start gap-3 text-[14.5px] font-medium text-gray-700">
+                      <CheckCircle2 className="w-[18px] h-[18px] text-[#F57C00] mt-[1px]" />
                       <span>{point}</span>
                     </li>
                   ))}
