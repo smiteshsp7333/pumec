@@ -1,0 +1,87 @@
+"use client";
+
+import { motion } from "framer-motion";
+
+export default function ClientsClient({ clientsData }: { clientsData?: { name: string, logo_url: string }[] }) {
+  // Use specific local logos to ensure high quality and visibility
+  const staticLogos = [
+    { name: "Infosys", src: "/logos/infosys.png" },
+    { name: "Tata Group", src: "/logos/Tata_logo.svg" },
+    { name: "Wipro", src: "/logos/Wipro_Primary_Logo_Color_RGB.svg.png" },
+    { name: "HDFC Bank", src: "/logos/HDFC-LOGO.png" },
+    { name: "Aditya Birla", src: "/logos/Aditya-Birla-Group-Logo-Vector-scaled.jpg" },
+  ];
+
+  return (
+    <section className="py-12 bg-[#fcfcfc] border-y border-black/5 relative overflow-hidden">
+      <div className="container-custom relative z-10 px-4">
+        <div className="text-center mb-8">
+          <motion.h2
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="text-black/40 font-medium text-xs lg:text-sm uppercase tracking-widest max-w-2xl mx-auto"
+          >
+            The Brands We Work With And Believe In Us
+          </motion.h2>
+        </div>
+
+        <motion.div 
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.1 }}
+          className="relative max-w-[1400px] mx-auto"
+        >
+          <div 
+            className="flex overflow-hidden py-4" 
+            style={{ maskImage: 'linear-gradient(to right, transparent, black 15%, black 85%, transparent)', WebkitMaskImage: 'linear-gradient(to right, transparent, black 15%, black 85%, transparent)' }}
+          >
+            <div className="flex w-max animate-marquee items-center gap-12 md:gap-16 lg:gap-24">
+              {[...staticLogos, ...staticLogos, ...staticLogos].map((logo, i) => (
+                <div
+                  key={`${logo.name}-${i}`}
+                  className="flex items-center justify-center w-[160px] md:w-[200px] h-[100px] bg-white border border-gray-100 rounded-lg shadow-sm shrink-0 p-4"
+                >
+                  <img
+                    src={logo.src}
+                    alt={logo.name}
+                    loading={i >= staticLogos.length ? "lazy" : "eager"}
+                    className="max-w-full max-h-[60px] w-auto object-contain pointer-events-none select-none mix-blend-multiply"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.style.display = 'none';
+                    }}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </motion.div>
+      </div>
+
+      <style jsx>{`
+        @keyframes marquee {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(calc(-50% - 1.5rem)); }
+        }
+        @media (min-width: 768px) {
+          @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-50% - 2rem)); }
+          }
+        }
+        @media (min-width: 1024px) {
+          @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-50% - 3rem)); }
+          }
+        }
+        .animate-marquee {
+          animation: marquee 25s linear infinite;
+        }
+      `}</style>
+    </section>
+  );
+}
